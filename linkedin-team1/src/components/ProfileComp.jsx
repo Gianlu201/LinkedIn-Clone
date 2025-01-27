@@ -21,7 +21,7 @@ const ProfileComp = () => {
             <i className="bi bi-pencil fs-4"></i>
           </button>
         </Col>
-        <Col className="mt-5 ms-3" xs={12}>
+        <Col className="mt-4 ms-3" xs={12}>
           <Row className=" mt-5 w-100 justify-content-between align-items-start">
             <Col xs={6}>
               <h1 className="fs-3 fw-bold mb-0">Camilla Zicari</h1>
