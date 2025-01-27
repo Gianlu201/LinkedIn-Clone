@@ -21,11 +21,11 @@ const ProfileComp = () => {
             <i className="bi bi-pencil fs-4"></i>
           </button>
         </Col>
-        <Col className="mt-5" xs={12}>
+        <Col className="mt-5 ms-3" xs={12}>
           <Row className=" mt-5 w-100 justify-content-between align-items-start">
             <Col xs={6}>
               <h1 className="fs-3 fw-bold mb-0">Camilla Zicari</h1>
-              <button className=" border-primary bg-transparent rounded-4 text-primary btnBadge mt-1">
+              <button className="border-primary bg-transparent rounded-4 text-primary btnBadge mt-1">
                 <i className="bi bi-patch-check me-1"></i>
                 Add verification badge
               </button>
@@ -42,31 +42,31 @@ const ProfileComp = () => {
           </Row>
           <Row>
             <Col>
-              <Row className="mt-2 me-3">
+              <Row className="mt-2 me-3 align-items-center">
                 <Col xs={4}>
                   <button
-                    className=" bg-primary text-white rounded-4 border-0 w-100"
+                    className="btn btn-sm bg-primary text-white rounded-4 border-0 w-100"
                     id="btnOpenTo"
                   >
                     Open to
                   </button>
                 </Col>
                 <Col xs={4}>
-                  <button className=" border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
+                  <button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
                     Add profile section
                   </button>
                 </Col>
                 <Col xs={4}>
                   <button
-                    className=" border-secondary bg-transparent text-secondary rounded-4 w-75"
+                    className="btn btn-sm border-secondary bg-transparent text-secondary rounded-4 w-75"
                     id="btnResources"
                   >
                     Resources
                   </button>
                 </Col>
                 <Col xs={11}>
-                  <button className="mt-2 border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
-                    Add profile section
+                  <button className="mt-2 border-primary bg-transparent text-primary rounded-4 w-100 btnPSection btn btn-sm">
+                    Enhance profile
                   </button>
                 </Col>
                 <Col xs={1}></Col>
@@ -74,7 +74,7 @@ const ProfileComp = () => {
             </Col>
           </Row>
         </Col>
-        <Col xs={12}>
+        <Col xs={12} className="ms-3">
           <Row xs={2} className=" my-3 flex-nowrap overflow-auto">
             <Col>
               <Card className=" d-flex justify-content-between cardRelative h-100">

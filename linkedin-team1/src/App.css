@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1,
 p,
 span,
@@ -50,14 +54,17 @@ h6 {
 
 #btnOpenTo:hover {
   background-color: #004182 !important;
+  border: 1.2px solid #004182 !important;
 }
 
 .btnPSection:hover {
   background-color: #ebf3fd !important;
+  border-width: 1.8px;
 }
 
 #btnResources:hover {
   border-color: black !important;
+  border-width: 1.8px;
   color: black !important;
   background-color: #f3f3f3 !important;
 }
