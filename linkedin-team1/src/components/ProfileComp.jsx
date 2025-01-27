@@ -12,7 +12,7 @@ const ProfileComp = () => {
             className="img-fluid rounded-top-3"
           />
           <img
-            src="https://placecats.com/150/150"
+            src="https://placecats.com/130/130"
             alt=""
             className="profileImg rounded-circle border border-white border-3"
           />
