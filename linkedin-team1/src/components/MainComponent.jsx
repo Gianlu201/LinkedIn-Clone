@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import SuggestedComp from "./SuggestedComp";
 import AnalyticsComp from "./AnalyticsComp";
 import ActivityComp from "./ActivityComp";
+import ExperienceComp from "./ExperienceComp";
 
 const MainComponent = () => {
   return (
@@ -13,6 +14,7 @@ const MainComponent = () => {
           <SuggestedComp />
           <AnalyticsComp />
           <ActivityComp />
+          <ExperienceComp />
         </Col>
         <Col xs={0} md={4}></Col>
       </Row>
