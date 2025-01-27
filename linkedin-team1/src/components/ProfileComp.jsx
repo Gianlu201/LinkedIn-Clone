@@ -76,7 +76,7 @@ const ProfileComp = () => {
         </Col>
         <Col xs={12} className="ms-3">
           <Row xs={2} className=" my-3 flex-nowrap overflow-auto">
-            <Col>
+            <Col className="pe-1">
               <Card className=" d-flex justify-content-between cardRelative h-100">
                 <Card.Body>
                   <Card.Title className=" fs-6">Open to work</Card.Title>
@@ -91,7 +91,7 @@ const ProfileComp = () => {
               </Card>
             </Col>
 
-            <Col>
+            <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
                   <Card.Title className="cardText">
@@ -109,7 +109,7 @@ const ProfileComp = () => {
               </Card>
             </Col>
 
-            <Col>
+            <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
                   <Card.Title className="cardText">
@@ -126,7 +126,7 @@ const ProfileComp = () => {
               </Card>
             </Col>
 
-            <Col>
+            <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
                   <Card.Title className="cardText">
