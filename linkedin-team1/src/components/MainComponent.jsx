@@ -4,6 +4,7 @@ import SuggestedComp from "./SuggestedComp";
 import AnalyticsComp from "./AnalyticsComp";
 import ActivityComp from "./ActivityComp";
 import ExperienceComp from "./ExperienceComp";
+import EducationComp from "./EducationComp";
 
 const MainComponent = () => {
   return (
@@ -15,6 +16,7 @@ const MainComponent = () => {
           <AnalyticsComp />
           <ActivityComp />
           <ExperienceComp />
+          <EducationComp />
         </Col>
         <Col xs={0} md={4}></Col>
       </Row>

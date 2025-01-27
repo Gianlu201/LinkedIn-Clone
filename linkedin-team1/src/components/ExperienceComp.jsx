@@ -26,8 +26,10 @@ const ExperienceComp = () => {
             <Col xs={10} className="ps-0">
               <h4 className="fw-bold fs-6">Consulente commerciale</h4>
               <p className="descriptions">Selectra · Part-time</p>
-              <p className="descriptions">Aug 2022 - Mar 2024 · 1yr 8 mos</p>
-              <p className="descriptions">Rome, Latium, Italy</p>
+              <p className="descriptions text-secondary">
+                Aug 2022 - Mar 2024 · 1yr 8 mos
+              </p>
+              <p className="descriptions text-secondary">Rome, Latium, Italy</p>
             </Col>
           </Row>
           <hr />
@@ -42,8 +44,10 @@ const ExperienceComp = () => {
             <Col xs={10} className="ps-0">
               <h4 className="fw-bold fs-6">Consulente commerciale</h4>
               <p className="descriptions">Selectra · Part-time</p>
-              <p className="descriptions">Aug 2022 - Mar 2024 · 1yr 8 mos</p>
-              <p className="descriptions">Rome, Latium, Italy</p>
+              <p className="descriptions text-secondary">
+                Aug 2022 - Mar 2024 · 1yr 8 mos
+              </p>
+              <p className="descriptions text-secondary">Rome, Latium, Italy</p>
             </Col>
           </Row>
           <hr />
@@ -58,8 +62,10 @@ const ExperienceComp = () => {
             <Col xs={10} className="ps-0">
               <h4 className="fw-bold fs-6">Consulente commerciale</h4>
               <p className="descriptions">Selectra · Part-time</p>
-              <p className="descriptions">Aug 2022 - Mar 2024 · 1yr 8 mos</p>
-              <p className="descriptions">Rome, Latium, Italy</p>
+              <p className="descriptions text-secondary">
+                Aug 2022 - Mar 2024 · 1yr 8 mos
+              </p>
+              <p className="descriptions text-secondary">Rome, Latium, Italy</p>
             </Col>
           </Row>
         </Col>
