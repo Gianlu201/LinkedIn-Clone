@@ -95,6 +95,14 @@ h6 {
   right: 10px;
 }
 
+#cardBg {
+  background-color: #dde7f1 !important;
+}
+
+.cardFont {
+  font-size: small;
+}
+
 /* CSS FOOTER */
 
 footer {

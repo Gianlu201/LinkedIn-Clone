@@ -3,13 +3,13 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 const ProfileComp = () => {
   return (
-    <Container fluid className="mt-2">
+    <Container className="my-2 bg-white rounded-3">
       <Row>
-        <Col className="p-0">
+        <Col className="p-0 profileTop">
           <img
             src="https://placecats.com/576/150"
             alt=""
-            className="profileTop rounded-top-3"
+            className="img-fluid rounded-top-3"
           />
           <img
             src="https://placecats.com/150/150"
@@ -74,10 +74,13 @@ const ProfileComp = () => {
             </Col>
           </Row>
         </Col>
-        <Col xs={12} className="ms-3">
-          <Row xs={2} className=" my-3 flex-nowrap overflow-auto">
+        <Col xs={12} className="">
+          <Row xs={2} className=" my-3 flex-nowrap overflow-auto pb-3">
             <Col className="pe-1">
-              <Card className=" d-flex justify-content-between cardRelative h-100">
+              <Card
+                className=" d-flex justify-content-between cardRelative h-100"
+                id="cardBg"
+              >
                 <Card.Body>
                   <Card.Title className=" fs-6">Open to work</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted fs-6">

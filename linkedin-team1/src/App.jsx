@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className=" overflow-hidden">
+    <div className="overflow-hidden">
       <MainComponent />
       <Footer />
     </div>
