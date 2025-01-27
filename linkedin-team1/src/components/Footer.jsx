@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 //import { QuestionCircleFill } from 'react-bootstrap-icons';
-import "../../public/assets/footer.css";
 
 const Footer = () => {
   return (
