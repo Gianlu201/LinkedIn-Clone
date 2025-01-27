@@ -16,7 +16,25 @@ const ExperienceComp = () => {
       <Row>
         <Col xs={12}>
           <Row className="ms-2">
-            <Col xs={2} className=" pe-0">
+            <Col xs={2} lg={1} className="pe-0 me-lg-3">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
+                alt=""
+                style={{ width: "48px" }}
+              />
+            </Col>
+            <Col xs={10} lg={10} className="ps-0">
+              <h4 className="fw-bold fs-6">Consulente commerciale</h4>
+              <p className="descriptions">Selectra · Part-time</p>
+              <p className="descriptions text-secondary">
+                Aug 2022 - Mar 2024 · 1yr 8 mos
+              </p>
+              <p className="descriptions text-secondary">Rome, Latium, Italy</p>
+            </Col>
+          </Row>
+          <hr />
+          <Row className="ms-2">
+            <Col xs={2} lg={1} className="pe-0 me-lg-3">
               <img
                 src="https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
                 alt=""
@@ -34,25 +52,8 @@ const ExperienceComp = () => {
           </Row>
           <hr />
           <Row className="ms-2">
-            <Col xs={2} className=" pe-0">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
-                alt=""
-                style={{ width: "48px" }}
-              />
-            </Col>
-            <Col xs={10} className="ps-0">
-              <h4 className="fw-bold fs-6">Consulente commerciale</h4>
-              <p className="descriptions">Selectra · Part-time</p>
-              <p className="descriptions text-secondary">
-                Aug 2022 - Mar 2024 · 1yr 8 mos
-              </p>
-              <p className="descriptions text-secondary">Rome, Latium, Italy</p>
-            </Col>
-          </Row>
-          <hr />
-          <Row className="ms-2">
-            <Col xs={2} className=" pe-0">
+            <Col xs={2} lg={1} className="pe-0 me-lg-3">
+              {" "}
               <img
                 src="https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
                 alt=""

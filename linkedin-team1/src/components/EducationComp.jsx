@@ -16,7 +16,8 @@ const EducationComp = () => {
       <Row>
         <Col xs={12}>
           <Row className="ms-2">
-            <Col xs={2} className=" pe-0">
+            <Col xs={2} lg={1} className="pe-0 me-lg-3">
+              {" "}
               <img
                 src="https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
                 alt=""

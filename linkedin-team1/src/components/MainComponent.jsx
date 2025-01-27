@@ -7,12 +7,14 @@ import ExperienceComp from "./ExperienceComp";
 import EducationComp from "./EducationComp";
 import SkillsComp from "./SkillsComp";
 import InterestsComp from "./InterestsComp";
+import LanguageUrlComp from "./LanguageUrlComp";
+import HiringComp from "./HiringComp";
 
 const MainComponent = () => {
   return (
     <Container className="p-0">
       <Row>
-        <Col xs={12} md={8}>
+        <Col xs={12} md={7} lg={8} className=" ps-xxl-5">
           <ProfileComp />
           <SuggestedComp />
           <AnalyticsComp />
@@ -22,7 +24,10 @@ const MainComponent = () => {
           <SkillsComp />
           <InterestsComp />
         </Col>
-        <Col xs={0} md={4}></Col>
+        <Col xs={0} md={5} lg={4} className=" pe-xxl-5">
+          <LanguageUrlComp />
+          <HiringComp />
+        </Col>
       </Row>
     </Container>
   );
