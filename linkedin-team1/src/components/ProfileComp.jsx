@@ -51,7 +51,7 @@ const ProfileComp = () => {
                     Open to
                   </button>
                 </Col>
-                <Col xs={4} className="px-0 pe-2">
+                <Col xs={4} className="px-0 pe-2 pe-md-1">
                   <button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
                     Add profile section
                   </button>
