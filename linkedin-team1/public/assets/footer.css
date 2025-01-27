@@ -1,0 +1,40 @@
+footer {
+  font-size: 0.7em;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+footer a:hover,
+.drop-list:hover {
+  color: #0a66c2;
+  text-decoration: underline;
+}
+footer a:visited {
+  color: #8443ce;
+}
+.anchor-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.anchor-list li {
+  width: 30%;
+  margin-bottom: 6px;
+}
+.drop-list {
+  width: 30%;
+  padding: 0;
+  margin-bottom: 6px;
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+}
+.dropdown-menu {
+  font-size: 1em;
+  text-decoration: none;
+}
+.dropdown-item:hover {
+  text-decoration: none;
+  background-color: rgb(168, 168, 168);
+}
