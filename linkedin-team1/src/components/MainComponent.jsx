@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const MainComponent = () => {
   return (
-    <Container fluid className="p-0">
+    <Container fluid className="p-0 bg-white">
       <Row>
         <Col>
           <ProfileComp />
