@@ -19,7 +19,7 @@ footer a:visited {
   margin: 0;
 }
 .anchor-list li {
-  width: 30%;
+  width: 48%;
   margin-bottom: 6px;
 }
 .drop-list {
@@ -38,4 +38,10 @@ footer a:visited {
 .dropdown-item:hover {
   text-decoration: none;
   background-color: rgb(168, 168, 168);
+}
+
+@media screen and (min-width: 876px) {
+  .anchor-list li {
+    width: 30%;
+  }
 }
