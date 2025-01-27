@@ -10,8 +10,12 @@ const ActivityComp = () => {
           <p className=" text-primary fw-bold">5 followers</p>
         </Col>
         <i className="bi bi-pencil fs-5 matitina"></i>
-        <Col xs={12} md={6} className="mt-md-3 mb-2">
-          <Button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 btnPSection px-3 fw-bold">
+        <Col
+          xs={12}
+          md={6}
+          className="mt-md-3 mb-2 d-flex justify-content-md-end pe-md-5"
+        >
+          <Button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 btnPSection px-3 fw-bold me-lg-3 me-xl-4 me-xxl-5">
             Create a post
           </Button>
         </Col>
