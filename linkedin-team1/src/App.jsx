@@ -5,7 +5,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Footer from "./components/Footer";
 
 function App() {
-  return(<> <Footer />
+  return(
+  <> 
+  <Footer />
 </>
  )
 
