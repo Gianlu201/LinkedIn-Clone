@@ -42,8 +42,8 @@ const ProfileComp = () => {
           </Row>
           <Row>
             <Col>
-              <Row className="mt-2 me-3 align-items-center">
-                <Col xs={4}>
+              <Row className="mt-2 ms-1 me-2 align-items-center">
+                <Col xs={4} className="px-0 pe-2">
                   <button
                     className="btn btn-sm bg-primary text-white rounded-4 border-0 w-100"
                     id="btnOpenTo"
@@ -51,12 +51,12 @@ const ProfileComp = () => {
                     Open to
                   </button>
                 </Col>
-                <Col xs={4}>
+                <Col xs={4} className="px-0 pe-2">
                   <button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
                     Add profile section
                   </button>
                 </Col>
-                <Col xs={4}>
+                <Col xs={4} className="px-0 pe-2">
                   <button
                     className="btn btn-sm border-secondary bg-transparent text-secondary rounded-4 w-75"
                     id="btnResources"
@@ -64,7 +64,7 @@ const ProfileComp = () => {
                     Resources
                   </button>
                 </Col>
-                <Col xs={11}>
+                <Col xs={11} className="px-0">
                   <button className="mt-2 border-primary bg-transparent text-primary rounded-4 w-100 btnPSection btn btn-sm">
                     Enhance profile
                   </button>
