@@ -103,17 +103,29 @@ h6 {
   font-size: small;
 }
 
+.btnAnalytics:hover {
+  background-color: #f3f3f3 !important;
+}
+
+.matitina {
+  position: absolute;
+  top: 18px;
+  left: 90%;
+}
+
 /* CSS FOOTER */
 
 footer {
   font-size: 0.7em;
 }
-footer a {
+footer a,
+.mainLink {
   color: black;
   text-decoration: none;
 }
 footer a:hover,
-.drop-list:hover {
+.drop-list:hover,
+.mainLink:hover {
   color: #0a66c2;
   text-decoration: underline;
 }
