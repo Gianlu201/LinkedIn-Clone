@@ -24,6 +24,7 @@ footer a:visited {
 }
 .drop-list {
   width: 30%;
+  max-width: 30%;
   padding: 0;
   margin-bottom: 6px;
   font-size: 1em;

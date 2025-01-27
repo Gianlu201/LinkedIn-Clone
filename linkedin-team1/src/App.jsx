@@ -5,9 +5,10 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Footer from "./components/Footer";
 
 function App() {
-  return;
+  return(<> <Footer />
+</>
+ )
 
-  <Footer />;
 }
 
 export default App;
