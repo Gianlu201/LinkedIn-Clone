@@ -10,9 +10,10 @@ footer a:hover,
   color: #0a66c2;
   text-decoration: underline;
 }
-footer a:visited {
+/* footer a:visited {
   color: #8443ce;
-}
+} */
+
 .anchor-list {
   list-style-type: none;
   padding: 0;
