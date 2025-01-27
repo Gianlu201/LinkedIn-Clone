@@ -1,13 +1,35 @@
 
-/*css della navbar */
+/*css della navbar */ 
+ .custom-navbar {
+    height: 80px;  
+    padding-top: 0px;    
+  }
+  
+  .custom-navbar .navbar-brand {
+    padding: 0;    
+  }
+  
+  .custom-navbar .navbar-nav {
+    height: 100%;  /* Imposta l'altezza della navbar */
+    display: flex;
+    align-items: center;  /* Centra gli elementi verticalmente */
+  }
+  
+  .custom-navbar .navbar-toggle {
+    padding: 10px;  /* Regola il padding del bottone toggle */
+  }
 .Navicons{
    max-height: "100px";
 }
 .IconText{
+    margin-bottom: 0;
     font-size: 13px;   
 }
 .IconeGrigeNav{
-    font-size: 30px;   
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 25px;   
   color: #666666; 
 }
 
@@ -15,4 +37,4 @@
     font-size: 2rem;
     color: #0a66c2;
   }
-  
+

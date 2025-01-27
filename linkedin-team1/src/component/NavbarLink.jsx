@@ -16,25 +16,25 @@ function NavbarLink() {
   };
 
   return (
-    <Navbar  className="bg-body-tertiary">
+    <Navbar  className="bg-body-tertiary custom-navbar">
     <Container fluid >
       <Navbar.Brand href="#home">
         <i className="bi bi-linkedin icon-linkedin "></i>
       </Navbar.Brand>
 
         {showSearch ? (
-          <InputGroup className="d-sm-none">
-            <InputGroup.Text>
-              <i className="bi bi-search"></i>
-            </InputGroup.Text>
-            <Form.Control
-              type="search"
-              placeholder="Cerca"
-              aria-label="Search"
-              onBlur={() => setShowSearch(false)} 
-              autoFocus 
-            />
-          </InputGroup>
+        <InputGroup className="d-sm-none">
+        <InputGroup.Text className="border-0">
+          <i className="bi bi-search"></i>
+        </InputGroup.Text>
+        <Form.Control
+          type="search"
+          placeholder="Cerca"
+          aria-label="Search"
+          onBlur={() => setShowSearch(false)}
+          autoFocus
+        />
+      </InputGroup>
         ) : (
           <Button
             variant="outline-success"
@@ -68,32 +68,27 @@ function NavbarLink() {
 
 
 
+<Nav.Link href="#action1" className="d-flex flex-column align-items-center">
+  <i className="IconeGrigeNav bi bi-house-door-fill"></i>
+  <p className="IconText d-none d-md-block">Home</p>
+</Nav.Link>
+<Nav.Link href="#action2" className="d-flex flex-column align-items-center">
+  <i className="IconeGrigeNav bi bi-person"></i>
+  <p className="IconText d-none d-md-block">Rete</p>
+</Nav.Link>
+<Nav.Link href="#action3" className="d-flex flex-column align-items-center">
+  <i className="IconeGrigeNav bi bi-briefcase-fill"></i>
+  <p className="IconText d-none d-md-block">Lavoro</p>
+</Nav.Link>
+<Nav.Link href="#action4" className=" d-flex flex-column align-items-center">
+  <i className="IconeGrigeNav bi bi-bell-fill"></i>
+  <p className="IconText d-none d-md-block">Notifiche</p>
+</Nav.Link>
+<Nav.Link href="#action5" className="d-flex flex-column align-items-center ">
+  <i className="IconeGrigeNav bi bi-chat-dots"></i>
+  <p className="IconText d-none d-md-block">Messaggi</p>
+</Nav.Link>
 
-<Nav.Link href="#action1">
-  <i className="IconeGrigeNav bi bi-house-door-fill d-flex flex-column align-items-center justify-content-center">
-    <p className="IconText d-none d-md-block">home</p>
-  </i>
-</Nav.Link>
-<Nav.Link href="#action2">
-  <i className="IconeGrigeNav bi bi-person d-flex flex-column align-items-center justify-content-center">
-    <p className="IconText d-none d-md-block">Rete</p>
-  </i>
-</Nav.Link>
-<Nav.Link href="#action3">
-  <i className="IconeGrigeNav bi bi-briefcase-fill d-flex flex-column align-items-center justify-content-center">
-    <p className="IconText d-none d-md-block">Lavoro</p>
-  </i>
-</Nav.Link>
-<Nav.Link href="#action4">
-  <i className="IconeGrigeNav bi bi-bell-fill d-flex flex-column align-items-center justify-content-center">
-    <p className="IconText d-none d-md-block">Notifiche</p>
-  </i>
-</Nav.Link>
-<Nav.Link href="#action5">
-  <i className="IconeGrigeNav bi bi-chat-dots d-flex flex-column align-items-center justify-content-center">
-    <p className="IconText d-none d-md-block">Messaggi</p>
-  </i>
-</Nav.Link>
 
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
