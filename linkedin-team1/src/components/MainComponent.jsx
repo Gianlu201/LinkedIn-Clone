@@ -6,6 +6,7 @@ import ActivityComp from "./ActivityComp";
 import ExperienceComp from "./ExperienceComp";
 import EducationComp from "./EducationComp";
 import SkillsComp from "./SkillsComp";
+import InterestsComp from "./InterestsComp";
 
 const MainComponent = () => {
   return (
@@ -19,6 +20,7 @@ const MainComponent = () => {
           <ExperienceComp />
           <EducationComp />
           <SkillsComp />
+          <InterestsComp />
         </Col>
         <Col xs={0} md={4}></Col>
       </Row>

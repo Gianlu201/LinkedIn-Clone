@@ -13,7 +13,7 @@ const SuggestedComp = () => {
         </Col>
         <Col xs={12}>
           <Row className="flex-nowrap overflow-auto pb-3">
-            <Col xs={11}>
+            <Col xs={11} lg={6}>
               <Card className=" d-flex justify-content-between h-100">
                 <Card.Body>
                   <Card.Title className=" fw-bold fs-6">
@@ -37,7 +37,7 @@ const SuggestedComp = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={11}>
+            <Col xs={11} lg={6}>
               <Card className=" d-flex justify-content-between h-100">
                 <Card.Body>
                   <Card.Title className=" fw-bold fs-6 d-flex align-items-center">
