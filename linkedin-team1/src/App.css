@@ -123,6 +123,11 @@ h6 {
   font-size: 14px;
   line-height: 1.3;
 }
+
+.suggestedImg {
+  max-width: 48px;
+}
+
 /* CSS FOOTER */
 
 footer {
