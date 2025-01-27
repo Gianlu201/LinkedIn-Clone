@@ -7,7 +7,7 @@ const ProfileComp = () => {
       <Row>
         <Col className="p-0 profileTop">
           <img
-            src="https://placecats.com/576/150"
+            src="https://placecats.com/576/170"
             alt=""
             className="img-fluid rounded-top-3"
           />
