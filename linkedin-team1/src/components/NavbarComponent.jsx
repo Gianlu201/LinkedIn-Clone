@@ -59,26 +59,26 @@ const NavbarComponent = () => {
           </div>
         </Col>
         <Col xs={8} lg={6} className="pe-0">
-          <Nav className=" justify-content-between">
+          <Nav className=" justify-content-end">
             <Nav.Link
               href="#action1"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-house-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-house-fill fs-4 px-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">Home</p>
             </Nav.Link>
             <Nav.Link
               href="#action2"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-person-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-person-fill fs-4 px-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">Web</p>
             </Nav.Link>
             <Nav.Link
               href="#action3"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-3"></i>
               <p className="IconText  text-secondary d-none d-md-block ">
                 Work
               </p>
@@ -87,7 +87,7 @@ const NavbarComponent = () => {
               href="#action4"
               className="d-flex flex-column align-items-center "
             >
-              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">
                 Messages
               </p>
@@ -96,12 +96,12 @@ const NavbarComponent = () => {
               href="#action5"
               className=" d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-bell-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">
                 Notifications
               </p>
             </Nav.Link>
-            <div className=" position-relative">
+            <div className=" position-relative ps-3">
               <Button
                 className=" bg-transparent border-0"
                 onClick={() => {
