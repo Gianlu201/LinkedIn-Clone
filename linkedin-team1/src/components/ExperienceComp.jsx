@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import ProvaModale from "./ProvaModale";
 
 const ExperienceComp = () => {
   const profile = useSelector((state) => {
@@ -75,48 +77,59 @@ const ExperienceComp = () => {
   }, [profile]);
 
   return (
-    <Container
-      fluid
-      className=" bg-white mt-4 rounded-3 position-relative pb-3"
-    >
-      <Row className="ms-2 align-items-md-start">
-        <Col xs={12} md={6} className="mt-3 mb-3">
-          <h3>Experience</h3>
-        </Col>{" "}
-        <i className="bi bi-plus-lg fs-4 plus"></i>
-        <i className="bi bi-pencil fs-5 matitina"></i>
-      </Row>{" "}
-      <Row>
-        <Col xs={12}>
-          {experience.map((exp, i) => {
-            return (
-              <div key={exp._id}>
-                <Row className="ms-2">
-                  <Col xs={2} lg={1} className="pe-0 me-lg-3">
-                    <img
-                      src={exp.image}
-                      alt=""
-                      style={{ width: "48px", height: "50px" }}
-                    />
-                  </Col>
-                  <Col xs={10} lg={10} className="ps-0">
-                    <h4 className="fw-bold fs-6">{exp.role}</h4>
-                    <p className="descriptions">{exp.company}</p>
-                    <p className="descriptions text-secondary">
-                      {exp.startDate.slice(0, 10)} -{" "}
-                      {exp.endDate?.slice(0, 10) || "Present"} ·{" "}
-                      {currentDate(exp.startDate, exp.endDate)}
-                    </p>
-                    <p className="descriptions text-secondary">{exp.area}</p>
-                  </Col>
-                </Row>
-                {i < experience.length - 1 && <hr />}
-              </div>
-            );
-          })}
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Container
+        fluid
+        className=" bg-white mt-4 rounded-3 position-relative pb-3"
+      >
+        <Row className="ms-2 align-items-md-start">
+          <Col xs={12} md={6} className="mt-3 mb-3">
+            <h3>Experience</h3>
+          </Col>{" "}
+          <button
+            type="button"
+            className=" border-0 plus btn btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i className="bi bi-plus-lg fs-4"></i>
+          </button>
+          <i className="bi bi-pencil fs-5 matitina"></i>
+        </Row>{" "}
+        <Row>
+          <Col xs={12}>
+            {experience.map((exp, i) => {
+              return (
+                <div key={exp._id}>
+                  <Row className="ms-2">
+                    <Col xs={2} lg={1} className="pe-0 me-lg-3">
+                      <img
+                        src={exp.image}
+                        alt=""
+                        style={{ width: "48px", height: "50px" }}
+                      />
+                    </Col>
+                    <Col xs={10} lg={10} className="ps-0">
+                      <h4 className="fw-bold fs-6">{exp.role}</h4>
+                      <p className="descriptions">{exp.company}</p>
+                      <p className="descriptions text-secondary">
+                        {exp.startDate.slice(0, 10)} -{" "}
+                        {exp.endDate?.slice(0, 10) || "Present"} ·{" "}
+                        {currentDate(exp.startDate, exp.endDate)}
+                      </p>
+                      <p className="descriptions text-secondary">{exp.area}</p>
+                    </Col>
+                  </Row>
+                  {i < experience.length - 1 && <hr />}
+                </div>
+              );
+            })}
+          </Col>
+        </Row>
+      </Container>
+      {/* <ExperienceModal modal={modal} setModal={setModal} /> */}
+      <ProvaModale />
+    </>
   );
 };
 

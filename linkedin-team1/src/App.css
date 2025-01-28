@@ -152,8 +152,8 @@ h6 {
 
 .plus {
   position: absolute;
-  top: 18px;
-  left: 80%;
+  top: 11px;
+  left: 33%;
 }
 
 .descriptions {
@@ -227,7 +227,12 @@ h6 {
 
 .modalPosition {
   position: absolute;
-  top: 20px !important;
+  top: 1vh !important;
+}
+
+.modalHeight {
+  height: 75vh !important;
+  overflow-y: scroll;
 }
 
 /* CSS FOOTER */

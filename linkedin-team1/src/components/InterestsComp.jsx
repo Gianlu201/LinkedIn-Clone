@@ -7,7 +7,9 @@ const InterestsComp = () => {
         <Col xs={12} md={6} className="mt-3 mb-3">
           <h3>Interests</h3>
         </Col>{" "}
-        <i className="bi bi-plus-lg fs-4 plus"></i>
+        <button type="button" className=" border-0 plus btn btn-sm">
+          <i className="bi bi-plus-lg fs-4"></i>
+        </button>{" "}
         <i className="bi bi-pencil fs-5 matitina"></i>
       </Row>{" "}
       <Row>
