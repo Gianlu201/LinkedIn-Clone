@@ -59,7 +59,7 @@ export default function ExperienceModalEdit() {
                   return (
                     <div key={exp._id}>
                       <div className='d-flex ms-2'>
-                        <div className='pe-0 me-lg-3'>
+                        <div className='pe-0 me-2 me-lg-3'>
                           <img
                             src={exp.image}
                             alt=''
