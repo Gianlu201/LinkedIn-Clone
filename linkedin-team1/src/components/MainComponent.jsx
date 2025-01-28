@@ -10,6 +10,7 @@ import InterestsComp from "./InterestsComp";
 import LanguageUrlComp from "./LanguageUrlComp";
 import HiringComp from "./HiringComp";
 import MoreProfilesComp from "./MoreProfilesComp";
+import AboutComp from "./AboutComp";
 
 const MainComponent = () => {
   return (
@@ -17,6 +18,7 @@ const MainComponent = () => {
       <Row>
         <Col xs={12} md={7} lg={8} className=" ps-xxl-5">
           <ProfileComp />
+          <AboutComp />
           <SuggestedComp />
           <AnalyticsComp />
           <ActivityComp />

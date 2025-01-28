@@ -28,6 +28,19 @@ h6 {
   position: absolute;
   top: 100px;
   left: 30px;
+  width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .profileImg {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .profileImg {
+    width: 110px;
+  }
 }
 
 .profileIcon {
@@ -174,7 +187,24 @@ h6 {
     width: 100% !important;
     border-radius: 7px;
   }
+
+  .sfondoGatto {
+    height: 120px !important;
+  }
 }
+
+@media screen and (min-width: 992px) {
+  .sfondoGatto {
+    height: 165px !important;
+  }
+}
+
+/* TODO: .matitina:hover {
+  background-color: #f3f3f3 !important;
+  width: 6% !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+} */
 
 /* CSS FOOTER */
 

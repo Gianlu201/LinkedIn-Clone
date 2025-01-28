@@ -1,19 +1,59 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProfileComp = () => {
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
+
+  const dispatch = useDispatch();
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
+  const url = "https://striveschool-api.herokuapp.com/api/profile/me";
+
+  const getProfile = async () => {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        dispatch({
+          type: "GET_PROFILE",
+          payload: data,
+        });
+      } else {
+        throw new Error("Errore nel recupero dei dati");
+      }
+    } catch (error) {
+      console.log("errore", error);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   const width = window.innerWidth;
   return (
     <Container className="my-2 bg-white rounded-3">
       <Row>
         <Col className="p-0 profileTop">
           <img
-            src="https://placecats.com/576/170"
+            src="https://placecats.com/900/200"
             alt=""
-            className="img-fluid rounded-top-3"
+            className="img-fluid rounded-top-3 sfondoGatto"
+            style={{ width: "900px", height: "165px" }}
           />
           <img
-            src="https://placecats.com/110/110"
+            src={profile.image}
             alt=""
             className="profileImg rounded-circle border border-white border-3"
           />
@@ -25,14 +65,16 @@ const ProfileComp = () => {
         <Col className="mt-4 mt-md-3 ms-3" xs={12}>
           <Row className=" mt-5 w-100 justify-content-between align-items-start">
             <Col xs={6} md={12}>
-              <h1 className="fs-3 fw-bold mb-0">Camilla Zicari</h1>
+              <h1 className="fs-3 fw-bold mb-0">
+                {profile.name} {profile.surname}
+              </h1>
               <button className="btn btn-sm border-primary bg-transparent rounded-4 text-primary btnBadge mt-1">
                 <i className="bi bi-patch-check me-1"></i>
                 Add verification badge
               </button>
-              <p>Consulente Commerciale</p>
+              <p>{profile.title}</p>
               <p className="mt-1">
-                Italy |{" "}
+                {profile.area} |{" "}
                 <span className=" text-primary fw-bold">Contact info</span>
               </p>
               <p className=" text-primary fw-bold">5 connections</p>
