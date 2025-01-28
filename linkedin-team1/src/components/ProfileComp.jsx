@@ -1,12 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import ModalComp from "./ModalComp";
 
 const ProfileComp = () => {
   const profile = useSelector((state) => {
     return state.profile;
   });
+
+  const [modal, setModal] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -58,7 +62,12 @@ const ProfileComp = () => {
             className="profileImg rounded-circle border border-white border-3"
           />
           <i className="bi bi-camera-fill profileIcon text-primary bg-white px-2 py-1 rounded-circle"></i>
-          <button className="profilePen border-0 bg-transparent">
+          <button
+            onClick={() => {
+              setModal(true);
+            }}
+            className="profilePen border-0 bg-transparent"
+          >
             <i className="bi bi-pencil fs-4"></i>
           </button>
         </Col>
@@ -207,6 +216,7 @@ const ProfileComp = () => {
           </Row>
         </Col>
       </Row>
+      <ModalComp modal={modal} setModal={setModal} />
     </Container>
   );
 };
