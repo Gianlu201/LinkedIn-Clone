@@ -2,15 +2,14 @@ import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import NavbarLink from "./component/NavbarLink";
+
+import NavbarComponent from "./components/NavbarComponent";
 
 function App() {
   return (
-  <>
-   <NavbarLink />
-  </>
+    <>
+      <NavbarComponent />
+    </>
   );
 }
 export default App;
-
-
