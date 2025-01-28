@@ -68,7 +68,7 @@ const ProfileComp = () => {
               <h1 className="fs-3 fw-bold mb-0">
                 {profile.name} {profile.surname}
               </h1>
-              <button className="btn btn-sm border-primary bg-transparent rounded-4 text-primary btnBadge mt-1">
+              <button className="btn btn-sm border-primary bg-transparent rounded-4 text-primary btnBadge mt-1 fw-bold">
                 <i className="bi bi-patch-check me-1"></i>
                 Add verification badge
               </button>
