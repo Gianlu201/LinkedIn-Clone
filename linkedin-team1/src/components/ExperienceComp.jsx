@@ -90,7 +90,7 @@ const ExperienceComp = () => {
             type="button"
             className=" border-0 plus btn btn-sm"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#exampleModal2"
           >
             <i className="bi bi-plus-lg fs-4"></i>
           </button>
@@ -127,7 +127,6 @@ const ExperienceComp = () => {
           </Col>
         </Row>
       </Container>
-      {/* <ExperienceModal modal={modal} setModal={setModal} /> */}
       <ProvaModale />
     </>
   );

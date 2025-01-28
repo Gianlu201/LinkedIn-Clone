@@ -45,15 +45,15 @@ const ProvaModale = () => {
   return (
     <div
       className="modal fade"
-      id="exampleModal"
+      id="exampleModal2"
       tabIndex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="exampleModalLabel2"
       aria-hidden="true"
     >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h1 className="modal-title fs-5" id="exampleModalLabel">
+            <h1 className="modal-title fs-5" id="exampleModalLabel2">
               Add experience
             </h1>
             <button
@@ -253,7 +253,12 @@ const ProvaModale = () => {
             </Form>
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-primary">
+            <button
+              type="button"
+              className="btn btn-primary rounded-5 btn-sm px-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
               Save
             </button>
           </div>
