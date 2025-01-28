@@ -2,7 +2,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const MoreProfilesComp = (props) => {
+const PeopleComp = (props) => {
   const profiles = useSelector((state) => {
     return state.profiles;
   });
@@ -44,7 +44,7 @@ const MoreProfilesComp = (props) => {
     <Container className="bg-white mt-4 rounded-3 pt-3">
       <h5>{props.title}</h5>
 
-      {profiles.slice(7, 12).map((profile, i) => {
+      {profiles.slice(25, 30).map((profile, i) => {
         return (
           <div key={profile._id}>
             <div className="d-flex mt-2">
@@ -64,7 +64,7 @@ const MoreProfilesComp = (props) => {
                   {profile.name} {profile.surname}
                 </a>
                 <p className="small">{profile.title}</p>
-                <p className="small">{profile.bio}</p>
+                <p className="small profBio">{profile.bio}</p>
                 <button
                   className="btn btn-sm border-secondary bg-transparent text-secondary rounded-4 px-3 mt-2"
                   id="btnResources"
@@ -91,4 +91,4 @@ const MoreProfilesComp = (props) => {
   );
 };
 
-export default MoreProfilesComp;
+export default PeopleComp;

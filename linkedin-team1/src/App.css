@@ -206,6 +206,18 @@ h6 {
   border-radius: 50% !important;
 } */
 
+.suggestedImg {
+  max-width: 48px;
+}
+
+.profBio {
+  display: -webkit-box;
+  -webkit-box-direction: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 /* CSS FOOTER */
 
 footer {

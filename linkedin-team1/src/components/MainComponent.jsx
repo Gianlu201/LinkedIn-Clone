@@ -11,6 +11,7 @@ import LanguageUrlComp from "./LanguageUrlComp";
 import HiringComp from "./HiringComp";
 import MoreProfilesComp from "./MoreProfilesComp";
 import AboutComp from "./AboutComp";
+import PeopleComp from "./PeopleComp";
 
 const MainComponent = () => {
   return (
@@ -34,7 +35,7 @@ const MainComponent = () => {
 
           <MoreProfilesComp title="More profiles for you" />
 
-          <MoreProfilesComp title="People you may know" />
+          <PeopleComp title="People you may know" />
 
           <HiringComp />
         </Col>

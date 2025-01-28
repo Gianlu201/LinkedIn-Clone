@@ -1,6 +1,7 @@
 const initialState = {
     profile: {},
-    experience: []
+    experience: [],
+    profiles: []
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -15,6 +16,12 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 experience: action.payload
+            }
+
+        case 'GET_PROFILES':
+            return {
+                ...state,
+                profiles: action.payload
             }
         default: return state
     }
