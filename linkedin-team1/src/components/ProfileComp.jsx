@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ModalComp from "./ModalComp";
@@ -43,7 +43,14 @@ const ProfileComp = () => {
     getProfile();
   }, []);
 
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <Container className="my-2 bg-white rounded-3">
       <Row>
@@ -100,12 +107,21 @@ const ProfileComp = () => {
                     Open to
                   </button>
                 </Col>
-                <Col xs={4} md={6} className="px-0 pe-2 pe-md-2 me-md-2">
+                <Col xs={4} md={6} lg={5} className="px-0 pe-2 pe-md-2 me-md-2">
                   <button className="btn btn-sm border-primary bg-transparent text-primary rounded-4 w-100 btnPSection">
                     Add profile section
                   </button>
                 </Col>
-                {width > 767 ? (
+                {width > 991 ? (
+                  <Col xs={4} lg={3} className="px-0 pe-2">
+                    <button
+                      className="btn btn-sm border-secondary bg-transparent text-secondary rounded-4 w-75"
+                      id="btnResources"
+                    >
+                      Resources
+                    </button>
+                  </Col>
+                ) : width > 767 ? (
                   <Col md={2} className="px-0 pe-2">
                     <button
                       className="btn btn-sm border-secondary bg-transparent text-secondary rounded-circle"
