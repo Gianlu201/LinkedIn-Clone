@@ -10,13 +10,13 @@
   }
   
   .custom-navbar .navbar-nav {
-    height: 100%;  /* Imposta l'altezza della navbar */
+    height: 100%;  
     display: flex;
-    align-items: center;  /* Centra gli elementi verticalmente */
+    align-items: center;  
   }
   
   .custom-navbar .navbar-toggle {
-    padding: 10px;  /* Regola il padding del bottone toggle */
+    padding: 10px;  
   }
 .Navicons{
    max-height: "100px";
@@ -38,3 +38,83 @@
     color: #0a66c2;
   }
 
+  .ricerca{
+    display: block;
+    width: 250px !important;
+  }
+
+  .ImmagineProfilo{
+    width: 30px;
+    border-radius: 50%;
+  }
+  .imgProfiloDrop, h4 {
+    margin-left: 5px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+h4{
+    margin-left: 18px;
+    margin-bottom: 0 !important;
+}
+
+h5{
+    margin-bottom: 0 !important;
+}
+.frecciadrop{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 25px;   
+  color: #666666; 
+    background-color: transparent;
+    border-style: none;
+}
+p{
+    margin-bottom: 0 !important;
+}
+.dropdown-menu {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .softgray {
+    color: #A9A9A9; 
+  }
+  
+  .softgray:hover {
+
+    color: #555555; 
+  }
+  .imgialla{
+    width: 20px;
+  }
+
+  .margine{
+margin: solid 1px red;
+
+  }
+
+  .icon {
+    width: 24px; 
+    height: 24px;
+  }
+  
+  h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  ul li {
+    list-style-type: none;
+  }
+  
+  .text-muted {
+    font-size: 0.875rem;
+    color: #6c757d; 
+  }
+  
+  .dimensionigrid{
+    width: 3000px;
+    height: 550px;
+  }
