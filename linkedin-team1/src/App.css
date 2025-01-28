@@ -23,7 +23,7 @@
 }
 .IconText{
     margin-bottom: 0;
-    font-size: 13px;   
+    font-size: 10px;   
 }
 .IconeGrigeNav{
     display: flex;
@@ -171,4 +171,20 @@ margin: solid 1px red;
 
   .custom-navbar .nav-link:hover {
     color: #0077b5;
+  }
+
+  .divDropPosition {
+    position: absolute;
+    right: 0px !important;
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  .text-button {
+    font-size: 13px;
+  }
+  .divDropPositionAz {
+    position: absolute;
+    right: 30px !important;
+    border: 1px solid gray;
+  
   }

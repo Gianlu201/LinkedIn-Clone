@@ -8,19 +8,19 @@ import {
   Form,
   InputGroup,
   Nav,
-  NavDropdown,
-  DropdownButton,
 } from "react-bootstrap";
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [dropdownMe, setDropdownMe] = useState(false);
+  const [dropdownAz, setDropdownAz] = useState(false);
   return (
     <Container>
       <Row>
-        <Col xs={2} lg={4}>
+        <Col xs={2} lg={4} className="pt-md-2">
           {" "}
           <div className="d-flex align-items-center">
             <Navbar.Brand href="#home">
-              <i className="bi bi-linkedin icon-linkedin me-2 "></i>
+              <i className="bi bi-linkedin icon-linkedin me-2 fs-3 "></i>
             </Navbar.Brand>
             <Button
               variant="link"
@@ -31,16 +31,23 @@ const NavbarComponent = () => {
             </Button>
 
             {showSearch && (
-              <Form className="d-lg-none">
-                <InputGroup>
-                  <Form.Control
-                    type="text"
-                    placeholder="Cerca..."
-                    style={{ maxWidth: "200px" }}
-                  />
-                </InputGroup>
-              </Form>
+              <div className="position-absolute w-100 top-0 start-0 bg-white p-2 shadow-lg z-3">
+                <Form>
+                  <div className="d-flex">
+                    {" "}
+                    <i className="bi bi-search mt-1 me-1"></i>
+                    <InputGroup>
+                      <Form.Control
+                        type="text"
+                        placeholder=" Cerca..."
+                        className="w-100"
+                      />
+                    </InputGroup>
+                  </div>
+                </Form>
+              </div>
             )}
+
             <Form className="d-none d-lg-flex">
               <InputGroup>
                 <InputGroup.Text>
@@ -52,27 +59,27 @@ const NavbarComponent = () => {
           </div>
         </Col>
         <Col xs={8} lg={6} className="pe-0">
-          <Nav className=" justify-content-md-between">
+          <Nav className=" justify-content-between">
             <Nav.Link
               href="#action1"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-house-door-fill"></i>
-              <p className="IconText text-secondary d-none d-md-block">Home</p>
+              <i className="IconeGrigeNav bi bi-house-door-fill fs-4"></i>
+              <p className="IconText text-secondary d-none d-md-block ">Home</p>
             </Nav.Link>
             <Nav.Link
               href="#action2"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-person"></i>
-              <p className="IconText text-secondary d-none d-md-block">Rete</p>
+              <i className="IconeGrigeNav bi bi-person fs-4"></i>
+              <p className="IconText text-secondary d-none d-md-block ">Rete</p>
             </Nav.Link>
             <Nav.Link
               href="#action3"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-briefcase-fill"></i>
-              <p className="IconText  text-secondary d-none d-md-block">
+              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4"></i>
+              <p className="IconText  text-secondary d-none d-md-block ">
                 Lavoro
               </p>
             </Nav.Link>
@@ -80,8 +87,8 @@ const NavbarComponent = () => {
               href="#action4"
               className=" d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-bell-fill"></i>
-              <p className="IconText text-secondary d-none d-md-block">
+              <i className="IconeGrigeNav bi bi-bell-fill fs-4"></i>
+              <p className="IconText text-secondary d-none d-md-block ">
                 Notifiche
               </p>
             </Nav.Link>
@@ -89,110 +96,131 @@ const NavbarComponent = () => {
               href="#action5"
               className="d-flex flex-column align-items-center "
             >
-              <i className="IconeGrigeNav bi bi-chat-dots"></i>
-              <p className="IconText text-secondary d-none d-md-block">
+              <i className="IconeGrigeNav bi bi-chat-dots fs-4"></i>
+              <p className="IconText text-secondary d-none d-md-block ">
                 Messaggi
               </p>
             </Nav.Link>
-            <Nav.Link
-              href="#action6"
-              className="d-flex flex-column align-items-center ps-1 ps-md-2"
-            >
-              <img
-                src="/1719248792649.jpeg"
-                className="ImmagineProfilo"
-                alt="Descrizione immagine"
-              />
-
-              <div className="d-flex align-items-center">
-                <p className="IconText text-secondary d-none d-md-block">Tu</p>
-
-                <DropdownButton
-                  align="end"
-                  title=""
-                  className="dropdown-menu-start d-flex align-items-center d-none d-lg-block"
-                  variant="link"
-                >
-                  <div className="d-flex align-items-center">
-                    <img
-                      src="/1719248792649.jpeg"
-                      className="imgProfiloDrop w-25"
-                      alt="Descrizione immagine"
-                    />
-                    <div className="m-1">
-                      <h5 className="mt-2 ms-1">Nome Cognome</h5>
-                      <p className="ms-1">
-                        descrizione lavoro e informazioni dell utente
+            <div className=" position-relative">
+              <Button
+                className=" bg-transparent border-0"
+                onClick={() => {
+                  setDropdownMe(!dropdownMe);
+                }}
+              >
+                <img
+                  src="/1719248792649.jpeg"
+                  className="ImmagineProfilo"
+                  alt="Descrizione immagine"
+                />
+                <p className="IconText text-secondary  d-none d-md-block">
+                  Tu<i className="bi bi-caret-down-fill"></i>
+                </p>
+              </Button>
+              {dropdownMe && (
+                <div className="dropdown-menu-start d-flex align-items-center divDropPosition">
+                  <Container style={{ width: "250px" }} className=" border-1">
+                    <Row className="d-flex flex-column">
+                      <Col>
+                        <Row className="mt-3">
+                          <Col xs={3} className="pe-1">
+                            {" "}
+                            <img
+                              src="/1719248792649.jpeg"
+                              className="ImmagineProfilo rounded-circle"
+                              alt="Descrizione immagine"
+                              style={{ width: "60px", height: "60px" }}
+                            />
+                          </Col>
+                          <Col xs={9} className="ps-4">
+                            <p className="fw-bold">Rachele Barberis</p>
+                            <p>Neolaureata</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col>
+                        <Row className="mt-3">
+                          <Col xs={7} className="pe-0">
+                            <div className="mb-2">
+                              {" "}
+                              <Button className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3">
+                                <p className="text-button p-0">
+                                  Visualizza Profilo
+                                </p>
+                              </Button>
+                            </div>
+                          </Col>
+                          <Col xs={5} className="ps-0">
+                            <div className="mb-2">
+                              {" "}
+                              <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
+                                <p className=" text-button p-0">Verifica</p>
+                              </Button>
+                            </div>
+                          </Col>
+                          <hr></hr>
+                        </Row>
+                      </Col>
+                      <Col>
+                        <p className="fw-bold">Account</p>
+                        <Row>
+                          <Col xs={2}>
+                            <img
+                              src="/imgGiallina.svg"
+                              style={{ width: "20px", height: "20px" }}
+                            />
+                          </Col>
+                          <Col xs={10} className="pe-0">
+                            <p className="small">
+                              {" "}
+                              Prova 1 mese di Premium per 0 EUR
+                            </p>
+                          </Col>
+                          <p className="text-secondary">
+                            Impostazioni e privacy
+                          </p>
+                          <p className="text-secondary">Guida</p>
+                          <p className="text-secondary mb-1">Lingua</p>
+                        </Row>
+                        <hr></hr>
+                      </Col>
+                      <p className="fw-bold">Gestisci</p>
+                      <p className="text-secondary">Post e attività</p>
+                      <p className="text-secondary mb-1">
+                        Account per la pubblicità di off..
                       </p>
-                    </div>
-                  </div>
-                  <div className="mt-2 mb-3">
-                    <Button className="d-block mx-auto">
-                      Visualizza Profilo
-                    </Button>
-                  </div>
-                  <NavDropdown.Divider />
-
-                  <h4>Account</h4>
-                  <NavDropdown.Item href="#action6">
-                    <img
-                      src="\svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgaWQ9InByZW1pdW0tY2hpcC12Mi1tZWRpdW0iIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJub25lIiBkYXRhLXN1cHBvcnRlZC1kcHM9IjI0eDI0Ij4KICA.svg"
-                      className="imgialla"
-                      alt="img gialla"
-                    />
-                    <span>Prova 1 mese di premium per 0</span>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action6">
-                    <p className="softgray">Impostazioni e privacy</p>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action6">
-                    <p className="softgray">Guida</p>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">
-                    <p className="softgray">Lingua</p>
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-
-                  <h4>Gestisci</h4>
-                  <NavDropdown.Item href="#action6">
-                    <p className="softgray">Post e attività</p>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action6">
-                    <p className="softgray">
-                      Account per la pubblicazione di off...
-                    </p>
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action6">
-                    <p className="softgray">Esci</p>
-                  </NavDropdown.Item>
-                </DropdownButton>
-              </div>
-            </Nav.Link>
+                    </Row>
+                    <hr></hr>
+                    <p className="text-secondary">Esci</p>
+                  </Container>
+                </div>
+              )}
+            </div>
           </Nav>
         </Col>
         <Col xs={2} lg={2} className="ps-0">
           {" "}
-          <Nav.Link
-            href="#action6"
-            className="justify-content-lg-start ps-1 ps-lg-2 mt-2"
-          >
-            <i className="bi bi-grid-3x3-gap ms-md-4"></i>
-
-            <div className="d-flex align-items-center">
-              <p className="IconText text-secondary d-none d-md-block">
-                Per le Aziende
+          <div className=" position-relative">
+            <Button
+              className=" bg-transparent border-0"
+              onClick={() => {
+                setDropdownAz(!dropdownAz);
+              }}
+            >
+              <i className="bi bi-grid-3x3-gap fs-5 text-secondary"></i>
+              <p className="IconText text-secondary  d-none d-md-block">
+                Per le Aziende<i className="bi bi-caret-down-fill"></i>
               </p>
-
-              <DropdownButton
-                align="end"
-                variant="link"
-                id="business-dropdown"
-                className="d-none d-lg-block"
-              >
-                <Container>
+            </Button>
+            {dropdownAz && (
+              <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz">
+                <Container
+                  fluid={true}
+                  style={{ width: "500px", maxHeight: "75vh" }}
+                  className="overflow-y-scroll"
+                >
                   <Row>
-                    <Col className="col-ms-12 col-md-1">
+                    <Col lg={6}>
                       <h5>Le mie app</h5>
                       <ul className="list-unstyled">
                         <li className="d-flex align-items-center mb-3">
@@ -217,7 +245,7 @@ const NavbarComponent = () => {
                         <li className="d-flex align-items-center mb-3">
                           <img src="\Lavoro.svg" alt="Icona" className="icon" />
                           <span className="ms-2">
-                            Pubblica un offerta di lavoro
+                            Pubblica un&apos;offerta di lavoro
                           </span>
                         </li>
                         <li className="mt-4">
@@ -225,11 +253,11 @@ const NavbarComponent = () => {
                         </li>
                         <li className="d-flex align-items-center mb-3">
                           <img
-                            src="\Vendiye.svg"
+                            src="\Vendite.svg"
                             alt="Icona"
                             className="icon"
                           />
-                          <span className="ms-2">Marketpalce dei servizi</span>
+                          <span className="ms-2">Marketplace dei servizi</span>
                         </li>
                         <li className="mt-4">
                           <strong>Marketing</strong>
@@ -255,8 +283,8 @@ const NavbarComponent = () => {
                         </li>
                       </ul>
                     </Col>
-                    <hr></hr>
-                    <Col className="col-lg-12 col-md-6">
+
+                    <Col lg={6}>
                       <h5>Scopri altro per il business</h5>
                       <ul className="list-unstyled">
                         <li className="mb-3">
@@ -287,9 +315,8 @@ const NavbarComponent = () => {
                             Amplia e sfrutta la tua rete
                           </p>
                         </li>
-
                         <li className="mb-3">
-                          <strong>Impara con Linkedln</strong>
+                          <strong>Impara con LinkedIn</strong>
                           <p className="text-muted">
                             Corsi per formare i tuoi dipendenti
                           </p>
@@ -307,9 +334,9 @@ const NavbarComponent = () => {
                     </Col>
                   </Row>
                 </Container>
-              </DropdownButton>
-            </div>
-          </Nav.Link>
+              </div>
+            )}
+          </div>
         </Col>
       </Row>
     </Container>
