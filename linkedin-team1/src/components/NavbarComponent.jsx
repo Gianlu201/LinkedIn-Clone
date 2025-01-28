@@ -39,7 +39,7 @@ const NavbarComponent = () => {
                     <InputGroup>
                       <Form.Control
                         type="text"
-                        placeholder=" Cerca..."
+                        placeholder=" Search..."
                         className="w-100"
                       />
                     </InputGroup>
@@ -64,15 +64,15 @@ const NavbarComponent = () => {
               href="#action1"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-house-door-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-house-fill fs-4"></i>
               <p className="IconText text-secondary d-none d-md-block ">Home</p>
             </Nav.Link>
             <Nav.Link
               href="#action2"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-person fs-4"></i>
-              <p className="IconText text-secondary d-none d-md-block ">Rete</p>
+              <i className="IconeGrigeNav bi bi-person-fill fs-4"></i>
+              <p className="IconText text-secondary d-none d-md-block ">Web</p>
             </Nav.Link>
             <Nav.Link
               href="#action3"
@@ -80,25 +80,25 @@ const NavbarComponent = () => {
             >
               <i className="IconeGrigeNav bi bi-briefcase-fill fs-4"></i>
               <p className="IconText  text-secondary d-none d-md-block ">
-                Lavoro
+                Work
               </p>
-            </Nav.Link>
+            </Nav.Link>{" "}
             <Nav.Link
               href="#action4"
-              className=" d-flex flex-column align-items-center"
+              className="d-flex flex-column align-items-center "
             >
-              <i className="IconeGrigeNav bi bi-bell-fill fs-4"></i>
+              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4"></i>
               <p className="IconText text-secondary d-none d-md-block ">
-                Notifiche
+                Messages
               </p>
             </Nav.Link>
             <Nav.Link
               href="#action5"
-              className="d-flex flex-column align-items-center "
+              className=" d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-chat-dots fs-4"></i>
+              <i className="IconeGrigeNav bi bi-bell-fill fs-4"></i>
               <p className="IconText text-secondary d-none d-md-block ">
-                Messaggi
+                Notifications
               </p>
             </Nav.Link>
             <div className=" position-relative">
@@ -134,7 +134,7 @@ const NavbarComponent = () => {
                           </Col>
                           <Col xs={9} className="ps-4">
                             <p className="fw-bold">Rachele Barberis</p>
-                            <p>Neolaureata</p>
+                            <p>Recently Graduated</p>
                           </Col>
                         </Row>
                       </Col>
@@ -144,9 +144,7 @@ const NavbarComponent = () => {
                             <div className="mb-2">
                               {" "}
                               <Button className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3">
-                                <p className="text-button p-0">
-                                  Visualizza Profilo
-                                </p>
+                                <p className="text-button p-0">View Profile</p>
                               </Button>
                             </div>
                           </Col>
@@ -154,7 +152,7 @@ const NavbarComponent = () => {
                             <div className="mb-2">
                               {" "}
                               <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
-                                <p className=" text-button p-0">Verifica</p>
+                                <p className=" text-button p-0">Verify</p>
                               </Button>
                             </div>
                           </Col>
@@ -173,32 +171,28 @@ const NavbarComponent = () => {
                           <Col xs={10} className="pe-0">
                             <p className="small">
                               {" "}
-                              Prova 1 mese di Premium per 0 EUR
+                              Try 1 month of Premium for 0 EUR
                             </p>
                           </Col>
-                          <p className="text-secondary">
-                            Impostazioni e privacy
-                          </p>
-                          <p className="text-secondary">Guida</p>
-                          <p className="text-secondary mb-1">Lingua</p>
+                          <p className="text-secondary">Settigs & Privacy</p>
+                          <p className="text-secondary">Help</p>
+                          <p className="text-secondary mb-1">Language</p>
                         </Row>
                         <hr></hr>
                       </Col>
-                      <p className="fw-bold">Gestisci</p>
-                      <p className="text-secondary">Post e attività</p>
-                      <p className="text-secondary mb-1">
-                        Account per la pubblicità di off..
-                      </p>
+                      <p className="fw-bold">Manage</p>
+                      <p className="text-secondary">Posts & Activity</p>
+                      <p className="text-secondary mb-1">Job Posting Account</p>
                     </Row>
                     <hr></hr>
-                    <p className="text-secondary">Esci</p>
+                    <p className="text-secondary">Sign Out</p>
                   </Container>
                 </div>
               )}
             </div>
           </Nav>
         </Col>
-        <Col xs={2} lg={2} className="ps-0">
+        <Col xs={2} lg={2} className=" ps-0 ps-lg-4">
           {" "}
           <div className=" position-relative">
             <Button
@@ -221,7 +215,7 @@ const NavbarComponent = () => {
                 >
                   <Row>
                     <Col lg={6}>
-                      <h5>Le mie app</h5>
+                      <h5>My Apps</h5>
                       <ul className="list-unstyled">
                         <li className="d-flex align-items-center mb-3">
                           <img
@@ -229,11 +223,11 @@ const NavbarComponent = () => {
                             alt="Icona"
                             className="icon"
                           />
-                          <span className="ms-2">Trova lead</span>
+                          <span className="ms-2">Find Leads</span>
                         </li>
                         <li className="d-flex align-items-center mb-3">
                           <img src="\gruppi.svg" alt="Icona" className="icon" />
-                          <span className="ms-2">Gruppi</span>
+                          <span className="ms-2">Groups</span>
                         </li>
                         <li className="mt-4">
                           <strong>Talent</strong>
@@ -244,12 +238,10 @@ const NavbarComponent = () => {
                         </li>
                         <li className="d-flex align-items-center mb-3">
                           <img src="\Lavoro.svg" alt="Icona" className="icon" />
-                          <span className="ms-2">
-                            Pubblica un&apos;offerta di lavoro
-                          </span>
+                          <span className="ms-2">Post a job</span>
                         </li>
                         <li className="mt-4">
-                          <strong>Vendite</strong>
+                          <strong>Sales</strong>
                         </li>
                         <li className="d-flex align-items-center mb-3">
                           <img
@@ -257,7 +249,7 @@ const NavbarComponent = () => {
                             alt="Icona"
                             className="icon"
                           />
-                          <span className="ms-2">Marketplace dei servizi</span>
+                          <span className="ms-2">Services Marketplace</span>
                         </li>
                         <li className="mt-4">
                           <strong>Marketing</strong>
@@ -268,7 +260,7 @@ const NavbarComponent = () => {
                             alt="Icona"
                             className="icon"
                           />
-                          <span className="ms-2">Pubblicizza</span>
+                          <span className="ms-2">Advertise</span>
                         </li>
                         <li className="mt-4">
                           <strong>Learning</strong>
@@ -285,50 +277,52 @@ const NavbarComponent = () => {
                     </Col>
 
                     <Col lg={6}>
-                      <h5>Scopri altro per il business</h5>
+                      <h5>Explore more for business</h5>
                       <ul className="list-unstyled">
                         <li className="mb-3">
-                          <strong>Assumi su LinkedIn</strong>
-                          <p className="text-muted">Trova, attrai e assumi</p>
-                        </li>
-                        <li className="mb-3">
-                          <strong>Vendi con LinkedIn</strong>
+                          <strong>Hire on LinkedIn</strong>
                           <p className="text-muted">
-                            Sblocca nuove opportunità di vendita
+                            Find, attract and recruit talent
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Offerta di lavoro gratuita</strong>
+                          <strong>Sell with LinkedIn</strong>
                           <p className="text-muted">
-                            Ottieni rapidamente candidati qualificati
+                            Unlock sales opportunities
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Fai pubblicità su LinkedIn</strong>
+                          <strong>Post a job for free</strong>
                           <p className="text-muted">
-                            Acquisisci clienti e fai crescere la tua azienda
+                            Get qualified applicants quickly
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Inizia con Premium</strong>
+                          <strong>Advertise on LinkedIn</strong>
                           <p className="text-muted">
-                            Amplia e sfrutta la tua rete
+                            Acquire customers and grow your business
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Impara con LinkedIn</strong>
+                          <strong>Get started with Premium</strong>
                           <p className="text-muted">
-                            Corsi per formare i tuoi dipendenti
+                            Expand and leverage your network
+                          </p>
+                        </li>
+                        <li className="mb-3">
+                          <strong>Learn with LinkedIn</strong>
+                          <p className="text-muted">
+                            Courses to develop your employees
                           </p>
                         </li>
                         <li className="mb-5">
                           <strong>Admin Center</strong>
                           <p className="text-muted">
-                            Gestisci i dettagli di fatturazione e account
+                            Manage billing and account details
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Crea una pagina aziendale +</strong>
+                          <strong>Create a Company Page +</strong>
                         </li>
                       </ul>
                     </Col>
