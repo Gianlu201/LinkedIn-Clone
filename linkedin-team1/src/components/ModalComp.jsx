@@ -132,7 +132,7 @@ const ModalComp = () => {
                       }}
                     />
 
-                    <Form.Label className="mt-1 text-secondary">
+                    <Form.Label className="mt-2 text-secondary">
                       Last name*
                     </Form.Label>
                     <Form.Control

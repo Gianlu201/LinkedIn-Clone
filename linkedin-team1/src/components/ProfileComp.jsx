@@ -163,7 +163,7 @@ const ProfileComp = () => {
             <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
-                  <Card.Title className="cardText">
+                  <Card.Title className="cardText pe-3">
                     {" "}
                     <span className=" fw-bold">
                       Share that you're hiring
@@ -181,7 +181,7 @@ const ProfileComp = () => {
             <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
-                  <Card.Title className="cardText">
+                  <Card.Title className="cardText pe-3">
                     {" "}
                     <span className=" fw-bold">Showcase your services</span> as
                     a selection on your profile so ypur business can be easily
@@ -198,7 +198,7 @@ const ProfileComp = () => {
             <Col className="pe-1">
               <Card className=" d-flex justify-content-between h-100 cardRelative">
                 <Card.Body>
-                  <Card.Title className="cardText">
+                  <Card.Title className="cardText pe-3">
                     {" "}
                     <span className=" fw-bold">Tell non-profits</span> you're
                     interested in getting involved with your time and skills
