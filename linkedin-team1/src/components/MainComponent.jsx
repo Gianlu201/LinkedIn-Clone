@@ -14,7 +14,7 @@ const MainComponent = () => {
   return (
     <Container className='p-0'>
       <Row>
-        <Col xs={12} md={9}>
+        <Col xs={12} md={7} lg={8}>
           <ProfileComp />
           <SuggestedComp />
           <AnalyticsComp />
@@ -24,7 +24,7 @@ const MainComponent = () => {
           <SkillsComp />
           <InterestsComp />
         </Col>
-        <Col xs={0} md={3}>
+        <Col xs={0} md={5} lg={4}>
           <Container className='mt-2 pb-3 bg-white rounded-3'>
             <div className='position-relative'>
               <h4 className='pt-3'>Profile language</h4>
