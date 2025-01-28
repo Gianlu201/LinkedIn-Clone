@@ -148,12 +148,14 @@ h6 {
   position: absolute;
   top: 18px;
   left: 90%;
+  width: 2em;
 }
 
 .plus {
   position: absolute;
   top: 11px;
-  left: 33%;
+  left: 82%;
+  width: 2em;
 }
 
 .descriptions {
