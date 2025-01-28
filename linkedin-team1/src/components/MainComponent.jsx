@@ -8,7 +8,7 @@ import EducationComp from "./EducationComp";
 import SkillsComp from "./SkillsComp";
 import InterestsComp from "./InterestsComp";
 import LanguageUrlComp from "./LanguageUrlComp";
-import HiringAdviceComp from "./HiringAdviceComp";
+import HiringComp from "./HiringComp";
 import MoreProfilesComp from "./MoreProfilesComp";
 
 const MainComponent = () => {
@@ -25,16 +25,16 @@ const MainComponent = () => {
           <SkillsComp />
           <InterestsComp />
         </Col>
-        <Col xs={0} md={5} lg={4} className=" ps-xxl-5">
+        <Col xs={0} md={5} lg={4} className=" pe-xxl-5">
           <LanguageUrlComp />
 
-          <HiringAdviceComp />
+          <HiringComp />
 
           <MoreProfilesComp title="More profiles for you" />
 
           <MoreProfilesComp title="People you may know" />
 
-          <HiringAdviceComp />
+          <HiringComp />
         </Col>
       </Row>
     </Container>
