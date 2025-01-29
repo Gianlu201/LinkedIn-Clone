@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import ProvaModale from "./ProvaModale";
+import ExperienceModalEdit from "./ExpereinceModalEdit";
 
 const ExperienceComp = () => {
   const profile = useSelector((state) => {
@@ -94,7 +95,14 @@ const ExperienceComp = () => {
           >
             <i className="bi bi-plus-lg fs-4"></i>
           </button>
-          <i className="bi bi-pencil fs-5 matitina"></i>
+          <button
+            type="button"
+            className=" border-0 matitina btn btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#ExperienceModalEdit"
+          >
+            <i className="bi bi-pencil fs-5"></i>
+          </button>
         </Row>{" "}
         <Row>
           <Col xs={12}>
@@ -128,6 +136,7 @@ const ExperienceComp = () => {
         </Row>
       </Container>
       <ProvaModale />
+      <ExperienceModalEdit />
     </>
   );
 };
