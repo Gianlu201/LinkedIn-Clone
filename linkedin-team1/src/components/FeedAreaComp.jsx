@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import DeleteMyPostModal from './DeleteMyPostModal';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
@@ -10,6 +10,7 @@ const FeedAreaComp = () => {
   const [currentPostId, setCurrentPostId] = useState('');
 
   const navigate = useNavigate();
+  const params = useParams();
 
   const profile = useSelector((state) => {
     return state.profile;
@@ -64,7 +65,7 @@ const FeedAreaComp = () => {
       case secondsPassed > 0:
         return `${secondsPassed}sec`;
       default:
-        return '??';
+        return 'now';
     }
   };
 
@@ -74,7 +75,7 @@ const FeedAreaComp = () => {
 
   useEffect(() => {
     getAllFeed();
-  }, [currentPostId]);
+  }, [currentPostId, params]);
 
   return (
     <div className=' mt-2 rounded-3'>
@@ -233,7 +234,7 @@ const FeedAreaComp = () => {
                       </div>
                     </div>
 
-                    {/* corpo del testo */}
+                    {/* corpo del post */}
                     <div className='d-flex flex-column align-items-center my-2'>
                       <p className='w-100 mb-2 overflow-x-hidden'>
                         {post.text}
@@ -241,7 +242,7 @@ const FeedAreaComp = () => {
                       {post?.image && (
                         <img
                           src={post.image}
-                          alt=''
+                          alt='post image'
                           className='w-75 mx-auto mt-1'
                         />
                       )}

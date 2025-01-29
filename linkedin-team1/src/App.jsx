@@ -13,6 +13,7 @@ function App() {
       <div>
         <NavbarComponent />
         <Routes>
+          <Route path='/post' element={<HomeComponent />} />
           <Route path='/post/:postId' element={<HomeComponent />} />
           <Route path='/' element={<HomeComponent />} />
           <Route path='/profile' element={<MainComponent />} />

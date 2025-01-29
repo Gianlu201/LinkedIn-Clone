@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import NewPostModal from './NewPostModal';
+import { useNavigate } from 'react-router-dom';
 
 const NewPostComp = () => {
   // const token =
@@ -10,6 +11,8 @@ const NewPostComp = () => {
   const profile = useSelector((state) => {
     return state.profile;
   });
+
+  const navigate = useNavigate();
 
   return (
     <Container fluid className=' bg-white mt-2 mt-md-4 rounded-3 bordinoGames'>
@@ -27,6 +30,9 @@ const NewPostComp = () => {
               className='btn bg-trasparent border border-1 border-black rounded-5 w-100 h-75 fw-semibold'
               data-bs-toggle='modal'
               data-bs-target='#newPostModal'
+              onClick={() => {
+                navigate('/post/');
+              }}
             >
               Start a post
             </button>
