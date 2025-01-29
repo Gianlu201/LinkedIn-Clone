@@ -3,6 +3,7 @@ import GamesComp from "./GamesComp";
 import AddToFeed from "./AddToFeed";
 import HiringComp from "./HiringComp";
 import HomeProfile from "./HomeProfile";
+import ToolsRightComp from "./ToolsRightComp";
 
 const HomeComponent = () => {
   return (
@@ -10,7 +11,7 @@ const HomeComponent = () => {
       <Row>
         <Col xs={12} md={4} lg={3}>
           <HomeProfile />
-          <HomeProfile />
+          <ToolsRightComp />
         </Col>
         <Col xs={12} md={8} lg={9}>
           <Row>
