@@ -7,7 +7,10 @@ const AboutComp = () => {
   });
 
   return (
-    <Container fluid className=" bg-white mt-4 rounded-3 position-relative">
+    <Container
+      fluid
+      className="bordinoGames bg-white mt-2 rounded-3 position-relative"
+    >
       <Row className="ms-2 align-items-md-start">
         <Col xs={12} md={6} className="mt-3 mb-2">
           <h3>About</h3>

@@ -42,7 +42,7 @@ const PeopleComp = (props) => {
   }, []);
 
   return (
-    <Container className="bg-white mt-4 rounded-3 pt-3">
+    <Container className="bg-white mt-2 rounded-3 pt-3 bordinoGames">
       <h5>{props.title}</h5>
 
       {profiles.slice(25, 30).map((profile, i) => {

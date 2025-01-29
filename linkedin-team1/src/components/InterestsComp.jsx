@@ -2,7 +2,10 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 const InterestsComp = () => {
   return (
-    <Container fluid className=" bg-white mt-4 rounded-3 position-relative">
+    <Container
+      fluid
+      className=" bg-white mt-2 rounded-3 position-relative bordinoGames"
+    >
       <Row className="ms-2 align-items-md-start">
         <Col xs={12} md={6} className="mt-3 mb-3">
           <h3>Interests</h3>
