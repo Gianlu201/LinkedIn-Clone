@@ -52,7 +52,7 @@ const ProfileComp = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <Container className="my-2 bg-white rounded-3">
+    <Container className="my-2 bg-white rounded-3 bordinoGames">
       <Row>
         <Col className="p-0 profileTop">
           <img

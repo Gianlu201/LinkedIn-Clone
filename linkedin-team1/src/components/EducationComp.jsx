@@ -4,7 +4,7 @@ const EducationComp = () => {
   return (
     <Container
       fluid
-      className=" bg-white mt-4 rounded-3 position-relative pb-3"
+      className=" bg-white mt-2 rounded-3 position-relative pb-3 bordinoGames"
     >
       <Row className="ms-2 align-items-md-start">
         <Col xs={12} md={6} className="mt-3 mb-3">
@@ -27,7 +27,7 @@ const EducationComp = () => {
               />
             </Col>
             <Col xs={10} className="ps-0">
-              <h4 className="fw-bold fs-6">IIS Giosuè Carducci</h4>
+              <h4 className="fw-bold fs-6 w-100">IIS Giosuè Carducci</h4>
               <p className="descriptions">
                 Diploma di scuola superiore, Scienze applicate
               </p>

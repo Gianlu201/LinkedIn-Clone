@@ -81,7 +81,7 @@ const ExperienceComp = () => {
     <>
       <Container
         fluid
-        className=" bg-white mt-4 rounded-3 position-relative pb-3"
+        className=" bg-white mt-2 rounded-3 position-relative pb-3 bordinoGames"
       >
         <Row className="ms-2 align-items-md-start">
           <Col xs={12} md={6} className="mt-3 mb-3">

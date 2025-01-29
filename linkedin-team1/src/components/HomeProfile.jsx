@@ -45,12 +45,13 @@ const HomeProfile = () => {
   useEffect(() => {}, []);
   return (
     <Container>
-      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
+      <Row className="my-2 bg-white rounded-3">
         <Col className="p-0 mb-3 profileTopHome">
           <img
             src="https://placecats.com/900/200"
             alt=""
             className="img-fluid rounded-top-3 sfondoGattoHome"
+            style={{ width: "900px" }}
           />
           <img
             src={profile.image}
@@ -73,7 +74,7 @@ const HomeProfile = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
+      <Row className="my-2 bg-white rounded-3">
         <Col xs={10} className="py-3">
           <a href="#" className="homeLinks text-black fw-bold">
             Connections
@@ -83,13 +84,13 @@ const HomeProfile = () => {
             Grow your network
           </a>
         </Col>
-        <Col xs={2} className="py-3">
+        <Col xs={2} className="py-2">
           <a href="#" className="homeLinksNum">
             2
           </a>
         </Col>
       </Row>
-      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
+      <Row className="my-2 bg-white rounded-3">
         <Col xs={12} className="pt-3">
           <p className="text-muted homeLinks">
             {" "}
@@ -107,7 +108,7 @@ const HomeProfile = () => {
           </span>
         </Col>
       </Row>
-      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
+      <Row className="my-2 bg-white rounded-3">
       <Col xs={12} className="pt-3 d-flex">
       <i className="bi bi-bookmark-fill d-inline-block"></i>
                 <div>

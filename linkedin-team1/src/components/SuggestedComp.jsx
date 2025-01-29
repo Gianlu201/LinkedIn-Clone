@@ -2,7 +2,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const SuggestedComp = () => {
   return (
-    <Container fluid className=" bg-white mt-4 rounded-3">
+    <Container fluid className=" bg-white mt-2 rounded-3 bordinoGames">
       <Row className=" pb-3">
         <Col xs={12} className="my-3 ms-3">
           <h3>Suggested for you</h3>
