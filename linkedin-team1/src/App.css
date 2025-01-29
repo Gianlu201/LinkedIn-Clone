@@ -289,3 +289,186 @@ footer a:hover,
     width: 30%;
   }
 }
+
+/*css della navbar */
+.custom-navbar {
+  height: 80px;
+  padding-top: 0px;
+}
+
+.custom-navbar .navbar-brand {
+  padding: 0;
+}
+
+.custom-navbar .navbar-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-toggle {
+  padding: 10px;
+}
+.Navicons {
+  max-height: "100px";
+}
+.IconText {
+  margin-bottom: 0;
+  font-size: 10px;
+}
+.IconeGrigeNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 25px;
+  color: #666666;
+}
+
+.icon-linkedin {
+  font-size: 2rem;
+  color: #0a66c2;
+}
+
+.ricerca {
+  display: block;
+  width: 250px !important;
+}
+
+.ImmagineProfilo {
+  width: 25px;
+  border-radius: 50%;
+}
+.imgProfiloDrop,
+h4 {
+  margin-left: 5px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+h4 {
+  margin-left: 18px;
+  margin-bottom: 0 !important;
+}
+
+h5 {
+  margin-bottom: 0 !important;
+}
+.frecciadrop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 25px;
+  color: #666666;
+  background-color: transparent;
+  border-style: none;
+}
+p {
+  margin-bottom: 0 !important;
+}
+.dropdown-menu {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.softgray {
+  color: #a9a9a9;
+}
+
+.softgray:hover {
+  color: #555555;
+}
+.imgialla {
+  width: 20px;
+}
+
+.margine {
+  margin: solid 1px red;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.text-muted {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.dimensionigrid {
+  width: 3000px;
+  height: 550px;
+}
+
+.business-dropdown .dropdown-menu {
+  width: 800px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.dropdown-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item strong {
+  font-size: 14px;
+  color: #000;
+}
+
+.dropdown-item p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.custom-navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-navbar .navbar-brand {
+  font-weight: bold;
+  color: #0077b5;
+}
+
+.custom-navbar .nav-link {
+  color: #000;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #0077b5;
+}
+
+.divDropPosition {
+  position: absolute;
+  right: 0px !important;
+}
+.text-button {
+  font-size: 13px;
+}
+.divDropPositionAz {
+  position: absolute;
+  right: 30px !important;
+}
