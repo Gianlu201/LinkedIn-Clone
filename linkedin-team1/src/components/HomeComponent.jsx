@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import HomeProfile from "./HomeProfile";
 
 const HomeComponent = () => {
   return (
@@ -6,6 +7,7 @@ const HomeComponent = () => {
       <Row>
         <Col xs={12} md={4} lg={3} className=" border border-1 border-danger">
           <h1>PARTE 1</h1>
+          <HomeProfile/>
         </Col>
         <Col xs={12} md={8} lg={9} className=" border border-1 border-danger">
           <Row>
