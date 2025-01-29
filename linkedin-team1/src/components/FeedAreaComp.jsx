@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import DeleteMyPostModal from './DeleteMyPostModal';
 
 const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
   const [notShowArr, setNotShowArr] = useState([]);
+
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
 
   const getAllFeed = async () => {
     const url = 'https://striveschool-api.herokuapp.com/api/posts/';
@@ -80,11 +86,97 @@ const FeedAreaComp = () => {
                   key={post._id}
                 >
                   <div className='d-flex justify-content-between align-items-center mx-3'>
-                    <p className=' text-secondary small'>Suggested</p>
+                    {profile._id === post.user._id ? (
+                      <div>
+                        <p className=' text-secondary small d-inline-block'>
+                          Your own
+                        </p>
+                      </div>
+                    ) : (
+                      <p className=' text-secondary small'>Suggested</p>
+                    )}
+
                     <div>
-                      <button className='btn bg-transparent'>
-                        <i className='bi bi-three-dots'></i>
-                      </button>
+                      {/* a */}
+                      <div className='d-inline-block'>
+                        <button
+                          className='btn bg-transparent'
+                          type='button'
+                          data-bs-toggle='dropdown'
+                          aria-expanded='false'
+                        >
+                          <i className='bi bi-three-dots'></i>
+                        </button>
+                        <ul className='dropdown-menu dropdown-menu-end'>
+                          {profile._id === post.user._id && (
+                            <>
+                              <li>
+                                <Button className='btn btn-sm bg-transparent border-0'>
+                                  <i className='bi bi-pencil-square text-black'></i>
+                                  <span className='text-black ms-2'>
+                                    Edit your post
+                                  </span>
+                                </Button>
+                              </li>
+                              <li>
+                                <Button
+                                  className='btn btn-sm bg-transparent border-0'
+                                  type='button'
+                                  data-bs-toggle='modal'
+                                  data-bs-target='#deleteMyPostModal'
+                                >
+                                  <i className='bi bi-trash-fill text-danger'></i>
+                                  <span className='text-black ms-2'>
+                                    Delete your post
+                                  </span>
+                                </Button>
+                              </li>
+                            </>
+                          )}
+
+                          <li>
+                            <button className='btn btn-sm'>
+                              <i className='bi bi-bookmark'></i>
+                              <span className='text-black ms-2'>Save</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className='btn btn-sm'>
+                              <i className='bi bi-link-45deg'></i>
+                              <span className='text-black ms-2'>
+                                Copy link to post
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className='btn btn-sm'>
+                              <i className='bi bi-code-slash'></i>
+                              <span className='text-black ms-2'>
+                                Embed this post
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className='btn btn-sm'>
+                              <i className='bi bi-eye-slash-fill'></i>
+                              <span className='text-black ms-2'>
+                                Not interested
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className='btn btn-sm'>
+                              <i className='bi bi-flag-fill'></i>
+                              <span className='text-black ms-2'>
+                                Report post
+                              </span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* a */}
+
                       <button
                         className='btn bg-transparent'
                         onClick={() => {
@@ -169,6 +261,7 @@ const FeedAreaComp = () => {
                       </button>
                     </div>
                   </div>
+                  <DeleteMyPostModal />
                 </div>
               );
             }
