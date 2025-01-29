@@ -493,3 +493,34 @@ ul li {
   position: absolute;
   right: 30px !important;
 }
+
+/*HomeProfile CSS*/
+.sfondoGattoHome {
+  height: 80px;
+
+}
+.profileTopHome {
+  position: relative;
+}
+
+.profileImgHome {
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  width: 75px;
+}
+.ProfTitleHome{
+  font-size: 0.9em;
+}
+.homeLinks {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.homeLinks:hover {
+  text-decoration: underline;
+}
+.homeLinksNum {
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+}
