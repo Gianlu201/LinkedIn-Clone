@@ -93,15 +93,15 @@ const ModalComp = () => {
       {user._id && (
         <div
           className="modal fade"
-          id="exampleModal"
+          id="exampleModal2"
           tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="exampleModalLabel2"
           aria-hidden="true"
         >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                <h1 className="modal-title fs-5" id="exampleModalLabel2">
                   Edit intro
                 </h1>
                 <button

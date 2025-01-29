@@ -370,8 +370,14 @@ const ProvaModale = () => {
               </Form.Group>
             </Form>
           </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-primary">
+          <div className="modal-footer d-flex flex-column align-items-end">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                handlePost();
+              }}
+            >
               Save
             </button>
             {required && (

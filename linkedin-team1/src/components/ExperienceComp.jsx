@@ -91,7 +91,7 @@ const ExperienceComp = () => {
             type="button"
             className=" border-0 plus btn btn-sm"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal2"
+            data-bs-target="#exampleModal"
           >
             <i className="bi bi-plus-lg fs-4"></i>
           </button>

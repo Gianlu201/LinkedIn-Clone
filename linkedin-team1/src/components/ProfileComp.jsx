@@ -69,7 +69,7 @@ const ProfileComp = () => {
           <i className="bi bi-camera-fill profileIcon text-primary bg-white px-2 py-1 rounded-circle"></i>
           <button
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#exampleModal2"
             className="profilePen border-0 bg-transparent"
           >
             <i className="bi bi-pencil fs-4"></i>
