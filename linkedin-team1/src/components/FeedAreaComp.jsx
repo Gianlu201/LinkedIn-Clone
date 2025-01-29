@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import DeleteMyPostModal from "./DeleteMyPostModal";
 
 const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
   const [notShowArr, setNotShowArr] = useState([]);
+
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
 
   const getAllFeed = async () => {
     const url = "https://striveschool-api.herokuapp.com/api/posts/";
@@ -76,15 +82,89 @@ const FeedAreaComp = () => {
             if (!notShowArr.includes(post._id)) {
               return (
                 <div
-                  className="bg-white rounded-3 mt-3 bordinoGames"
+                  className="bg-white rounded-3 mt-2 bordinoGames"
                   key={post._id}
                 >
                   <div className="d-flex justify-content-between align-items-center mx-3">
                     <p className=" text-secondary small">Suggested</p>
                     <div>
-                      <button className="btn bg-transparent">
-                        <i className="bi bi-three-dots"></i>
-                      </button>
+                      <div className="d-inline-block">
+                        <button
+                          className="btn bg-transparent"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i className="bi bi-three-dots"></i>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-end">
+                          {profile._id === post.user._id && (
+                            <>
+                              <li>
+                                <Button className="btn btn-sm bg-transparent border-0">
+                                  <i className="bi bi-pencil-square text-black"></i>
+                                  <span className="text-black ms-2">
+                                    Edit your post
+                                  </span>
+                                </Button>
+                              </li>
+                              <li>
+                                <Button
+                                  className="btn btn-sm bg-transparent border-0"
+                                  type="button"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deleteMyPostModal"
+                                >
+                                  <i className="bi bi-trash-fill text-danger"></i>
+                                  <span className="text-black ms-2">
+                                    Delete your post
+                                  </span>
+                                </Button>
+                              </li>
+                            </>
+                          )}
+
+                          <li>
+                            <button className="btn btn-sm">
+                              <i className="bi bi-bookmark"></i>
+                              <span className="text-black ms-2">Save</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className="btn btn-sm">
+                              <i className="bi bi-link-45deg"></i>
+                              <span className="text-black ms-2">
+                                Copy link to post
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className="btn btn-sm">
+                              <i className="bi bi-code-slash"></i>
+                              <span className="text-black ms-2">
+                                Embed this post
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className="btn btn-sm">
+                              <i className="bi bi-eye-slash-fill"></i>
+                              <span className="text-black ms-2">
+                                Not interested
+                              </span>
+                            </button>
+                          </li>
+                          <li>
+                            <button className="btn btn-sm">
+                              <i className="bi bi-flag-fill"></i>
+                              <span className="text-black ms-2">
+                                Report post
+                              </span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+
                       <button
                         className="btn bg-transparent"
                         onClick={() => {
@@ -96,7 +176,7 @@ const FeedAreaComp = () => {
                     </div>
                   </div>
 
-                  <hr className="mx-2" />
+                  <hr className="mx-2 mt-0" />
 
                   {/* corpo principale del post */}
                   <div className="mx-3">
@@ -107,19 +187,21 @@ const FeedAreaComp = () => {
                           <img
                             src={post.user.image}
                             alt="user picture"
-                            className=" rounded-circle"
+                            className=" rounded-circle mt-1"
                             width={"40px"}
                             height={"40px"}
                           />
                         </div>
                         <div className=" flex-grow-1 mx-2">
-                          <h5>
+                          <h6 className=" fw-semibold">
                             {post.user.name} {post.user.surname}
-                          </h5>
-                          <p>{post.user.title}</p>
-                          <p>
+                          </h6>
+                          <p className=" postText text-secondary ">
+                            {post.user.title}
+                          </p>
+                          <p className=" postText text-secondary">
                             {timePassed(post.updatedAt)} •
-                            <i className="bi bi-globe-americas ms-2"></i>
+                            <i className="bi bi-globe-americas ms-2 postText text-secondary"></i>
                           </p>
                         </div>
                         <div>
@@ -136,7 +218,11 @@ const FeedAreaComp = () => {
                         {post.text}
                       </p>
                       {post?.image && (
-                        <img src={post.image} alt="" className="w-75 mx-auto" />
+                        <img
+                          src={post.image}
+                          alt=""
+                          className="w-75 mx-auto mt-1"
+                        />
                       )}
                     </div>
 
@@ -150,42 +236,12 @@ const FeedAreaComp = () => {
                         <Button variant="link">44 reposts</Button>
                       </div>
                     </div>
-
-                    {/* corpo del testo */}
-                    <div className="d-flex flex-column align-items-center my-2">
-                      <p className="w-100 mb-2 overflow-x-hidden">
-                        {post.text}
-                      </p>
-                      {post?.image && (
-                        <img src={post.image} alt="" className="w-75 mx-auto" />
-                      )}
-                    </div>
-
-                    {/* bottoni interazioni col post */}
-                    <div className="d-flex justify-content-between mb-3">
-                      <button className="btn bg-transparent fs-5">
-                        <i className="bi bi-hand-thumbs-up-fill"></i> Like
-                      </button>
-                      <button className="btn bg-transparent fs-5">
-                        <i className="bi bi-chat-dots"></i> Comment
-                      </button>
-                      <button className="btn bg-transparent fs-5">
-                        <i className="bi bi-repeat"></i> Repost
-                      </button>
-                      <button className="btn bg-transparent fs-5">
-                        <i className="bi bi-send-fill"></i>Send
-                      </button>
-                    </div>
-                    <div>
-                      <Button variant="link">20 comments</Button> •{" "}
-                      <Button variant="link">44 reposts</Button>
-                    </div>
                   </div>
 
                   <hr className="my-1" />
 
                   {/* bottoni interazioni col post */}
-                  <div className="d-flex justify-content-between mb-3">
+                  <div className="d-flex justify-content-between mb-2">
                     <button className="btn bg-transparent fs-6">
                       <i className="bi bi-hand-thumbs-up-fill"></i> Like
                     </button>
@@ -199,6 +255,7 @@ const FeedAreaComp = () => {
                       <i className="bi bi-send-fill"></i>Send
                     </button>
                   </div>
+                  <DeleteMyPostModal />
                 </div>
               );
             }
