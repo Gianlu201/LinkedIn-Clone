@@ -551,3 +551,26 @@ ul li {
 .btnPost:hover {
   background-color: #f3f3f3;
 }
+
+ /*profile footer*/
+
+ .profileFooter {
+  text-decoration: none;
+  font-size: 0.7em;
+ }
+
+ .p-list-footer {
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 0;
+  margin-bottom: 6px;
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+}
+.profileFooter:hover {
+  text-decoration: underline;
+}
+.footerDropItem {
+  font-size: 0.7em;
+}

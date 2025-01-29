@@ -6,6 +6,7 @@ import HomeProfile from "./HomeProfile";
 import ToolsRightComp from "./ToolsRightComp";
 import NewPostComp from "./NewPostComp";
 import FeedAreaComp from "./FeedAreaComp";
+import ProfileFooter from "./ProfileFooter";
 
 const HomeComponent = () => {
   return (
@@ -32,6 +33,7 @@ const HomeComponent = () => {
               <AddToFeed />
               <div className="stickyImg">
                 <HiringComp />
+                <ProfileFooter/>
               </div>
             </Col>
           </Row>
