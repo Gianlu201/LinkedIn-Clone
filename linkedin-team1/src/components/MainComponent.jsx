@@ -15,7 +15,7 @@ import PeopleComp from "./PeopleComp";
 
 const MainComponent = () => {
   return (
-    <Container className="p-0">
+    <Container className="p-0 mt-5 pt-3">
       <Row>
         <Col xs={12} md={7} lg={8} className=" ps-xxl-5">
           <ProfileComp />
