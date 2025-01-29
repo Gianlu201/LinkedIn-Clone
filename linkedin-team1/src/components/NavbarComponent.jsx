@@ -130,7 +130,7 @@ const NavbarComponent = () => {
                   </p>
                 </Button>
                 {dropdownMe && (
-                  <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white z-3">
+                  <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3">
                     <Container
                       style={{ width: "250px" }}
                       className="border border-muted rounded-2 pb-3"
@@ -199,12 +199,12 @@ const NavbarComponent = () => {
                           <p className="text-secondary">Help</p>
                           <p className="text-secondary mb-1">Language</p>
                           <hr></hr>
+                          <p className="fw-bold">Manage</p>
+                          <p className="text-secondary">Posts & Activity</p>
+                          <p className="text-secondary pb-1">
+                            Job Posting Account
+                          </p>
                         </Col>
-                        <p className="fw-bold">Manage</p>
-                        <p className="text-secondary">Posts & Activity</p>
-                        <p className="text-secondary pb-1">
-                          Job Posting Account
-                        </p>
                       </Row>
                       <hr></hr>
                       <p className="text-secondary">Sign Out</p>
@@ -233,7 +233,7 @@ const NavbarComponent = () => {
                 </p>
               </Button>
               {dropdownAz && (
-                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white z-3">
+                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white rounded-3 z-3">
                   <Container
                     fluid={true}
                     style={{
@@ -323,68 +323,66 @@ const NavbarComponent = () => {
                       </Col>
 
                       <Col lg={6}>
-                        <h5 className="p-lg-4 pb-1">
-                          Explore more for business
-                        </h5>
-                        <ul className="list-unstyled">
+                        <h5 className="p-4">Explore more for business</h5>
+                        <ul className="list-unstyled px-4">
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Hire on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Find, attract and recruit talent
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Sell with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Unlock sales opportunities
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Post a job for free
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Get qualified applicants quickly
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Advertise on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Acquire customers and grow your business
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Get started with Premium
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Expand and leverage your network
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Learn with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Courses to develop your employees
                             </p>
                           </li>
-                          <li className="mb-5">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                          <li>
+                            <strong className="mb-3 small w-100">
                               Admin Center
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Manage billing and account details
                             </p>
                           </li>
-                          <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5 pb-3">
+                          <li className="py-4 text-center">
+                            <strong className=" small w-100 pb-3 mb-4">
                               Create a Company Page +
                             </strong>
                           </li>
