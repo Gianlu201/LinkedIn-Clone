@@ -16,14 +16,14 @@ const NavbarComponent = () => {
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
   return (
-    <div className=" bg-white position-fixed z-1 w-100">
-      <Container>
+    <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
+      <Container className=" ">
         <Row>
-          <Col xs={2} lg={4} className="pt-md-2">
+          <Col xs={2} lg={4} className="">
             {" "}
             <div className="d-flex align-items-center">
               <Navbar.Brand href="#home">
-                <i className="bi bi-linkedin icon-linkedin me-2 fs-3 "></i>
+                <i className="bi bi-linkedin icon-linkedin me-2 iconaLinkedin "></i>
               </Navbar.Brand>
               <Button
                 variant="link"
@@ -53,15 +53,19 @@ const NavbarComponent = () => {
 
               <Form className="d-none d-lg-flex">
                 <InputGroup>
-                  <InputGroup.Text>
-                    <i className="bi bi-search"></i>
+                  <InputGroup.Text className=" sfondoSearch">
+                    <i className="bi bi-search px-2"></i>
                   </InputGroup.Text>
-                  <Form.Control type="text" placeholder="Cerca..." />
+                  <Form.Control
+                    type="text"
+                    placeholder="Cerca..."
+                    className=" sfondoSearch"
+                  />
                 </InputGroup>
               </Form>
             </div>
           </Col>
-          <Col xs={8} lg={6} className="pe-0">
+          <Col xs={8} lg={6} className="pe-0 d-flex align-items-center">
             <Nav className=" justify-content-center justify-content-xl-end">
               <Link
                 to={"/"}
@@ -69,7 +73,7 @@ const NavbarComponent = () => {
                 className=" nav-link d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Home
                 </p>
               </Link>
@@ -78,7 +82,7 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-person-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Web
                 </p>
               </Nav.Link>
@@ -87,8 +91,8 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
-                <p className="IconText  text-secondary d-none d-md-block ">
-                  Work
+                <p className="IconText pb-0  text-secondary d-none d-md-block ">
+                  Jobs
                 </p>
               </Nav.Link>{" "}
               <Nav.Link
@@ -96,7 +100,7 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center "
               >
                 <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Messages
                 </p>
               </Nav.Link>
@@ -105,7 +109,7 @@ const NavbarComponent = () => {
                 className=" d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Notifications
                 </p>
               </Nav.Link>
@@ -122,11 +126,11 @@ const NavbarComponent = () => {
                     alt="Descrizione immagine"
                   />
                   <p className="IconText text-secondary  d-none d-md-block">
-                    Tu<i className="bi bi-caret-down-fill"></i>
+                    Me<i className="bi bi-caret-down-fill"></i>
                   </p>
                 </Button>
                 {dropdownMe && (
-                  <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white z-3">
+                  <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3">
                     <Container
                       style={{ width: "250px" }}
                       className="border border-muted rounded-2 pb-3"
@@ -195,12 +199,12 @@ const NavbarComponent = () => {
                           <p className="text-secondary">Help</p>
                           <p className="text-secondary mb-1">Language</p>
                           <hr></hr>
+                          <p className="fw-bold">Manage</p>
+                          <p className="text-secondary">Posts & Activity</p>
+                          <p className="text-secondary pb-1">
+                            Job Posting Account
+                          </p>
                         </Col>
-                        <p className="fw-bold">Manage</p>
-                        <p className="text-secondary">Posts & Activity</p>
-                        <p className="text-secondary pb-1">
-                          Job Posting Account
-                        </p>
                       </Row>
                       <hr></hr>
                       <p className="text-secondary">Sign Out</p>
@@ -210,7 +214,11 @@ const NavbarComponent = () => {
               </div>
             </Nav>
           </Col>
-          <Col xs={2} lg={2} className=" ps-0 ps-lg-4">
+          <Col
+            xs={2}
+            lg={2}
+            className=" ps-0 ps-lg-4 d-flex align-items-center justify-content-center pe-0 borderNav"
+          >
             {" "}
             <div className=" position-relative">
               <Button
@@ -221,11 +229,11 @@ const NavbarComponent = () => {
               >
                 <i className="bi bi-grid-3x3-gap fs-5 text-secondary"></i>
                 <p className="IconText text-secondary  d-none d-md-block">
-                  Per le Aziende<i className="bi bi-caret-down-fill"></i>
+                  For business<i className="bi bi-caret-down-fill"></i>
                 </p>
               </Button>
               {dropdownAz && (
-                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white z-3">
+                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white rounded-3 z-3">
                   <Container
                     fluid={true}
                     style={{
@@ -315,68 +323,66 @@ const NavbarComponent = () => {
                       </Col>
 
                       <Col lg={6}>
-                        <h5 className="p-lg-4 pb-1">
-                          Explore more for business
-                        </h5>
-                        <ul className="list-unstyled">
+                        <h5 className="p-4">Explore more for business</h5>
+                        <ul className="list-unstyled px-4">
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Hire on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Find, attract and recruit talent
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Sell with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Unlock sales opportunities
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Post a job for free
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Get qualified applicants quickly
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Advertise on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Acquire customers and grow your business
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Get started with Premium
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Expand and leverage your network
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Learn with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Courses to develop your employees
                             </p>
                           </li>
-                          <li className="mb-5">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                          <li>
+                            <strong className="mb-3 small w-100">
                               Admin Center
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Manage billing and account details
                             </p>
                           </li>
-                          <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5 pb-3">
+                          <li className="py-4 text-center">
+                            <strong className=" small w-100 pb-3 mb-4">
                               Create a Company Page +
                             </strong>
                           </li>

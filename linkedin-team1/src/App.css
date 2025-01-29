@@ -258,6 +258,17 @@ h6 {
   font-size: 14px;
 }
 
+.stickyImg {
+  position: sticky !important;
+  top: 8vh !important;
+  right: 0 !important;
+  height: 100px !important;
+}
+
+.postText {
+  font-size: 14px;
+}
+
 /* CSS FOOTER */
 
 footer {
@@ -312,6 +323,10 @@ footer a:hover,
 }
 
 /*css della navbar */
+
+.borderNav {
+  border-left: 0.5px solid grey;
+}
 .custom-navbar {
   height: 80px;
   padding-top: 0px;
@@ -522,6 +537,14 @@ ul li {
   font-size: 0.9em;
   font-weight: 500;
   text-decoration: none;
+}
+
+.sfondoSearch {
+  background-color: #edf3f7;
+}
+
+.iconaLinkedin {
+  font-size: 37px;
 }
 /*---- Home Css */
 
