@@ -45,7 +45,7 @@ const HomeProfile = () => {
   useEffect(() => {}, []);
   return (
     <Container>
-      <Row className="my-2 bg-white rounded-3">
+      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
         <Col className="p-0 mb-3 profileTopHome">
           <img
             src="https://placecats.com/900/200"
@@ -67,13 +67,13 @@ const HomeProfile = () => {
               <p className="ProfTitleHome">{profile.title}</p>
               <p className="mt-0 text-muted">{profile.area}</p>
             </Col>
-            <Col xs={6} md={12} className="my-md-2">
-              <p className="my-0 ProfTitleHome">IIS Giosuè Carducci</p>
+            <Col xs={12} md={12} className="my-md-2">
+              <p className="mb-1 ProfTitleHome">IIS Giosuè Carducci</p>
             </Col>
           </Row>
         </Col>
       </Row>
-      <Row className="my-2 bg-white rounded-3">
+      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
         <Col xs={10} className="py-3">
           <a href="#" className="homeLinks text-black fw-bold">
             Connections
@@ -89,7 +89,7 @@ const HomeProfile = () => {
           </a>
         </Col>
       </Row>
-      <Row className="my-2 bg-white rounded-3">
+      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
         <Col xs={12} className="pt-3">
           <p className="text-muted homeLinks">
             {" "}
@@ -107,7 +107,7 @@ const HomeProfile = () => {
           </span>
         </Col>
       </Row>
-      <Row className="my-2 bg-white rounded-3">
+      <Row className="my-2 bg-white border border-2 border-light-grey rounded-3">
       <Col xs={12} className="pt-3 d-flex">
       <i className="bi bi-bookmark-fill d-inline-block"></i>
                 <div>
