@@ -28,24 +28,49 @@ const Footer = () => {
               <Dropdown>
                 <Dropdown.Toggle
                   variant="link"
-                  className="drop-list"
                   id="dropdown-basic"
+                  className="footerDrop d-flex justify-content-center align-items-center text-secondary py-0 px-0 text-decoration-none text-black"
                 >
                   Privacy & Terms
                 </Dropdown.Toggle>
-                <Dropdown.Menu >
-                  <Dropdown.Item href="#/action-1" className="fw-bold pt-0 pb-1 px-1">
+                <Dropdown.Menu
+                  className="p-list-footer fw-bold"
+                  style={{ width: "200px" }}
+                >
+                  <Dropdown.Item
+                    href="#/action-1"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0"
+                  >
                     Privacy Policy
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2" className="fw-bold py-1 px-1">
+                  <Dropdown.Item
+                    href="#/action-2"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0 bg-white"
+                  >
                     User Agreement
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3" className="fw-bold py-1 px-1">Pages Terms</Dropdown.Item>
-                  <Dropdown.Item href="#/action-4" className="fw-bold py-1 px-1">Cookie Policy</Dropdown.Item>
-                  <Dropdown.Item href="#/action-5" className="fw-bold py-1 px-1">
+                  <Dropdown.Item
+                    href="#/action-3"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0"
+                  >
+                    Pages Terms
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-4"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0"
+                  >
+                    Cookie Policy
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-5"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0"
+                  >
                     Copyright Policy
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-6" className="fw-bold py-1 px-1">
+                  <Dropdown.Item
+                    href="#/action-6"
+                    className="fw-bold footerOneDropItem py-1 px-2 border-0"
+                  >
                     Your California privacy choices
                   </Dropdown.Item>
                 </Dropdown.Menu>

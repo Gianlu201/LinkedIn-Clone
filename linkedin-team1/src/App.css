@@ -371,7 +371,7 @@ footer a:hover,
 }
 
 .ImmagineProfilo {
-  width: 25px;
+  width: 24px;
   border-radius: 50%;
 }
 .imgProfiloDrop,
@@ -509,6 +509,10 @@ ul li {
   right: 30px !important;
 }
 
+.caretDown {
+  font-size: 7px;
+}
+
 /*HomeProfile CSS*/
 .sfondoGattoHome {
   height: 80px;
@@ -574,4 +578,12 @@ ul li {
 }
 .footerDropItem {
   font-size: 0.7em;
+}
+
+.footerDrop {
+  font-size: 1em;
+}
+
+.footerOneDropItem {
+  font-size: 1em;
 }
