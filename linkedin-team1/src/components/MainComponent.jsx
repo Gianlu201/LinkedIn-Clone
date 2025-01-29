@@ -12,35 +12,39 @@ import HiringComp from "./HiringComp";
 import MoreProfilesComp from "./MoreProfilesComp";
 import AboutComp from "./AboutComp";
 import PeopleComp from "./PeopleComp";
+import Footer from "./Footer";
 
 const MainComponent = () => {
   return (
-    <Container className="p-0 mt-5 pt-3">
-      <Row>
-        <Col xs={12} md={7} lg={8} className=" ps-xxl-5">
-          <ProfileComp />
-          <AboutComp />
-          <SuggestedComp />
-          <AnalyticsComp />
-          <ActivityComp />
-          <ExperienceComp />
-          <EducationComp />
-          <SkillsComp />
-          <InterestsComp />
-        </Col>
-        <Col xs={0} md={5} lg={4} className=" pe-xxl-5">
-          <LanguageUrlComp />
+    <>
+      <Container className="p-0 mt-5 pt-3">
+        <Row>
+          <Col xs={12} md={7} lg={8} className=" ps-xxl-5">
+            <ProfileComp />
+            <AboutComp />
+            <SuggestedComp />
+            <AnalyticsComp />
+            <ActivityComp />
+            <ExperienceComp />
+            <EducationComp />
+            <SkillsComp />
+            <InterestsComp />
+          </Col>
+          <Col xs={0} md={5} lg={4} className=" pe-xxl-5">
+            <LanguageUrlComp />
 
-          <HiringComp />
+            <HiringComp />
 
-          <MoreProfilesComp title="More profiles for you" />
+            <MoreProfilesComp title="More profiles for you" />
 
-          <PeopleComp title="People you may know" />
+            <PeopleComp title="People you may know" />
 
-          <HiringComp />
-        </Col>
-      </Row>
-    </Container>
+            <HiringComp />
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
+    </>
   );
 };
 
