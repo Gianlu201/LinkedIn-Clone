@@ -33,19 +33,19 @@ const Footer = () => {
                 >
                   Privacy & Terms
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">
+                <Dropdown.Menu >
+                  <Dropdown.Item href="#/action-1" className="fw-bold pt-0 pb-1 px-1">
                     Privacy Policy
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
+                  <Dropdown.Item href="#/action-2" className="fw-bold py-1 px-1">
                     User Agreement
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Pages Terms</Dropdown.Item>
-                  <Dropdown.Item href="#/action-4">Cookie Policy</Dropdown.Item>
-                  <Dropdown.Item href="#/action-5">
+                  <Dropdown.Item href="#/action-3" className="fw-bold py-1 px-1">Pages Terms</Dropdown.Item>
+                  <Dropdown.Item href="#/action-4" className="fw-bold py-1 px-1">Cookie Policy</Dropdown.Item>
+                  <Dropdown.Item href="#/action-5" className="fw-bold py-1 px-1">
                     Copyright Policy
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-6">
+                  <Dropdown.Item href="#/action-6" className="fw-bold py-1 px-1">
                     Your California privacy choices
                   </Dropdown.Item>
                 </Dropdown.Menu>
