@@ -44,13 +44,14 @@ const HomeProfile = () => {
 
   useEffect(() => {}, []);
   return (
-    <Container>
-      <Row className="my-2 bg-white rounded-3">
+    <Container fluid className=" bg-white mt-4 rounded-3 bordinoGames">
+      <Row className=" bg-white rounded-3">
         <Col className="p-0 mb-3 profileTopHome">
           <img
             src="https://placecats.com/900/200"
             alt=""
             className="img-fluid rounded-top-3 sfondoGattoHome"
+            style={{ width: "900px" }}
           />
           <img
             src={profile.image}
@@ -73,8 +74,9 @@ const HomeProfile = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="my-2 bg-white rounded-3">
-        <Col xs={10} className="py-3">
+      <hr className=" my-1" />
+      <Row className=" bg-white rounded-3">
+        <Col xs={10} className="py-2">
           <a href="#" className="homeLinks text-black fw-bold">
             Connections
           </a>
@@ -83,14 +85,15 @@ const HomeProfile = () => {
             Grow your network
           </a>
         </Col>
-        <Col xs={2} className="py-3">
+        <Col xs={2} className="py-2">
           <a href="#" className="homeLinksNum">
             2
           </a>
         </Col>
       </Row>
+      <hr className=" my-1" />
       <Row className="my-2 bg-white rounded-3">
-        <Col xs={12} className="pt-3">
+        <Col xs={12} className="pt-2">
           <p className="text-muted homeLinks">
             {" "}
             Access exclusive tools & insights{" "}
@@ -105,36 +108,6 @@ const HomeProfile = () => {
             {" "}
             Network smarter with Premium
           </span>
-        </Col>
-      </Row>
-      <Row className="my-2 bg-white rounded-3">
-      <Col xs={12} className="pt-3 d-flex">
-      <i className="bi bi-bookmark-fill d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Saved Items </a>
-                </div> 
-        </Col>
-        <Col xs={12} className="py-1 d-flex">
-        <i className="bi bi-people-fill d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Groups </a>
-                </div> 
-        </Col>
-        <Col xs={12} className="py-1 d-flex">
-        <i className="bi bi-newspaper d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Newsletter </a>
-                </div> 
-        </Col>
-        <Col xs={12} className="pb-3 d-flex">
-        <i className="bi bi-calendar-event d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Events </a>
-                </div> 
         </Col>
       </Row>
     </Container>

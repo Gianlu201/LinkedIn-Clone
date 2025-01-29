@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const GamesComp = () => {
   return (
-    <Container fluid className=" bg-white mt-4 rounded-3 bordinoGames">
+    <Container fluid className=" bg-white mt-2 mt-md-4 rounded-3 bordinoGames">
       <Row className="align-items-md-start">
         <Col xs={12} className="my-2">
           <p className=" fw-bold w-100">Today's puzzle games</p>
