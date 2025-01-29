@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import DeleteMyPostModal from './DeleteMyPostModal';
+import { useNavigate } from 'react-router-dom';
 
 const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
   const [notShowArr, setNotShowArr] = useState([]);
   const [currentPostId, setCurrentPostId] = useState('');
+
+  const navigate = useNavigate();
 
   const profile = useSelector((state) => {
     return state.profile;
@@ -107,7 +110,15 @@ const FeedAreaComp = () => {
                           {profile._id === post.user._id && (
                             <>
                               <li>
-                                <Button className='btn btn-sm bg-transparent border-0'>
+                                <Button
+                                  className='btn btn-sm bg-transparent border-0'
+                                  type='button'
+                                  data-bs-toggle='modal'
+                                  data-bs-target='#newPostModal'
+                                  onClick={() => {
+                                    navigate(`/post/${post._id}`);
+                                  }}
+                                >
                                   <i className='bi bi-pencil-square text-black'></i>
                                   <span className='text-black ms-2'>
                                     Edit your post
