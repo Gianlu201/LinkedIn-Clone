@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   Container,
   Row,
@@ -11,12 +12,39 @@ import {
 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
+
+  const dropdownMeRef = useRef(null);
+  const dropdownAzRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      dropdownMe &&
+      dropdownMeRef.current &&
+      !dropdownMeRef.current.contains(event.target)
+    ) {
+      setDropdownMe(false);
+    }
+    if (
+      dropdownAz &&
+      dropdownAzRef.current &&
+      !dropdownAzRef.current.contains(event.target)
+    ) {
+      setDropdownAz(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownMe, dropdownAz]);
 
   const profile = useSelector((state) => {
     return state.profile;
@@ -177,9 +205,12 @@ const NavbarComponent = () => {
                 </p>
               </Button>
               {dropdownMe && (
-                <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3">
+                <div
+                  ref={dropdownMeRef}
+                  className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3"
+                >
                   <Container
-                    style={{ width: "250px" }}
+                    style={{ width: "270px" }}
                     className="border border-muted rounded-2 pb-3"
                   >
                     <Row className="d-flex flex-column">
@@ -191,44 +222,41 @@ const NavbarComponent = () => {
                               src={profile.image}
                               className="ImmagineProfilo rounded-circle"
                               alt="Descrizione immagine"
-                              style={{ width: "60px", height: "60px" }}
+                              style={{ width: "50px", height: "50px" }}
                             />
                           </Col>
-                          <Col xs={9} className="ps-4">
+                          <Col xs={9} className="ps-2">
                             <p className="fw-bold">
                               {profile.name} {profile.surname}
                             </p>
-                            <p>{profile.title}</p>
+                            <p className=" small">{profile.title}</p>
                           </Col>
                         </Row>
                       </Col>
                       <Col>
-                        <Row className="mt-3">
-                          <Col xs={6} className="pe-0">
-                            <div className="mb-2 d-flex justify-content-end pe-2">
-                              {" "}
-                              <Link
-                                to={"/profile"}
-                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3"
+                        <Row className="mt-1">
+                          <Col xs={12} className="px-2 pb-2">
+                            {" "}
+                            <Link
+                              to={"/profile"}
+                              className=" btn btn-sm w-100 bg-transparent border-1 border-primary text-primary rounded-5 btnPSection py-0"
+                            >
+                              <p
+                                className="text-button p-0"
+                                onClick={() => {
+                                  setDropdownMe(!dropdownMe);
+                                }}
                               >
-                                <p className="text-button p-0">View Profile</p>
-                              </Link>
-                            </div>
-                          </Col>
-                          <Col xs={6} className="ps-0">
-                            <div className="mb-2 d-flex justify-content-start ps-2">
-                              {" "}
-                              <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
-                                <p className=" text-button p-0">Verify</p>
-                              </Button>
-                            </div>
+                                View Profile
+                              </p>
+                            </Link>
                           </Col>
                           <hr></hr>
                         </Row>
                       </Col>
                       <Col>
-                        <p className="fw-bold">Account</p>
-                        <Row>
+                        <p className="fw-bold mb-1">Account</p>
+                        <Row className=" align-items-center">
                           <Col xs={1}>
                             <img
                               src="/imgGiallina.svg"
@@ -236,25 +264,27 @@ const NavbarComponent = () => {
                             />
                           </Col>
                           <Col xs={10} className="pe-0">
-                            <p className="small">
+                            <p className="small fw-semibold text-secondary">
                               {" "}
-                              Try 1 month of Premium for 0 EUR
+                              Try 1 month of Premium for €0
                             </p>
                           </Col>
                         </Row>{" "}
-                        <p className="text-secondary">Settigs & Privacy</p>
-                        <p className="text-secondary">Help</p>
-                        <p className="text-secondary mb-1">Language</p>
+                        <p className="text-secondary small">
+                          Settigs & Privacy
+                        </p>
+                        <p className="text-secondary small">Help</p>
+                        <p className="text-secondary small mb-1">Language</p>
                         <hr></hr>
-                        <p className="fw-bold">Manage</p>
-                        <p className="text-secondary">Posts & Activity</p>
-                        <p className="text-secondary pb-1">
+                        <p className="fw-bold mb-1">Manage</p>
+                        <p className="text-secondary small">Posts & Activity</p>
+                        <p className="text-secondary small pb-1">
                           Job Posting Account
                         </p>
                       </Col>
                     </Row>
                     <hr></hr>
-                    <p className="text-secondary">Sign Out</p>
+                    <p className="text-secondary small">Sign Out</p>
                   </Container>
                 </div>
               )}
@@ -281,7 +311,10 @@ const NavbarComponent = () => {
                 </p>
               </Button>
               {dropdownAz && (
-                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white rounded-3 z-3">
+                <div
+                  ref={dropdownAzRef}
+                  className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white rounded-3 z-3"
+                >
                   <Container
                     fluid={true}
                     style={{
