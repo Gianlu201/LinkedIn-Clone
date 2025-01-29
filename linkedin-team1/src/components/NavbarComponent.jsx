@@ -16,14 +16,14 @@ const NavbarComponent = () => {
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
   return (
-    <div className=" bg-white position-fixed z-1 w-100">
-      <Container>
+    <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
+      <Container className=" ">
         <Row>
-          <Col xs={2} lg={4} className="pt-md-2">
+          <Col xs={2} lg={4} className="">
             {" "}
             <div className="d-flex align-items-center">
               <Navbar.Brand href="#home">
-                <i className="bi bi-linkedin icon-linkedin me-2 fs-3 "></i>
+                <i className="bi bi-linkedin icon-linkedin me-2 iconaLinkedin "></i>
               </Navbar.Brand>
               <Button
                 variant="link"
@@ -53,15 +53,19 @@ const NavbarComponent = () => {
 
               <Form className="d-none d-lg-flex">
                 <InputGroup>
-                  <InputGroup.Text>
-                    <i className="bi bi-search"></i>
+                  <InputGroup.Text className=" sfondoSearch">
+                    <i className="bi bi-search px-2"></i>
                   </InputGroup.Text>
-                  <Form.Control type="text" placeholder="Cerca..." />
+                  <Form.Control
+                    type="text"
+                    placeholder="Cerca..."
+                    className=" sfondoSearch"
+                  />
                 </InputGroup>
               </Form>
             </div>
           </Col>
-          <Col xs={8} lg={6} className="pe-0">
+          <Col xs={8} lg={6} className="pe-0 d-flex align-items-center">
             <Nav className=" justify-content-center justify-content-xl-end">
               <Link
                 to={"/"}
@@ -69,7 +73,7 @@ const NavbarComponent = () => {
                 className=" nav-link d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Home
                 </p>
               </Link>
@@ -78,7 +82,7 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-person-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Web
                 </p>
               </Nav.Link>
@@ -87,8 +91,8 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
-                <p className="IconText  text-secondary d-none d-md-block ">
-                  Work
+                <p className="IconText pb-0  text-secondary d-none d-md-block ">
+                  Jobs
                 </p>
               </Nav.Link>{" "}
               <Nav.Link
@@ -96,7 +100,7 @@ const NavbarComponent = () => {
                 className="d-flex flex-column align-items-center "
               >
                 <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Messages
                 </p>
               </Nav.Link>
@@ -105,7 +109,7 @@ const NavbarComponent = () => {
                 className=" d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
+                <p className="IconText pb-0 text-secondary d-none d-md-block ">
                   Notifications
                 </p>
               </Nav.Link>
@@ -122,7 +126,7 @@ const NavbarComponent = () => {
                     alt="Descrizione immagine"
                   />
                   <p className="IconText text-secondary  d-none d-md-block">
-                    Tu<i className="bi bi-caret-down-fill"></i>
+                    Me<i className="bi bi-caret-down-fill"></i>
                   </p>
                 </Button>
                 {dropdownMe && (
@@ -210,7 +214,11 @@ const NavbarComponent = () => {
               </div>
             </Nav>
           </Col>
-          <Col xs={2} lg={2} className=" ps-0 ps-lg-4">
+          <Col
+            xs={2}
+            lg={2}
+            className=" ps-0 ps-lg-4 d-flex align-items-center justify-content-center pe-0 borderNav"
+          >
             {" "}
             <div className=" position-relative">
               <Button
@@ -221,7 +229,7 @@ const NavbarComponent = () => {
               >
                 <i className="bi bi-grid-3x3-gap fs-5 text-secondary"></i>
                 <p className="IconText text-secondary  d-none d-md-block">
-                  Per le Aziende<i className="bi bi-caret-down-fill"></i>
+                  For business<i className="bi bi-caret-down-fill"></i>
                 </p>
               </Button>
               {dropdownAz && (

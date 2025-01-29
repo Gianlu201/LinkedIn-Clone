@@ -9,7 +9,7 @@ import FeedAreaComp from "./FeedAreaComp";
 
 const HomeComponent = () => {
   return (
-    <Container className="mt-5 pt-2">
+    <Container className="mt-4 mt-md-5 pt-2">
       <Row>
         <Col xs={12} md={4} lg={3}>
           <HomeProfile />
@@ -27,10 +27,12 @@ const HomeComponent = () => {
               </div>
               <FeedAreaComp />
             </Col>
-            <Col xs={12} lg={5} xl={4}>
+            <Col xs={12} lg={5} xl={4} style={{ minHeight: "200vh" }}>
               <GamesComp />
               <AddToFeed />
-              <HiringComp />
+              <div className="stickyImg">
+                <HiringComp />
+              </div>
             </Col>
           </Row>
         </Col>

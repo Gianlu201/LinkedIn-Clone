@@ -10,7 +10,7 @@ import HomeComponent from "./components/HomeComponent";
 function App() {
   return (
     <BrowserRouter>
-      <div className="overflow-hidden">
+      <div>
         <NavbarComponent />
         <Routes>
           <Route path="/" element={<HomeComponent />} />

@@ -32,7 +32,7 @@ const FeedAreaComp = () => {
   }, []);
 
   return (
-    <div className=" mt-2 mt-md-4 rounded-3">
+    <div className=" mt-2 rounded-3">
       {posts.length === 0 ? (
         <Spinner animation="border" variant="info" />
       ) : (
@@ -40,7 +40,7 @@ const FeedAreaComp = () => {
           {posts.splice(-50, posts.length).map((post) => {
             return (
               <div
-                className="bg-white rounded-4 mt-3 bordinoGames"
+                className="bg-white rounded-3 mt-2 bordinoGames"
                 key={post._id}
               >
                 <div className="d-flex justify-content-between align-items-center mx-3">
@@ -55,30 +55,32 @@ const FeedAreaComp = () => {
                   </div>
                 </div>
 
-                <hr className="mx-2" />
+                <hr className="mx-2 mt-0" />
 
                 {/* corpo principale del post */}
                 <div className="mx-3">
                   {/* utente creatore post */}
                   <div>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between ">
                       <div>
                         <img
                           src={post.user.image}
                           alt="user picture"
-                          className=" rounded-circle"
+                          className=" rounded-circle mt-1"
                           width={"40px"}
                           height={"40px"}
                         />
                       </div>
                       <div className=" flex-grow-1 mx-2">
-                        <h5>
+                        <h6 className=" fw-semibold">
                           {post.user.name} {post.user.surname}
-                        </h5>
-                        <p>{post.user.title}</p>
-                        {/* TODO funzione per calcolare il tempo trascorso dalla creazione del post */}
-                        <p>
-                          5d • <i className="bi bi-globe-americas"></i>
+                        </h6>
+                        <p className=" text-secondary postText">
+                          {post.user.title}
+                        </p>
+                        {/* TODO: funzione per calcolare il tempo trascorso dalla creazione del post */}
+                        <p className=" postText text-secondary">
+                          5d • <i className="bi bi-globe-americas postText"></i>
                         </p>
                       </div>
                       <div>
@@ -91,7 +93,7 @@ const FeedAreaComp = () => {
 
                   {/* corpo del testo */}
                   <div className="d-flex flex-column align-items-center my-2">
-                    <p className="w-100 mb-2">{post.text}</p>
+                    <p className="w-100 mb-2 overflow-x-hidden">{post.text}</p>
                     {post?.image && (
                       <img src={post.image} alt="" className="w-75 mx-auto" />
                     )}
@@ -112,16 +114,16 @@ const FeedAreaComp = () => {
 
                   {/* bottoni interazioni col post */}
                   <div className="d-flex justify-content-between mb-3">
-                    <button className="btn bg-transparent fs-5">
+                    <button className="btn bg-transparent fs-6">
                       <i className="bi bi-hand-thumbs-up-fill"></i> Like
                     </button>
-                    <button className="btn bg-transparent fs-5">
+                    <button className="btn bg-transparent fs-6">
                       <i className="bi bi-chat-dots"></i> Comment
                     </button>
-                    <button className="btn bg-transparent fs-5">
+                    <button className="btn bg-transparent fs-6">
                       <i className="bi bi-repeat"></i> Repost
                     </button>
-                    <button className="btn bg-transparent fs-5">
+                    <button className="btn bg-transparent fs-6">
                       <i className="bi bi-send-fill"></i>Send
                     </button>
                   </div>
