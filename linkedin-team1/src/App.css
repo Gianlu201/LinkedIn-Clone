@@ -310,7 +310,7 @@ footer a:hover,
   padding: 10px;
 }
 .Navicons {
-  max-height: "100px";
+  max-height: '100px';
 }
 .IconText {
   margin-bottom: 0;
@@ -471,4 +471,10 @@ ul li {
 .divDropPositionAz {
   position: absolute;
   right: 30px !important;
+}
+
+/*---- Home Css */
+
+.btnPost:hover {
+  background-color: #f3f3f3;
 }
