@@ -3,7 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const LanguageUrlComp = () => {
   return (
-    <Container fluid className=" bg-white mt-4 my-md-2 pb-2 rounded-3">
+    <Container
+      fluid
+      className=" bg-white mt-4 my-md-2 pb-2 rounded-3 bordinoGames"
+    >
       <Row className="ms-2 ms-md-0 align-items-md-start position-relative">
         <Col xs={12} className="mt-3 mb-2">
           <h3 className="fontDestra ">Profile language</h3>

@@ -237,6 +237,27 @@ h6 {
   overflow-y: scroll;
 }
 
+.titleGames {
+  font-size: 14px;
+}
+
+.descriptionsGames {
+  font-size: 12px;
+  line-height: 1 !important;
+}
+
+.bordinoGames {
+  border: 0.5px solid grey;
+}
+
+.hoverRow:hover {
+  background-color: #ebebeb;
+}
+
+.recommendations {
+  font-size: 14px;
+}
+
 /* CSS FOOTER */
 
 footer {

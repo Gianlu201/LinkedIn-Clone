@@ -3,7 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const PeopleComp = (props) => {
+const AddToFeed = () => {
   const profiles = useSelector((state) => {
     return state.profiles;
   });
@@ -42,13 +42,15 @@ const PeopleComp = (props) => {
   }, []);
 
   return (
-    <Container className="bg-white mt-4 rounded-3 pt-3 bordinoGames">
-      <h5>{props.title}</h5>
-
-      {profiles.slice(25, 30).map((profile, i) => {
+    <Container fluid className=" bg-white mt-2 rounded-3 bordinoGames">
+      <div className=" d-flex justify-content-between align-items-center">
+        <p className=" fw-bold mt-2">Add to your feed</p>
+        <i className="bi bi-info-square-fill my-2 pe-1 small"></i>
+      </div>
+      {profiles.slice(55, 58).map((profile) => {
         return (
           <div key={profile._id}>
-            <div className="d-flex mt-2">
+            <div className="d-flex my-3">
               <div>
                 <img
                   src={
@@ -61,30 +63,28 @@ const PeopleComp = (props) => {
                 />
               </div>
               <div className="ms-2">
-                <a href="#" className="h6 mainLink">
+                <a href="#" className="h6 mainLink titleGames">
                   {profile.name} {profile.surname}
                 </a>
-                <p className="small">{profile.title}</p>
-                <p className="small profBio">{profile.bio}</p>
+                <p className="small descriptionsGames">{profile.title}</p>
+                <p className="small descriptionsGames">{profile.bio}</p>
                 <button
-                  className="btn btn-sm border-secondary bg-transparent text-secondary rounded-4 px-3 mt-2"
+                  className="btn btn-sm border-black bg-transparent text-black rounded-5 ps-1 pe-2 mt-3 d-flex align-items-center py-0"
                   id="btnResources"
                 >
-                  <i className="bi bi-person-plus-fill me-1"></i>
-                  Connect
+                  <i className="bi bi-plus me-1 fs-6"></i>
+                  Follow
                 </button>
               </div>
             </div>
-            {i < 4 && <hr />}
           </div>
         );
       })}
-
-      <hr className="mt-3 mb-0" />
       <Row>
-        <Col>
-          <Button className=" bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center btnAnalytics">
-            Show all
+        <Col className="btnAnalytics">
+          <Button className=" bg-transparent w-100 border-0 text-black pb-2 fw-semibold d-flex align-items-center justify-content-center text-start recommendations">
+            View all recommendations{" "}
+            <i className="bi bi-arrow-right-short fs-5"></i>
           </Button>
         </Col>
       </Row>
@@ -92,4 +92,4 @@ const PeopleComp = (props) => {
   );
 };
 
-export default PeopleComp;
+export default AddToFeed;

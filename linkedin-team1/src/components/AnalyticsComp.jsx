@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 const AnalyticsComp = () => {
   return (
-    <Container fluid className=" bg-white mt-4 rounded-3">
+    <Container fluid className=" bg-white mt-4 rounded-3 bordinoGames">
       <Row>
         <Col xs={12} className="mt-3 mb-2 ms-3">
           <h3>Analytics</h3>
