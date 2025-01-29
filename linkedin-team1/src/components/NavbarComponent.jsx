@@ -59,26 +59,26 @@ const NavbarComponent = () => {
           </div>
         </Col>
         <Col xs={8} lg={6} className="pe-0">
-          <Nav className=" justify-content-end">
+          <Nav className=" justify-content-center justify-content-lg-end">
             <Nav.Link
               href="#action1"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-house-fill fs-4 px-3"></i>
+              <i className="IconeGrigeNav bi bi-house-fill fs-4 px-lg-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">Home</p>
             </Nav.Link>
             <Nav.Link
               href="#action2"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-person-fill fs-4 px-3"></i>
+              <i className="IconeGrigeNav bi bi-person-fill fs-4 px-lg-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">Web</p>
             </Nav.Link>
             <Nav.Link
               href="#action3"
               className="d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-3"></i>
+              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-lg-3"></i>
               <p className="IconText  text-secondary d-none d-md-block ">
                 Work
               </p>
@@ -87,7 +87,7 @@ const NavbarComponent = () => {
               href="#action4"
               className="d-flex flex-column align-items-center "
             >
-              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-3"></i>
+              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-lg-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">
                 Messages
               </p>
@@ -96,7 +96,7 @@ const NavbarComponent = () => {
               href="#action5"
               className=" d-flex flex-column align-items-center"
             >
-              <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-3"></i>
+              <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-lg-3"></i>
               <p className="IconText text-secondary d-none d-md-block ">
                 Notifications
               </p>
@@ -119,7 +119,10 @@ const NavbarComponent = () => {
               </Button>
               {dropdownMe && (
                 <div className="dropdown-menu-start d-flex align-items-center divDropPosition">
-                  <Container style={{ width: "250px" }} className=" border-1">
+                  <Container
+                    style={{ width: "250px" }}
+                    className="border border-muted rounded-2 pb-3"
+                  >
                     <Row className="d-flex flex-column">
                       <Col>
                         <Row className="mt-3">
@@ -140,16 +143,16 @@ const NavbarComponent = () => {
                       </Col>
                       <Col>
                         <Row className="mt-3">
-                          <Col xs={7} className="pe-0">
-                            <div className="mb-2">
+                          <Col xs={6} className="pe-0">
+                            <div className="mb-2 d-flex justify-content-end pe-2">
                               {" "}
                               <Button className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3">
                                 <p className="text-button p-0">View Profile</p>
                               </Button>
                             </div>
                           </Col>
-                          <Col xs={5} className="ps-0">
-                            <div className="mb-2">
+                          <Col xs={6} className="ps-0">
+                            <div className="mb-2 d-flex justify-content-start ps-2">
                               {" "}
                               <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
                                 <p className=" text-button p-0">Verify</p>
@@ -162,10 +165,10 @@ const NavbarComponent = () => {
                       <Col>
                         <p className="fw-bold">Account</p>
                         <Row>
-                          <Col xs={2}>
+                          <Col xs={1}>
                             <img
                               src="/imgGiallina.svg"
-                              style={{ width: "20px", height: "20px" }}
+                              style={{ width: "18px", height: "18px" }}
                             />
                           </Col>
                           <Col xs={10} className="pe-0">
@@ -174,15 +177,15 @@ const NavbarComponent = () => {
                               Try 1 month of Premium for 0 EUR
                             </p>
                           </Col>
-                          <p className="text-secondary">Settigs & Privacy</p>
-                          <p className="text-secondary">Help</p>
-                          <p className="text-secondary mb-1">Language</p>
-                        </Row>
+                        </Row>{" "}
+                        <p className="text-secondary">Settigs & Privacy</p>
+                        <p className="text-secondary">Help</p>
+                        <p className="text-secondary mb-1">Language</p>
                         <hr></hr>
                       </Col>
                       <p className="fw-bold">Manage</p>
                       <p className="text-secondary">Posts & Activity</p>
-                      <p className="text-secondary mb-1">Job Posting Account</p>
+                      <p className="text-secondary pb-1">Job Posting Account</p>
                     </Row>
                     <hr></hr>
                     <p className="text-secondary">Sign Out</p>
@@ -210,119 +213,149 @@ const NavbarComponent = () => {
               <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz">
                 <Container
                   fluid={true}
-                  style={{ width: "500px", maxHeight: "75vh" }}
-                  className="overflow-y-scroll"
+                  style={{ maxWidth: "700px", maxHeight: "75vh" }}
+                  className="overflow-y-scroll border border-muted rounded-2"
                 >
                   <Row>
-                    <Col lg={6}>
-                      <h5>My Apps</h5>
+                    <Col lg={6} className="border">
+                      <h5 className="p-4">My Apps</h5>
                       <ul className="list-unstyled">
-                        <li className="d-flex align-items-center mb-3">
+                        <li className="d-flex align-items-center mb-3 ms-2">
                           <img
                             src="\trovaLed.svg"
                             alt="Icona"
-                            className="icon"
+                            className="ps-1 fs-2"
                           />
-                          <span className="ms-2">Find Leads</span>
+                          <span className="ps-2 fw-bold">Find Leads</span>
                         </li>
-                        <li className="d-flex align-items-center mb-3">
-                          <img src="\gruppi.svg" alt="Icona" className="icon" />
-                          <span className="ms-2">Groups</span>
-                        </li>
-                        <li className="mt-4">
-                          <strong>Talent</strong>
-                        </li>
-                        <li className="d-flex align-items-center mb-3">
-                          <img src="\Talent.svg" alt="Icona" className="icon" />
-                          <span className="ms-2">Talent Insights</span>
-                        </li>
-                        <li className="d-flex align-items-center mb-3">
-                          <img src="\Lavoro.svg" alt="Icona" className="icon" />
-                          <span className="ms-2">Post a job</span>
+                        <li className="d-flex align-items-center mb-3 ms-2">
+                          <img
+                            src="\gruppi.svg"
+                            alt="Icona"
+                            className="ps-1 fs-2"
+                          />
+                          <span className="ms-2 fw-bold">Groups</span>
                         </li>
                         <li className="mt-4">
-                          <strong>Sales</strong>
+                          <p className="ms-2 text-secondary">Talent</p>
                         </li>
-                        <li className="d-flex align-items-center mb-3">
+                        <li className="d-flex align-items-center mb-3 ms-2">
+                          <img
+                            src="\Talent.svg"
+                            alt="Icona"
+                            className="fs-2 ps-1"
+                          />
+                          <span className="ms-2 fw-bold">Talent Insights</span>
+                        </li>
+                        <li className="d-flex align-items-center mb-3 ms-2">
+                          <img
+                            src="\Lavoro.svg"
+                            alt="Icona"
+                            className="fs-2 ps-1"
+                          />
+                          <span className="ms-2 fw-bold">Post a job</span>
+                        </li>
+                        <li className="mt-4">
+                          <p className="ms-2 text-secondary">Sales</p>
+                        </li>
+                        <li className="d-flex align-items-center mb-3 ms-2">
                           <img
                             src="\Vendite.svg"
                             alt="Icona"
-                            className="icon"
+                            className="fs-2 ps-1"
                           />
-                          <span className="ms-2">Services Marketplace</span>
+                          <span className="ms-2 fw-bold">
+                            Services Marketplace
+                          </span>
                         </li>
                         <li className="mt-4">
-                          <strong>Marketing</strong>
+                          <p className="ms-2 text-secondary">Marketing</p>
                         </li>
-                        <li className="d-flex align-items-center mb-3">
+                        <li className="d-flex align-items-center mb-3 ms-2">
                           <img
                             src="\Pubblicizza.svg"
                             alt="Icona"
-                            className="icon"
+                            className="fs-2 ps-1"
                           />
-                          <span className="ms-2">Advertise</span>
+                          <span className="ms-2 fw-bold">Advertise</span>
                         </li>
                         <li className="mt-4">
-                          <strong>Learning</strong>
+                          <p className="ms-2 text-secondary">Learning</p>
                         </li>
-                        <li className="d-flex align-items-center mb-3">
+                        <li className="d-flex align-items-center mb-3 ms-2">
                           <img
                             src="\Learning.svg"
                             alt="Icona"
-                            className="icon"
+                            className="fs-2 ps-1"
                           />
-                          <span className="ms-2">Learning</span>
+                          <span className="ms-2 fw-bold">Learning</span>
                         </li>
                       </ul>
                     </Col>
 
                     <Col lg={6}>
-                      <h5>Explore more for business</h5>
+                      <h5 className="p-lg-4 pb-1">Explore more for business</h5>
                       <ul className="list-unstyled">
                         <li className="mb-3">
-                          <strong>Hire on LinkedIn</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Hire on LinkedIn
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Find, attract and recruit talent
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Sell with LinkedIn</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Sell with LinkedIn
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Unlock sales opportunities
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Post a job for free</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Post a job for free
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Get qualified applicants quickly
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Advertise on LinkedIn</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Advertise on LinkedIn
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Acquire customers and grow your business
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Get started with Premium</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Get started with Premium
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Expand and leverage your network
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Learn with LinkedIn</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Learn with LinkedIn
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Courses to develop your employees
                           </p>
                         </li>
                         <li className="mb-5">
-                          <strong>Admin Center</strong>
-                          <p className="text-muted">
+                          <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            Admin Center
+                          </strong>
+                          <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
                             Manage billing and account details
                           </p>
                         </li>
                         <li className="mb-3">
-                          <strong>Create a Company Page +</strong>
+                          <strong className="ms-lg-2 ps-lg-3 pe-5 pb-3">
+                            Create a Company Page +
+                          </strong>
                         </li>
                       </ul>
                     </Col>
