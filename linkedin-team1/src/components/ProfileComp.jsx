@@ -2,46 +2,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ModalComp from "./ModalComp";
 
 const ProfileComp = () => {
   const profile = useSelector((state) => {
     return state.profile;
   });
-
-  const dispatch = useDispatch();
-
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
-  const url = "https://striveschool-api.herokuapp.com/api/profile/me";
-
-  const getProfile = async () => {
-    try {
-      const response = await fetch(url, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (response.ok) {
-        const data = await response.json();
-        console.log("PROFILO:", data);
-        dispatch({
-          type: "GET_PROFILE",
-          payload: data,
-        });
-      } else {
-        throw new Error("Errore nel recupero dei dati");
-      }
-    } catch (error) {
-      console.log("errore", error);
-    }
-  };
-
-  useEffect(() => {
-    getProfile();
-  }, []);
 
   const [width, setWidth] = useState(window.innerWidth);
 

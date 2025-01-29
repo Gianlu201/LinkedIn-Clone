@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Container,
   Row,
@@ -11,10 +10,51 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
+
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
+
+  const dispatch = useDispatch();
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
+  const url = "https://striveschool-api.herokuapp.com/api/profile/me";
+
+  const getProfile = async () => {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log("PROFILO:", data);
+        dispatch({
+          type: "GET_PROFILE",
+          payload: data,
+        });
+      } else {
+        throw new Error("Errore nel recupero dei dati");
+      }
+    } catch (error) {
+      console.log("errore", error);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
     <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
       <Container className=" ">
@@ -128,7 +168,7 @@ const NavbarComponent = () => {
                 }}
               >
                 <img
-                  src="/1719248792649.jpeg"
+                  src={profile.image}
                   className="ImmagineProfilo"
                   alt="Descrizione immagine"
                 />
@@ -148,15 +188,17 @@ const NavbarComponent = () => {
                           <Col xs={3} className="pe-1">
                             {" "}
                             <img
-                              src="/1719248792649.jpeg"
+                              src={profile.image}
                               className="ImmagineProfilo rounded-circle"
                               alt="Descrizione immagine"
                               style={{ width: "60px", height: "60px" }}
                             />
                           </Col>
                           <Col xs={9} className="ps-4">
-                            <p className="fw-bold">Rachele Barberis</p>
-                            <p>Recently Graduated</p>
+                            <p className="fw-bold">
+                              {profile.name} {profile.surname}
+                            </p>
+                            <p>{profile.title}</p>
                           </Col>
                         </Row>
                       </Col>
