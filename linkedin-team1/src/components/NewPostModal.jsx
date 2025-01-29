@@ -107,6 +107,7 @@ const NewPostModal = () => {
       console.log(params.postId);
       getMyPost();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.postId]);
 
   return (
@@ -184,7 +185,7 @@ const NewPostModal = () => {
             </button>
             <button
               type='button'
-              className={'btn rounded-5 border-0 fw-medium text-black '.concat(
+              className={'btn rounded-5 border-0 fw-medium text-black text-white '.concat(
                 text?.trim() === '' ? 'bg-secondary' : 'bg-primary'
               )}
               disabled={text?.trim() === '' ? true : false}
