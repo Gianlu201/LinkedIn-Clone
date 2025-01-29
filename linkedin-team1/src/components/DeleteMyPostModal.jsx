@@ -6,7 +6,7 @@ const DeleteMyPostModal = () => {
       className="modal fade"
       id="deleteMyPostModal"
       tabIndex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="exampleModalLabel "
       aria-hidden="true"
     >
       <div className="modal-dialog">
