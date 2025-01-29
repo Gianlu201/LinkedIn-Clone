@@ -3,16 +3,13 @@ import GamesComp from "./GamesComp";
 import AddToFeed from "./AddToFeed";
 import HiringComp from "./HiringComp";
 import HomeProfile from "./HomeProfile";
-import ToolsRightComp from "./ToolsRightComp";
 
 const HomeComponent = () => {
   return (
     <Container className="mt-5 pt-2">
       <Row>
         <Col xs={12} md={4} lg={3}>
-<<<<<<< HEAD
-          <HomeProfile/>
-=======
+          <HomeProfile />
           <HomeProfile />
         </Col>
         <Col xs={12} md={8} lg={9}>
