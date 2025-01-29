@@ -3,6 +3,7 @@ import { Button, Spinner } from "react-bootstrap";
 
 const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
+  const [notShowArr, setNotShowArr] = useState([]);
 
   const getAllFeed = async () => {
     const url = "https://striveschool-api.herokuapp.com/api/posts/";
@@ -27,6 +28,40 @@ const FeedAreaComp = () => {
     }
   };
 
+  const timePassed = (dat) => {
+    const targetDay = new Date(dat);
+    const today = new Date();
+
+    const timePassed = (today - targetDay) / 1000;
+    const yearPassed = Math.floor(timePassed / 60 / 60 / 24 / 30 / 12);
+    const monthsPassed = Math.floor(timePassed / 60 / 60 / 24 / 30);
+    const daysPassed = Math.floor(timePassed / 60 / 60 / 24);
+    const hoursPassed = Math.floor(timePassed / 60 / 60);
+    const minutesPassed = Math.floor(timePassed / 60);
+    const secondsPassed = Math.floor(timePassed);
+
+    switch (true) {
+      case yearPassed > 0:
+        return `${yearPassed}y`;
+      case monthsPassed > 0:
+        return `${monthsPassed}m`;
+      case daysPassed > 0:
+        return `${daysPassed}d`;
+      case hoursPassed > 0:
+        return `${hoursPassed}h`;
+      case minutesPassed > 0:
+        return `${minutesPassed}min`;
+      case secondsPassed > 0:
+        return `${secondsPassed}sec`;
+      default:
+        return "??";
+    }
+  };
+
+  const hidePost = (postId) => {
+    setNotShowArr(notShowArr.concat(postId));
+  };
+
   useEffect(() => {
     getAllFeed();
   }, []);
@@ -38,71 +73,108 @@ const FeedAreaComp = () => {
       ) : (
         <>
           {posts.splice(-50, posts.length).map((post) => {
-            return (
-              <div
-                className="bg-white rounded-3 mt-2 bordinoGames"
-                key={post._id}
-              >
-                <div className="d-flex justify-content-between align-items-center mx-3">
-                  <p className=" text-secondary small">Suggested</p>
-                  <div>
-                    <button className="btn bg-transparent">
-                      <i className="bi bi-three-dots"></i>
-                    </button>
-                    <button className="btn bg-transparent">
-                      <i className="bi bi-x-lg"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <hr className="mx-2 mt-0" />
-
-                {/* corpo principale del post */}
-                <div className="mx-3">
-                  {/* utente creatore post */}
-                  <div>
-                    <div className="d-flex justify-content-between ">
-                      <div>
-                        <img
-                          src={post.user.image}
-                          alt="user picture"
-                          className=" rounded-circle mt-1"
-                          width={"40px"}
-                          height={"40px"}
-                        />
-                      </div>
-                      <div className=" flex-grow-1 mx-2">
-                        <h6 className=" fw-semibold">
-                          {post.user.name} {post.user.surname}
-                        </h6>
-                        <p className=" text-secondary postText">
-                          {post.user.title}
-                        </p>
-                        {/* TODO: funzione per calcolare il tempo trascorso dalla creazione del post */}
-                        <p className=" postText text-secondary">
-                          5d • <i className="bi bi-globe-americas postText"></i>
-                        </p>
-                      </div>
-                      <div>
-                        <button className="btn bg-transparent flex-grow-1">
-                          <i className="bi bi-plus-lg me-2"></i>Follow
-                        </button>
-                      </div>
+            if (!notShowArr.includes(post._id)) {
+              return (
+                <div
+                  className="bg-white rounded-3 mt-3 bordinoGames"
+                  key={post._id}
+                >
+                  <div className="d-flex justify-content-between align-items-center mx-3">
+                    <p className=" text-secondary small">Suggested</p>
+                    <div>
+                      <button className="btn bg-transparent">
+                        <i className="bi bi-three-dots"></i>
+                      </button>
+                      <button
+                        className="btn bg-transparent"
+                        onClick={() => {
+                          hidePost(post._id);
+                        }}
+                      >
+                        <i className="bi bi-x-lg"></i>
+                      </button>
                     </div>
                   </div>
 
-                  {/* corpo del testo */}
-                  <div className="d-flex flex-column align-items-center my-2">
-                    <p className="w-100 mb-2 overflow-x-hidden">{post.text}</p>
-                    {post?.image && (
-                      <img src={post.image} alt="" className="w-75 mx-auto" />
-                    )}
-                  </div>
+                  <hr className="mx-2" />
 
-                  {/* sezione commenti e reazioni */}
-                  <div className="d-flex justify-content-between align-items-center">
+                  {/* corpo principale del post */}
+                  <div className="mx-3">
+                    {/* utente creatore post */}
                     <div>
-                      <span className="text-secondary">343</span>
+                      <div className="d-flex justify-content-between">
+                        <div>
+                          <img
+                            src={post.user.image}
+                            alt="user picture"
+                            className=" rounded-circle"
+                            width={"40px"}
+                            height={"40px"}
+                          />
+                        </div>
+                        <div className=" flex-grow-1 mx-2">
+                          <h5>
+                            {post.user.name} {post.user.surname}
+                          </h5>
+                          <p>{post.user.title}</p>
+                          <p>
+                            {timePassed(post.updatedAt)} •
+                            <i className="bi bi-globe-americas ms-2"></i>
+                          </p>
+                        </div>
+                        <div>
+                          <button className="btn bg-transparent flex-grow-1">
+                            <i className="bi bi-plus-lg me-2"></i>Follow
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* corpo del testo */}
+                    <div className="d-flex flex-column align-items-center my-2">
+                      <p className="w-100 mb-2 overflow-x-hidden">
+                        {post.text}
+                      </p>
+                      {post?.image && (
+                        <img src={post.image} alt="" className="w-75 mx-auto" />
+                      )}
+                    </div>
+
+                    {/* sezione commenti e reazioni */}
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <span className="text-secondary">343</span>
+                      </div>
+                      <div>
+                        <Button variant="link">20 comments</Button> •{" "}
+                        <Button variant="link">44 reposts</Button>
+                      </div>
+                    </div>
+
+                    {/* corpo del testo */}
+                    <div className="d-flex flex-column align-items-center my-2">
+                      <p className="w-100 mb-2 overflow-x-hidden">
+                        {post.text}
+                      </p>
+                      {post?.image && (
+                        <img src={post.image} alt="" className="w-75 mx-auto" />
+                      )}
+                    </div>
+
+                    {/* bottoni interazioni col post */}
+                    <div className="d-flex justify-content-between mb-3">
+                      <button className="btn bg-transparent fs-5">
+                        <i className="bi bi-hand-thumbs-up-fill"></i> Like
+                      </button>
+                      <button className="btn bg-transparent fs-5">
+                        <i className="bi bi-chat-dots"></i> Comment
+                      </button>
+                      <button className="btn bg-transparent fs-5">
+                        <i className="bi bi-repeat"></i> Repost
+                      </button>
+                      <button className="btn bg-transparent fs-5">
+                        <i className="bi bi-send-fill"></i>Send
+                      </button>
                     </div>
                     <div>
                       <Button variant="link">20 comments</Button> •{" "}
@@ -128,8 +200,8 @@ const FeedAreaComp = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-            );
+              );
+            }
           })}
         </>
       )}
