@@ -9,6 +9,8 @@ import {
   InputGroup,
   Nav,
 } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownMe, setDropdownMe] = useState(false);
@@ -61,15 +63,16 @@ const NavbarComponent = () => {
           </Col>
           <Col xs={8} lg={6} className="pe-0">
             <Nav className=" justify-content-center justify-content-xl-end">
-              <Nav.Link
+              <Link
+                to={"/"}
                 href="#action1"
-                className="d-flex flex-column align-items-center"
+                className=" nav-link d-flex flex-column align-items-center"
               >
                 <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
                 <p className="IconText text-secondary d-none d-md-block ">
                   Home
                 </p>
-              </Nav.Link>
+              </Link>
               <Nav.Link
                 href="#action2"
                 className="d-flex flex-column align-items-center"
@@ -151,11 +154,14 @@ const NavbarComponent = () => {
                             <Col xs={6} className="pe-0">
                               <div className="mb-2 d-flex justify-content-end pe-2">
                                 {" "}
-                                <Button className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3">
+                                <Link
+                                  to={"/profile"}
+                                  className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3"
+                                >
                                   <p className="text-button p-0">
                                     View Profile
                                   </p>
-                                </Button>
+                                </Link>
                               </div>
                             </Col>
                             <Col xs={6} className="ps-0">

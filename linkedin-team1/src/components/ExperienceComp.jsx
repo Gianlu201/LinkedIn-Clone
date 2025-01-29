@@ -118,7 +118,7 @@ const ExperienceComp = () => {
                       />
                     </Col>
                     <Col xs={10} lg={10} className="ps-0">
-                      <h4 className="fw-bold fs-6">{exp.role}</h4>
+                      <h4 className="fw-bold fs-6 w-100">{exp.role}</h4>
                       <p className="descriptions">{exp.company}</p>
                       <p className="descriptions text-secondary">
                         {exp.startDate.slice(0, 10)} -{" "}
