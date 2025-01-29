@@ -26,8 +26,21 @@ h6 {
 
 .profileImg {
   position: absolute;
-  top: 80px;
+  top: 100px;
   left: 30px;
+  width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .profileImg {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .profileImg {
+    width: 110px;
+  }
 }
 
 .profileIcon {
@@ -48,6 +61,30 @@ h6 {
   padding-right: 7px;
   right: 21px;
   border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .profileImg {
+    top: 65px;
+    left: 20px;
+  }
+
+  .profilePen {
+    right: 22px;
+    top: 130px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .profileImg {
+    top: 110px;
+    left: 20px;
+  }
+
+  .profilePen {
+    right: 26px;
+    top: 180px;
+  }
 }
 
 .btnBadge {
@@ -111,18 +148,95 @@ h6 {
   position: absolute;
   top: 18px;
   left: 90%;
+  width: 2em;
 }
 
 .plus {
   position: absolute;
-  top: 18px;
-  left: 80%;
+  top: 11px;
+  left: 82%;
+  width: 2em;
 }
 
 .descriptions {
   font-size: 14px;
   line-height: 1.3;
 }
+
+.fontDestra {
+  font-size: 20px;
+}
+
+.pDestra {
+  font-size: 15px;
+}
+
+@media screen and (min-width: 767px) {
+  .fontDestra {
+    font-size: 18px !important;
+  }
+  .pDestra {
+    font-size: 15px;
+  }
+
+  .matitinaDestra {
+    position: absolute;
+    top: 12px !important;
+    right: 20px !important;
+  }
+
+  .hiring {
+    width: 100% !important;
+    border-radius: 7px;
+  }
+
+  .sfondoGatto {
+    height: 120px !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .sfondoGatto {
+    height: 165px !important;
+  }
+}
+
+/* TODO: .matitina:hover {
+  background-color: #f3f3f3 !important;
+  width: 6% !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+} */
+
+.suggestedImg {
+  max-width: 48px;
+}
+
+.profBio {
+  display: -webkit-box;
+  -webkit-box-direction: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.btnPosition:hover {
+  background-color: #ebf3fd !important;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.modalPosition {
+  position: absolute;
+  top: 1vh !important;
+}
+
+.modalHeight {
+  height: 70vh !important;
+  overflow-y: scroll;
+}
+
 /* CSS FOOTER */
 
 footer {
@@ -174,4 +288,187 @@ footer a:hover,
   .anchor-list li {
     width: 30%;
   }
+}
+
+/*css della navbar */
+.custom-navbar {
+  height: 80px;
+  padding-top: 0px;
+}
+
+.custom-navbar .navbar-brand {
+  padding: 0;
+}
+
+.custom-navbar .navbar-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-toggle {
+  padding: 10px;
+}
+.Navicons {
+  max-height: "100px";
+}
+.IconText {
+  margin-bottom: 0;
+  font-size: 10px;
+}
+.IconeGrigeNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 25px;
+  color: #666666;
+}
+
+.icon-linkedin {
+  font-size: 2rem;
+  color: #0a66c2;
+}
+
+.ricerca {
+  display: block;
+  width: 250px !important;
+}
+
+.ImmagineProfilo {
+  width: 25px;
+  border-radius: 50%;
+}
+.imgProfiloDrop,
+h4 {
+  margin-left: 5px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+h4 {
+  margin-left: 18px;
+  margin-bottom: 0 !important;
+}
+
+h5 {
+  margin-bottom: 0 !important;
+}
+.frecciadrop {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 25px;
+  color: #666666;
+  background-color: transparent;
+  border-style: none;
+}
+p {
+  margin-bottom: 0 !important;
+}
+.dropdown-menu {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.softgray {
+  color: #a9a9a9;
+}
+
+.softgray:hover {
+  color: #555555;
+}
+.imgialla {
+  width: 20px;
+}
+
+.margine {
+  margin: solid 1px red;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.text-muted {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.dimensionigrid {
+  width: 3000px;
+  height: 550px;
+}
+
+.business-dropdown .dropdown-menu {
+  width: 800px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.dropdown-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item strong {
+  font-size: 14px;
+  color: #000;
+}
+
+.dropdown-item p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.custom-navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-navbar .navbar-brand {
+  font-weight: bold;
+  color: #0077b5;
+}
+
+.custom-navbar .nav-link {
+  color: #000;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #0077b5;
+}
+
+.divDropPosition {
+  position: absolute;
+  right: 0px !important;
+}
+.text-button {
+  font-size: 13px;
+}
+.divDropPositionAz {
+  position: absolute;
+  right: 30px !important;
 }

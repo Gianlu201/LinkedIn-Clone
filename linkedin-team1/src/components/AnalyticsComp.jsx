@@ -15,7 +15,7 @@ const AnalyticsComp = () => {
         </Col>
       </Row>
       <Row className="mx-2 mt-1">
-        <Col xs={12} lg={4} className="d-flex mb-4">
+        <Col xs={12} lg={4} className="d-flex mb-4 mb-lg-1">
           <i className="bi bi-people-fill fs-5"></i>
           <div className=" ms-1">
             <a href="#" className="mainLink fw-bold">
@@ -25,7 +25,7 @@ const AnalyticsComp = () => {
           </div>
         </Col>
 
-        <Col xs={12} lg={4} className=" d-flex mb-4">
+        <Col xs={12} lg={4} className=" d-flex mb-4 mb-lg-1">
           <i className="bi bi-bar-chart-line-fill fs-5"></i>
           <div className="ms-1">
             <a href="#" className="mainLink fw-bold">
