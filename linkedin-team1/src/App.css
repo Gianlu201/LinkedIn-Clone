@@ -497,7 +497,6 @@ ul li {
 /*HomeProfile CSS*/
 .sfondoGattoHome {
   height: 80px;
-
 }
 .profileTopHome {
   position: relative;
@@ -509,7 +508,7 @@ ul li {
   left: 20px;
   width: 75px;
 }
-.ProfTitleHome{
+.ProfTitleHome {
   font-size: 0.9em;
 }
 .homeLinks {
@@ -523,4 +522,9 @@ ul li {
   font-size: 0.9em;
   font-weight: 500;
   text-decoration: none;
+}
+/*---- Home Css */
+
+.btnPost:hover {
+  background-color: #f3f3f3;
 }
