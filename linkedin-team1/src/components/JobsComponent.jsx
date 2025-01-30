@@ -8,10 +8,10 @@ import ExploreJobs from "./ExploreJobs";
 import JobDescription from "./JobDescription";
 import { useParams } from "react-router-dom";
 import JobFetch from "./JobFetch";
+import StaticSuggested from "./StaticSuggested";
 import JobsProfile from "./JobsProfile";
 import PreferencesSideComp from "./PreferencesSideComp";
 import ProfileFooter from "./ProfileFooter";
-import StaticSuggested from "./StaticSuggested";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
