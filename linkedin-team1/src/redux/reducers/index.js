@@ -2,6 +2,7 @@ const initialState = {
     profile: {},
     experience: [],
     profiles: [],
+    jobs: [],
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -22,6 +23,12 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 profiles: action.payload
+            }
+
+        case 'GET_JOBS':
+            return {
+                ...state,
+                jobs: action.payload
             }
 
         default: return state

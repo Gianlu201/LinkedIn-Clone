@@ -587,3 +587,9 @@ ul li {
 .footerOneDropItem {
   font-size: 1em;
 }
+
+/* Jobs css */
+
+.promoted {
+  font-size: 12px;
+}

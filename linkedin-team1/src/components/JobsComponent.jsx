@@ -1,11 +1,43 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Row, Col } from "react-bootstrap";
+import JobPicksComp from "./JobPicksComp";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const JobsComponent = () => {
+  const dispatch = useDispatch();
+
+  const url = "https://strive-benchmark.herokuapp.com/api/jobs?search=query";
+
+  const getProfile = async () => {
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("LAVORI:", data.data);
+        dispatch({
+          type: "GET_JOBS",
+          payload: data.data,
+        });
+      } else {
+        throw new Error("Errore nel recupero dei dati");
+      }
+    } catch (error) {
+      console.log("errore", error);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
-    <Container>
+    <Container className="mt-4 mt-md-5 pt-2">
       <Row>
         <Col xs={12} md={5} lg={4}></Col>
-        <Col xs={12} md={7} lg={8}></Col>
+        <Col xs={12} md={7} lg={8}>
+          <JobPicksComp />
+        </Col>
       </Row>
     </Container>
   );
