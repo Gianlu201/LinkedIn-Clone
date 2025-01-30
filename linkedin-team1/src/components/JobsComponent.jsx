@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import JobPicksComp from "./JobPicksComp";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import MoreJobsComp from "./MoreJobsComp";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const JobsComponent = () => {
         <Col xs={12} md={5} lg={4}></Col>
         <Col xs={12} md={7} lg={8}>
           <JobPicksComp />
+          <MoreJobsComp />
         </Col>
       </Row>
     </Container>

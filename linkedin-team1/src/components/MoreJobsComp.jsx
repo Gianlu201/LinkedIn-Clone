@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
-const JobPicksComp = () => {
+const MoreJobsComp = () => {
   const jobs = useSelector((state) => {
     return state.jobs;
   });
@@ -13,14 +13,14 @@ const JobPicksComp = () => {
     >
       <Row className="align-items-md-start">
         <Col xs={12} className="mt-3 mb-1 ps-4 ps-md-2 ps-lg-3 ps-xl-4">
-          <h5 className=" fw-bold mt-2 pb-1">Job picks for you</h5>
+          <h5 className=" fw-bold mt-2 pb-1">More jobs for you</h5>
           <p className=" text-secondary small jobsDesc">
             Based on your profile, preferences, and activity like applies,
             searches and saves
           </p>
         </Col>{" "}
       </Row>{" "}
-      {jobs.slice(0, 3).map((job) => {
+      {jobs.slice(4, 40).map((job, i) => {
         return (
           <Row className=" align-items-start" key={job._id}>
             <Col xs={11}>
@@ -52,32 +52,25 @@ const JobPicksComp = () => {
                     {job.publication_date.slice(0, 10)}
                   </p>
                   <p className="promoted text-secondary d-flex align-items-center">
-                    {" "}
-                    Promoted •{" "}
-                    <i className="bi bi-linkedin icon-linkedin mx-1 fs-6">
-                      {" "}
-                    </i>{" "}
+                    Promoted •
+                    <span className=" text-success fw-semibold px-1">
+                      Be an early applicant
+                    </span>
+                    •<i className="bi bi-linkedin icon-linkedin mx-1 fs-6"></i>
                     Easy Apply
-                  </p>{" "}
+                  </p>
                 </Col>
               </Row>
             </Col>
             <Col xs={1} className="px-md-0 px-lg-3 px-xxl-4 py-3">
               <i className="bi bi-x-lg fs-6 me-3 me-lg-0"></i>
             </Col>
-            <hr className=" mb-0" />
+            {i < 35 && <hr className=" mb-0" />}
           </Row>
         );
       })}
-      <Row className=" btnAnalytics">
-        <Col>
-          <Button className=" bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center">
-            Show all <i className="bi bi-arrow-right-short fs-5"></i>
-          </Button>
-        </Col>
-      </Row>
     </Container>
   );
 };
 
-export default JobPicksComp;
+export default MoreJobsComp;
