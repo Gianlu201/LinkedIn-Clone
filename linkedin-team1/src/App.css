@@ -247,7 +247,7 @@ h6 {
 }
 
 .bordinoGames {
-  border: 0.5px solid grey;
+  border: 0.5px solid rgb(176, 170, 170);
 }
 
 .hoverRow:hover {
@@ -255,6 +255,17 @@ h6 {
 }
 
 .recommendations {
+  font-size: 14px;
+}
+
+.stickyImg {
+  position: sticky !important;
+  top: 9vh !important;
+  right: 0 !important;
+  height: 100px !important;
+}
+
+.postText {
   font-size: 14px;
 }
 
@@ -312,6 +323,10 @@ footer a:hover,
 }
 
 /*css della navbar */
+
+.borderNav {
+  border-left: 0.5px solid grey;
+}
 .custom-navbar {
   height: 80px;
   padding-top: 0px;
@@ -356,7 +371,7 @@ footer a:hover,
 }
 
 .ImmagineProfilo {
-  width: 25px;
+  width: 24px;
   border-radius: 50%;
 }
 .imgProfiloDrop,
@@ -494,6 +509,10 @@ ul li {
   right: 30px !important;
 }
 
+.caretDown {
+  font-size: 7px;
+}
+
 /*HomeProfile CSS*/
 .sfondoGattoHome {
   height: 80px;
@@ -523,8 +542,48 @@ ul li {
   font-weight: 500;
   text-decoration: none;
 }
+
+.sfondoSearch {
+  background-color: #edf3f7;
+}
+
+.iconaLinkedin {
+  font-size: 37px;
+}
 /*---- Home Css */
 
 .btnPost:hover {
   background-color: #f3f3f3;
+}
+
+.textFilter {
+  font-size: 0.8em;
+}
+/*profile footer*/
+
+.profileFooter {
+  text-decoration: none;
+  font-size: 0.7em;
+}
+
+.p-list-footer {
+  text-decoration: none;
+  padding: 0;
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+}
+.profileFooter:hover {
+  text-decoration: underline;
+}
+.footerDropItem {
+  font-size: 0.7em;
+}
+
+.footerDrop {
+  font-size: 1em;
+}
+
+.footerOneDropItem {
+  font-size: 1em;
 }

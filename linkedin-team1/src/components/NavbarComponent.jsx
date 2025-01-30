@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   Container,
   Row,
@@ -10,24 +10,101 @@ import {
   Nav,
 } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState, useRef } from "react";
+
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
+
+  const dropdownMeRef = useRef(null);
+  const dropdownAzRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      dropdownMe &&
+      dropdownMeRef.current &&
+      !dropdownMeRef.current.contains(event.target)
+    ) {
+      setDropdownMe(false);
+    }
+    if (
+      dropdownAz &&
+      dropdownAzRef.current &&
+      !dropdownAzRef.current.contains(event.target)
+    ) {
+      setDropdownAz(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownMe, dropdownAz]);
+
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
+  const url = "https://striveschool-api.herokuapp.com/api/profile/me";
+
+  const getProfile = async () => {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log("PROFILO:", data);
+        dispatch({
+          type: "GET_PROFILE",
+          payload: data,
+        });
+      } else {
+        throw new Error("Errore nel recupero dei dati");
+      }
+    } catch (error) {
+      console.log("errore", error);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  useEffect(() => {
+    if (profile?._id && firstLoad) {
+      navigate(`/profile/${profile._id}`);
+      setFirstLoad(false);
+    }
+  }, [profile]);
+
   return (
-    <div className=" bg-white position-fixed z-1 w-100">
-      <Container>
-        <Row>
-          <Col xs={2} lg={4} className="pt-md-2">
+    <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
+      <Container className=" ">
+        <Row className=" justify-content-center">
+          <Col xs={2} lg={3} className=" d-flex pe-md-0 ps-md-0">
             {" "}
             <div className="d-flex align-items-center">
               <Navbar.Brand href="#home">
-                <i className="bi bi-linkedin icon-linkedin me-2 fs-3 "></i>
+                <i className="bi bi-linkedin icon-linkedin me-2 iconaLinkedin "></i>
               </Navbar.Brand>
               <Button
                 variant="link"
-                className="d-lg-none p-0 me-2"
+                className="d-lg-none p-0 me-2 ps-3 fs-5 text-secondary"
                 onClick={() => setShowSearch(!showSearch)}
               >
                 <i className="bi bi-search"></i>
@@ -36,9 +113,12 @@ const NavbarComponent = () => {
               {showSearch && (
                 <div className="position-absolute w-100 top-0 start-0 bg-white p-2 shadow-lg z-3">
                   <Form>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
                       {" "}
-                      <i className="bi bi-search mt-1 me-1"></i>
+                      <i
+                        className="bi bi-search me-1"
+                        onClick={() => setShowSearch(!showSearch)}
+                      ></i>
                       <InputGroup>
                         <Form.Control
                           type="text"
@@ -53,179 +133,195 @@ const NavbarComponent = () => {
 
               <Form className="d-none d-lg-flex">
                 <InputGroup>
-                  <InputGroup.Text>
-                    <i className="bi bi-search"></i>
+                  <InputGroup.Text className=" sfondoSearch border-0">
+                    <i className="bi bi-search px-2"></i>
                   </InputGroup.Text>
-                  <Form.Control type="text" placeholder="Cerca..." />
+                  <Form.Control
+                    type="text"
+                    placeholder="Search"
+                    className=" sfondoSearch border-0"
+                  />
                 </InputGroup>
               </Form>
             </div>
           </Col>
-          <Col xs={8} lg={6} className="pe-0">
-            <Nav className=" justify-content-center justify-content-xl-end">
-              <Link
-                to={"/"}
-                href="#action1"
-                className=" nav-link d-flex flex-column align-items-center"
+          <Col
+            xs={8}
+            md={7}
+            lg={6}
+            className="px-0 d-flex align-items-center justify-content-evenly"
+          >
+            <Link
+              to={"/"}
+              href="#action1"
+              className=" nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
+            >
+              <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
+              <p className="IconText pb-0 text-secondary d-none d-lg-block ">
+                Home
+              </p>
+            </Link>
+            <Nav.Link
+              href="#action2"
+              className="d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
+            >
+              <i className="IconeGrigeNav bi bi-person-fill fs-4 px-xl-3"></i>
+              <p className="IconText pb-0 text-secondary d-none d-lg-block ">
+                Web
+              </p>
+            </Nav.Link>
+            <Nav.Link
+              href="#action3"
+              className="d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
+            >
+              <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
+              <p className="IconText pb-0  text-secondary d-none d-lg-block ">
+                Jobs
+              </p>
+            </Nav.Link>{" "}
+            <Nav.Link
+              href="#action4"
+              className="d-flex flex-column align-items-center py-0 "
+            >
+              <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-xl-3"></i>
+              <p className="IconText pb-0 text-secondary d-none d-lg-block ">
+                Messages
+              </p>
+            </Nav.Link>
+            <Nav.Link
+              href="#action5"
+              className=" d-flex flex-column align-items-center py-0"
+            >
+              <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
+              <p className="IconText pb-0 text-secondary d-none d-lg-block ">
+                Notifications
+              </p>
+            </Nav.Link>
+            <div className=" position-relative px-lg-2 px-xl-0">
+              <Button
+                className=" bg-transparent border-0 px-0 py-0 d-flex flex-column align-items-center"
+                onClick={() => {
+                  setDropdownMe(!dropdownMe);
+                }}
               >
-                <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
-                  Home
+                <img
+                  src={profile.image}
+                  className="ImmagineProfilo"
+                  alt="Descrizione immagine"
+                />
+                <p className="IconText text-secondary  d-none d-lg-block">
+                  Me<i className="bi bi-caret-down-fill caretDown"></i>
                 </p>
-              </Link>
-              <Nav.Link
-                href="#action2"
-                className="d-flex flex-column align-items-center"
-              >
-                <i className="IconeGrigeNav bi bi-person-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
-                  Web
-                </p>
-              </Nav.Link>
-              <Nav.Link
-                href="#action3"
-                className="d-flex flex-column align-items-center"
-              >
-                <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
-                <p className="IconText  text-secondary d-none d-md-block ">
-                  Work
-                </p>
-              </Nav.Link>{" "}
-              <Nav.Link
-                href="#action4"
-                className="d-flex flex-column align-items-center "
-              >
-                <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
-                  Messages
-                </p>
-              </Nav.Link>
-              <Nav.Link
-                href="#action5"
-                className=" d-flex flex-column align-items-center"
-              >
-                <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
-                <p className="IconText text-secondary d-none d-md-block ">
-                  Notifications
-                </p>
-              </Nav.Link>
-              <div className=" position-relative ps-3">
-                <Button
-                  className=" bg-transparent border-0"
-                  onClick={() => {
-                    setDropdownMe(!dropdownMe);
-                  }}
+              </Button>
+              {dropdownMe && (
+                <div
+                  ref={dropdownMeRef}
+                  className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3"
                 >
-                  <img
-                    src="/1719248792649.jpeg"
-                    className="ImmagineProfilo"
-                    alt="Descrizione immagine"
-                  />
-                  <p className="IconText text-secondary  d-none d-md-block">
-                    Tu<i className="bi bi-caret-down-fill"></i>
-                  </p>
-                </Button>
-                {dropdownMe && (
-                  <div className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white z-3">
-                    <Container
-                      style={{ width: "250px" }}
-                      className="border border-muted rounded-2 pb-3"
-                    >
-                      <Row className="d-flex flex-column">
-                        <Col>
-                          <Row className="mt-3">
-                            <Col xs={3} className="pe-1">
+                  <Container
+                    style={{ width: "270px" }}
+                    className="border border-muted rounded-2 pb-3"
+                  >
+                    <Row className="d-flex flex-column">
+                      <Col>
+                        <Row className="mt-3">
+                          <Col xs={3} className="pe-1">
+                            {" "}
+                            <img
+                              src={profile.image}
+                              className="ImmagineProfilo rounded-circle"
+                              alt="Descrizione immagine"
+                              style={{ width: "50px", height: "50px" }}
+                            />
+                          </Col>
+                          <Col xs={9} className="ps-2">
+                            <p className="fw-bold">
+                              {profile.name} {profile.surname}
+                            </p>
+                            <p className=" small">{profile.title}</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col>
+                        <Row className="mt-2">
+                          <Col xs={12} className="pe-0">
+                            <div className="mb-2 d-flex justify-content-end pe-2">
                               {" "}
-                              <img
-                                src="/1719248792649.jpeg"
-                                className="ImmagineProfilo rounded-circle"
-                                alt="Descrizione immagine"
-                                style={{ width: "60px", height: "60px" }}
-                              />
-                            </Col>
-                            <Col xs={9} className="ps-4">
-                              <p className="fw-bold">Rachele Barberis</p>
-                              <p>Recently Graduated</p>
-                            </Col>
-                          </Row>
-                        </Col>
-                        <Col>
-                          <Row className="mt-3">
-                            <Col xs={6} className="pe-0">
-                              <div className="mb-2 d-flex justify-content-end pe-2">
-                                {" "}
-                                <Link
-                                  to={"/profile"}
-                                  className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3"
-                                >
-                                  <p className="text-button p-0">
-                                    View Profile
-                                  </p>
-                                </Link>
-                              </div>
-                            </Col>
-                            <Col xs={6} className="ps-0">
-                              <div className="mb-2 d-flex justify-content-start ps-2">
-                                {" "}
-                                <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
-                                  <p className=" text-button p-0">Verify</p>
-                                </Button>
-                              </div>
-                            </Col>
-                            <hr></hr>
-                          </Row>
-                        </Col>
-                        <Col>
-                          <p className="fw-bold">Account</p>
-                          <Row>
-                            <Col xs={1}>
-                              <img
-                                src="/imgGiallina.svg"
-                                style={{ width: "18px", height: "18px" }}
-                              />
-                            </Col>
-                            <Col xs={10} className="pe-0">
-                              <p className="small">
-                                {" "}
-                                Try 1 month of Premium for 0 EUR
-                              </p>
-                            </Col>
-                          </Row>{" "}
-                          <p className="text-secondary">Settigs & Privacy</p>
-                          <p className="text-secondary">Help</p>
-                          <p className="text-secondary mb-1">Language</p>
+                              <Link
+                                to={`/profile/${profile._id}`}
+                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary rounded-3 w-100 rounded-5"
+                                onClick={() => {
+                                  setDropdownMe(!dropdownMe);
+                                }}
+                              >
+                                <p className="text-button p-0">View Profile</p>
+                              </Link>
+                            </div>
+                          </Col>
                           <hr></hr>
-                        </Col>
-                        <p className="fw-bold">Manage</p>
-                        <p className="text-secondary">Posts & Activity</p>
-                        <p className="text-secondary pb-1">
+                        </Row>
+                      </Col>
+                      <Col>
+                        <p className="fw-bold mb-1">Account</p>
+                        <Row className=" align-items-center">
+                          <Col xs={1}>
+                            <img
+                              src="/imgGiallina.svg"
+                              style={{ width: "18px", height: "18px" }}
+                            />
+                          </Col>
+                          <Col xs={10} className="pe-0">
+                            <p className="small fw-semibold text-secondary">
+                              {" "}
+                              Try 1 month of Premium for €0
+                            </p>
+                          </Col>
+                        </Row>{" "}
+                        <p className="text-secondary small">
+                          Settigs & Privacy
+                        </p>
+                        <p className="text-secondary small">Help</p>
+                        <p className="text-secondary small mb-1">Language</p>
+                        <hr></hr>
+                        <p className="fw-bold mb-1">Manage</p>
+                        <p className="text-secondary small">Posts & Activity</p>
+                        <p className="text-secondary small pb-1">
                           Job Posting Account
                         </p>
-                      </Row>
-                      <hr></hr>
-                      <p className="text-secondary">Sign Out</p>
-                    </Container>
-                  </div>
-                )}
-              </div>
-            </Nav>
+                      </Col>
+                    </Row>
+                    <hr></hr>
+                    <p className="text-secondary small">Sign Out</p>
+                  </Container>
+                </div>
+              )}
+            </div>
           </Col>
-          <Col xs={2} lg={2} className=" ps-0 ps-lg-4">
+          <Col
+            xs={2}
+            md={3}
+            lg={2}
+            className=" ps-0 ps-lg-4 d-flex align-items-center justify-content-center pe-0 borderNav"
+          >
             {" "}
             <div className=" position-relative">
               <Button
-                className=" bg-transparent border-0"
+                className=" bg-transparent border-0 py-0"
                 onClick={() => {
                   setDropdownAz(!dropdownAz);
                 }}
               >
-                <i className="bi bi-grid-3x3-gap fs-5 text-secondary"></i>
+                <i className="bi bi-grid-3x3-gap text-secondary"></i>
                 <p className="IconText text-secondary  d-none d-md-block">
-                  Per le Aziende<i className="bi bi-caret-down-fill"></i>
+                  For business
+                  <i className="bi bi-caret-down-fill caretDown"></i>
                 </p>
               </Button>
               {dropdownAz && (
-                <div className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white z-3">
+                <div
+                  ref={dropdownAzRef}
+                  className="dropdown-menu-start d-flex align-items-center divDropPositionAz bg-white rounded-3 z-3"
+                >
                   <Container
                     fluid={true}
                     style={{
@@ -315,68 +411,66 @@ const NavbarComponent = () => {
                       </Col>
 
                       <Col lg={6}>
-                        <h5 className="p-lg-4 pb-1">
-                          Explore more for business
-                        </h5>
-                        <ul className="list-unstyled">
+                        <h5 className="p-4">Explore more for business</h5>
+                        <ul className="list-unstyled px-4">
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Hire on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Find, attract and recruit talent
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Sell with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Unlock sales opportunities
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Post a job for free
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Get qualified applicants quickly
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Advertise on LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Acquire customers and grow your business
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Get started with Premium
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Expand and leverage your network
                             </p>
                           </li>
                           <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                            <strong className=" small w-100">
                               Learn with LinkedIn
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Courses to develop your employees
                             </p>
                           </li>
-                          <li className="mb-5">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5">
+                          <li>
+                            <strong className="mb-3 small w-100">
                               Admin Center
                             </strong>
-                            <p className="text-muted ms-lg-2 ps-lg-3 pb-3">
+                            <p className="text-muted   pb-3">
                               Manage billing and account details
                             </p>
                           </li>
-                          <li className="mb-3">
-                            <strong className="ms-lg-2 ps-lg-3 pe-5 pb-3">
+                          <li className="py-4 text-center">
+                            <strong className=" small w-100 pb-3 mb-4">
                               Create a Company Page +
                             </strong>
                           </li>
