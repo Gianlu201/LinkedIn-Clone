@@ -35,7 +35,7 @@ const JobFetch = () => {
   return (
     <Container
       fluid
-      className=" bg-white mt-2 mt-md-4 rounded-3 bordinoGames pb-2"
+      className=" bg-white mt-2 mt-md-4 rounded-3 bordinoGames pb-3"
     >
       <Row className="align-items-md-start">
         <Col xs={12} className="mt-3 mb-1 ps-4 ps-md-2 ps-lg-3 ps-xl-4">
