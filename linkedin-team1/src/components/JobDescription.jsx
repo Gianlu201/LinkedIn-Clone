@@ -50,7 +50,7 @@ const JobDescription = () => {
     >
       <Row className="justify-content-between align-items-center mt-1 ms-md-2 ms-lg-1 ms-xl-0 ps-xl-0">
         <Col xs={12} className=" d-flex justify-content-end border-bottom">
-          <div className=" dropdown ">
+          <div className=" dropdown">
             <Button
               type="button"
               data-bs-toggle="dropdown"
@@ -60,43 +60,62 @@ const JobDescription = () => {
               <i className="bi bi-arrow-90deg-right text-black"></i>
             </Button>
 
-            <ul className="dropdown-menu dropdown-menu-end">
+            <ul
+              className="dropdown-menu dropdown-menu-end ps-2"
+              style={{ width: "200px" }}
+            >
               <li>
-                <h6 className="dropdown-header">Share on LinkenIn</h6>
+                <h6 className="dropdown-header">Share on LinkedIn</h6>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-pencil"></i>
+              <li className=" pe-2">
+                <a
+                  className="hoverRow dropdown-item small d-flex align-items-center"
+                  href="#"
+                >
+                  <i className="me-1 fs-5 bi bi-pencil-fill text-danger"></i>
                   Report to Feed
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-send-fill"></i>
+              <li className=" pe-2">
+                <a
+                  className="hoverRow dropdown-item small d-flex align-items-center"
+                  href="#"
+                >
+                  <i className="me-1 fs-5 bi bi-send-fill text-success"></i>
                   Send in a message
                 </a>
               </li>
-              <li>
+              <li className=" pe-2">
                 <hr className="dropdown-divider" />
               </li>
 
-              <li>
+              <li className=" pe-2">
                 <h6 className="dropdown-header">Other options</h6>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-send-fill"></i>
+              <li className=" pe-2">
+                <a
+                  className="hoverRow dropdown-item small d-flex align-items-center"
+                  href="#"
+                >
+                  <i className="me-1 fs-5 bi bi-send-fill text-success"></i>
                   Copy link
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-twitter-x"></i> X, formerly Twitter
+              <li className=" pe-2">
+                <a
+                  className="hoverRow dropdown-item small d-flex align-items-center"
+                  href="#"
+                >
+                  <i className="me-1 fs-5 bi bi-twitter-x"></i> X, formerly
+                  Twitter
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-facebook"></i>
+              <li className=" pe-2">
+                <a
+                  className="hoverRow dropdown-item small d-flex align-items-center"
+                  href="#"
+                >
+                  <i className="me-1 fs-5 bi bi-facebook text-primary"></i>
                   Facebook
                 </a>
               </li>
@@ -111,16 +130,22 @@ const JobDescription = () => {
             >
               <i className="bi bi-three-dots text-black"></i>
             </Button>
-            <ul className="dropdown-menu dropdown-menu-end">
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-pencil-square"></i>
+            <ul className="dropdown-menu dropdown-menu-end ps-2 pe-2">
+              <li className="">
+                <a
+                  className="dropdown-item small d-flex align-items-center py-1 hoverRow"
+                  href="#"
+                >
+                  <i className=" me-2 fs-5 bi bi-pencil-square text-primary"></i>
                   Send feedback
                 </a>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <i className="bi bi-flag-fill"></i>
+              <li className="">
+                <a
+                  className=" py-1 dropdown-item small d-flex align-items-center hoverRow"
+                  href="#"
+                >
+                  <i className=" me-2 fs-5 bi bi-flag-fill text-danger"></i>
                   Report this job
                 </a>
               </li>
