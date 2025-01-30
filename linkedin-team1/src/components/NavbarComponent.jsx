@@ -10,7 +10,7 @@ import {
   Nav,
 } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 
@@ -18,6 +18,7 @@ const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   const dropdownMeRef = useRef(null);
   const dropdownAzRef = useRef(null);
@@ -51,6 +52,7 @@ const NavbarComponent = () => {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
@@ -82,6 +84,13 @@ const NavbarComponent = () => {
   useEffect(() => {
     getProfile();
   }, []);
+
+  useEffect(() => {
+    if (profile?._id && firstLoad) {
+      navigate(`/profile/${profile._id}`);
+      setFirstLoad(false);
+    }
+  }, [profile]);
 
   return (
     <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
@@ -234,22 +243,28 @@ const NavbarComponent = () => {
                         </Row>
                       </Col>
                       <Col>
-                        <Row className="mt-1">
-                          <Col xs={12} className="px-2 pb-2">
-                            {" "}
-                            <Link
-                              to={"/profile"}
-                              className=" btn btn-sm w-100 bg-transparent border-1 border-primary text-primary rounded-5 btnPSection py-0"
-                            >
-                              <p
-                                className="text-button p-0"
+                        <Row className="mt-3">
+                          <Col xs={6} className="pe-0">
+                            <div className="mb-2 d-flex justify-content-end pe-2">
+                              {" "}
+                              <Link
+                                to={`/profile/${profile._id}`}
+                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3"
                                 onClick={() => {
                                   setDropdownMe(!dropdownMe);
                                 }}
                               >
-                                View Profile
-                              </p>
-                            </Link>
+                                <p className="text-button p-0">View Profile</p>
+                              </Link>
+                            </div>
+                          </Col>
+                          <Col xs={6} className="ps-0">
+                            <div className="mb-2 d-flex justify-content-start ps-2">
+                              {" "}
+                              <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
+                                <p className=" text-button p-0">Verify</p>
+                              </Button>
+                            </div>
                           </Col>
                           <hr></hr>
                         </Row>
