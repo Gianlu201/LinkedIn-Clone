@@ -21,7 +21,7 @@ function App() {
           <Route path='/jobs' element={<JobsComponent />} />
           <Route path='/jobs/:query' element={<JobsComponent />} />
           <Route
-            path='/jobs/:query/company/:company/job/:jobId'
+            path='/jobs/:query/company/:company/job/:jobId/:imgIndex'
             element={<JobsComponent />}
           />
         </Routes>

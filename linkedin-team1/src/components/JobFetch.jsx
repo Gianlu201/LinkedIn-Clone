@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
-import companyImages from "../data/company_images.json";
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
+import companyImages from '../data/company_images.json';
 
 const JobFetch = () => {
   const params = useParams();
@@ -15,23 +15,29 @@ const JobFetch = () => {
     try {
       const response = await fetch(url, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       if (response.ok) {
         const data = await response.json();
         setJobsFetched(data.data);
       } else {
-        throw new Error("Errore nel recupero dei lavori cercati");
+        throw new Error('Errore nel recupero dei lavori cercati');
       }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const getRandomImage = () => {
-    return companyImages[Math.floor(Math.random() * companyImages.length)]
-      .image;
+  const getCompanyImage = (ind) => {
+    let indice = ind;
+
+    if (ind > companyImages.length - 1) {
+      let division = Math.floor(ind / (companyImages.length - 1));
+      indice = ind - division * (companyImages.length - 1);
+    }
+
+    return indice;
   };
 
   useEffect(() => {
@@ -41,12 +47,12 @@ const JobFetch = () => {
   return (
     <Container
       fluid
-      className=" bg-white mt-2 mt-md-4 rounded-3 bordinoGames pb-3"
+      className=' bg-white mt-2 mt-md-4 rounded-3 bordinoGames pb-3'
     >
-      <Row className="align-items-md-start">
-        <Col xs={12} className="mt-3 mb-1 ps-4 ps-md-2 ps-lg-3 ps-xl-4">
-          <h5 className=" fw-bold mt-2 pb-1">Search results:</h5>
-          <p className=" text-secondary small jobsDesc">
+      <Row className='align-items-md-start'>
+        <Col xs={12} className='mt-3 mb-1 ps-4 ps-md-2 ps-lg-3 ps-xl-4'>
+          <h5 className=' fw-bold mt-2 pb-1'>Search results:</h5>
+          <p className=' text-secondary small jobsDesc'>
             From your search: {params.query}
           </p>
         </Col>
@@ -54,60 +60,62 @@ const JobFetch = () => {
       <div>
         {jobsFetched?.length < 1 ? (
           <div>
-            <Spinner animation="border" variant="primary" />
+            <Spinner animation='border' variant='primary' />
           </div>
         ) : (
           <div
-            style={{ height: "40vh" }}
-            className=" overflow-y-auto overflow-x-hidden"
+            style={{ height: '40vh' }}
+            className=' overflow-y-auto overflow-x-hidden'
           >
             {jobsFetched.map((job, i) => {
               return (
-                <Row className=" align-items-start w-100" key={job._id}>
+                <Row className=' align-items-start w-100' key={job._id}>
                   <Col xs={11}>
-                    <Row className="py-3">
+                    <Row className='py-3'>
                       <Col
                         xs={2}
                         lg={1}
-                        className="pe-0 pe-md-2 pe-lg-0 ms-lg-3 d-flex justify-content-center justify-content-lg-end"
+                        className='pe-0 pe-md-2 pe-lg-0 ms-lg-3 d-flex justify-content-center justify-content-lg-end'
                       >
-                        {" "}
+                        {' '}
                         <img
-                          src={getRandomImage()}
-                          alt=""
-                          style={{ width: "48px", height: "48px" }}
-                          className=" pt-1"
+                          src={companyImages[getCompanyImage(i)].image}
+                          alt=''
+                          style={{ width: '48px', height: '48px' }}
+                          className=' pt-1'
                         />
                       </Col>
-                      <Col xs={10} className="ps-0 ps-lg-2">
+                      <Col xs={10} className='ps-0 ps-lg-2'>
                         <Link
-                          to={`/jobs/${params.query}/company/${job.company_name}/job/${job._id}`}
-                          className="fw-bold fs-6 w-100 mainLink text-primary"
+                          to={`/jobs/${params.query}/company/${
+                            job.company_name
+                          }/job/${job._id}/${getCompanyImage(i)}`}
+                          className='fw-bold fs-6 w-100 mainLink text-primary'
                         >
                           {job.title}
                         </Link>
-                        <p className="descriptions">
+                        <p className='descriptions'>
                           {job.company_name} • {job.category}
                         </p>
-                        <p className="descriptions text-secondary">
-                          {job.candidate_required_location} •{" "}
+                        <p className='descriptions text-secondary'>
+                          {job.candidate_required_location} •{' '}
                           {job.publication_date.slice(0, 10)}
                         </p>
-                        <p className="promoted text-secondary d-flex align-items-center">
-                          {" "}
-                          Promoted •{" "}
-                          <i className="bi bi-linkedin icon-linkedin mx-1 fs-6">
-                            {" "}
-                          </i>{" "}
+                        <p className='promoted text-secondary d-flex align-items-center'>
+                          {' '}
+                          Promoted •{' '}
+                          <i className='bi bi-linkedin icon-linkedin mx-1 fs-6'>
+                            {' '}
+                          </i>{' '}
                           Easy Apply
-                        </p>{" "}
+                        </p>{' '}
                       </Col>
                     </Row>
                   </Col>
-                  <Col xs={1} className="px-md-0 px-lg-3 px-xxl-4 py-3">
-                    <i className="bi bi-x-lg fs-6 me-3 me-lg-0"></i>
+                  <Col xs={1} className='px-md-0 px-lg-3 px-xxl-4 py-3'>
+                    <i className='bi bi-x-lg fs-6 me-3 me-lg-0'></i>
                   </Col>
-                  {i < jobsFetched.length - 1 && <hr className=" mb-0" />}
+                  {i < jobsFetched.length - 1 && <hr className=' mb-0' />}
                 </Row>
               );
             })}
