@@ -243,27 +243,19 @@ const NavbarComponent = () => {
                         </Row>
                       </Col>
                       <Col>
-                        <Row className="mt-3">
-                          <Col xs={6} className="pe-0">
+                        <Row className="mt-2">
+                          <Col xs={12} className="pe-0">
                             <div className="mb-2 d-flex justify-content-end pe-2">
                               {" "}
                               <Link
                                 to={`/profile/${profile._id}`}
-                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary p-2 rounded-3"
+                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary rounded-3 w-100 rounded-5"
                                 onClick={() => {
                                   setDropdownMe(!dropdownMe);
                                 }}
                               >
                                 <p className="text-button p-0">View Profile</p>
                               </Link>
-                            </div>
-                          </Col>
-                          <Col xs={6} className="ps-0">
-                            <div className="mb-2 d-flex justify-content-start ps-2">
-                              {" "}
-                              <Button className=" btn btn-sm bg-primary border-1 border-primary text-white p-2 px-3 rounded-3">
-                                <p className=" text-button p-0">Verify</p>
-                              </Button>
                             </div>
                           </Col>
                           <hr></hr>
