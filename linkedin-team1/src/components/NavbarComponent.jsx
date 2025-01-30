@@ -19,6 +19,7 @@ const NavbarComponent = () => {
   const [dropdownMe, setDropdownMe] = useState(false);
   const [dropdownAz, setDropdownAz] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true);
+  const [search, setSearch] = useState("");
 
   const dropdownMeRef = useRef(null);
   const dropdownAzRef = useRef(null);
@@ -92,6 +93,11 @@ const NavbarComponent = () => {
     }
   }, [profile]);
 
+  const searchJobs = () => {
+    navigate(`/jobs/${search}`);
+    setSearch("");
+  };
+
   return (
     <div className=" bg-white position-fixed top-0 z-1 w-100 bordinoGames">
       <Container className=" ">
@@ -112,7 +118,12 @@ const NavbarComponent = () => {
 
               {showSearch && (
                 <div className="position-absolute w-100 top-0 start-0 bg-white p-2 shadow-lg z-3">
-                  <Form>
+                  <Form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      searchJobs();
+                    }}
+                  >
                     <div className="d-flex align-items-center">
                       {" "}
                       <i
@@ -124,6 +135,10 @@ const NavbarComponent = () => {
                           type="text"
                           placeholder=" Search..."
                           className="w-100"
+                          value={search}
+                          onChange={(e) => {
+                            setSearch(e.target.value);
+                          }}
                         />
                       </InputGroup>
                     </div>
@@ -131,7 +146,13 @@ const NavbarComponent = () => {
                 </div>
               )}
 
-              <Form className="d-none d-lg-flex">
+              <Form
+                className="d-none d-lg-flex"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  searchJobs();
+                }}
+              >
                 <InputGroup>
                   <InputGroup.Text className=" sfondoSearch border-0">
                     <i className="bi bi-search px-2"></i>
@@ -140,6 +161,10 @@ const NavbarComponent = () => {
                     type="text"
                     placeholder="Search"
                     className=" sfondoSearch border-0"
+                    value={search}
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                    }}
                   />
                 </InputGroup>
               </Form>

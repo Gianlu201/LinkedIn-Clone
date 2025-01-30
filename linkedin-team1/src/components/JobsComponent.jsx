@@ -5,9 +5,13 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import MoreJobsComp from "./MoreJobsComp";
 import ExploreJobs from "./ExploreJobs";
+import JobDescription from "./JobDescription";
+import { useParams } from "react-router-dom";
+import JobFetch from "./JobFetch";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
+  const params = useParams();
 
   const url = "https://strive-benchmark.herokuapp.com/api/jobs?search=query";
 
@@ -41,6 +45,12 @@ const JobsComponent = () => {
           <JobPicksComp />
           <ExploreJobs />
           <MoreJobsComp />
+          {params?.query && (
+            <>
+              <JobFetch />
+              <JobDescription />
+            </>
+          )}
         </Col>
       </Row>
     </Container>
