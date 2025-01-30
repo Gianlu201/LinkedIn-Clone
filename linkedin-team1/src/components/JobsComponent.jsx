@@ -8,6 +8,7 @@ import ExploreJobs from "./ExploreJobs";
 import JobDescription from "./JobDescription";
 import { useParams } from "react-router-dom";
 import JobFetch from "./JobFetch";
+import StaticSuggested from "./StaticSuggested";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const JobsComponent = () => {
             <>
               <JobPicksComp />
               <ExploreJobs />
+              <StaticSuggested />
               <MoreJobsComp />
             </>
           )}
