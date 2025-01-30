@@ -43,8 +43,8 @@ const HomeProfile = () => {
 
   useEffect(() => {}, []);
   return (
-    <Container>
-      <Row className="my-2 bg-white rounded-3">
+    <Container fluid className=" bg-white mt-4 rounded-3 bordinoGames">
+      <Row className=" bg-white rounded-3">
         <Col className="p-0 mb-3 profileTopHome">
           <img
             src="https://placecats.com/900/200"
@@ -67,14 +67,15 @@ const HomeProfile = () => {
               <p className="ProfTitleHome">{profile.title}</p>
               <p className="mt-0 text-muted">{profile.area}</p>
             </Col>
-            <Col xs={12} md={12} className="my-md-2">
-              <p className="mb-1 ProfTitleHome">IIS Giosuè Carducci</p>
+            <Col xs={6} md={12} className="my-md-2">
+              <p className="my-0 ProfTitleHome">IIS Giosuè Carducci</p>
             </Col>
           </Row>
         </Col>
       </Row>
-      <Row className="my-2 bg-white rounded-3">
-        <Col xs={10} className="py-3">
+      <hr className=" my-1" />
+      <Row className=" bg-white rounded-3">
+        <Col xs={10} className="py-2">
           <a href="#" className="homeLinks text-black fw-bold">
             Connections
           </a>
@@ -89,6 +90,7 @@ const HomeProfile = () => {
           </a>
         </Col>
       </Row>
+      <hr className=" my-1" />
       <Row className="my-2 bg-white rounded-3">
         <Col xs={12} className="py-1">
           <p className="text-muted homeLinks">
@@ -102,52 +104,6 @@ const HomeProfile = () => {
             style={{ width: "18px", height: "18px" }}
           />
           <span className="small fw-bold homeLinks"> Try 1 month for €0</span>
-        </Col>
-      </Row>
-      <Row className="my-2 bg-white rounded-3">
-        <Col xs={12} className="pt-3 d-flex">
-          <i className="bi bi-bookmark-fill d-inline-block"></i>
-          <div>
-            <a
-              className="fw-bold text-black ms-2 d-inline-block homeLinks"
-              href="#"
-            >
-              Saved Items{" "}
-            </a>
-          </div>
-        </Col>
-        <Col xs={12} className="py-1 d-flex">
-          <i className="bi bi-people-fill d-inline-block"></i>
-          <div>
-            <a
-              className="fw-bold text-black ms-2 d-inline-block homeLinks"
-              href="#"
-            >
-              Groups{" "}
-            </a>
-          </div>
-        </Col>
-        <Col xs={12} className="py-1 d-flex">
-          <i className="bi bi-newspaper d-inline-block"></i>
-          <div>
-            <a
-              className="fw-bold text-black ms-2 d-inline-block homeLinks"
-              href="#"
-            >
-              Newsletter{" "}
-            </a>
-          </div>
-        </Col>
-        <Col xs={12} className="pb-3 d-flex">
-          <i className="bi bi-calendar-event d-inline-block"></i>
-          <div>
-            <a
-              className="fw-bold text-black ms-2 d-inline-block homeLinks"
-              href="#"
-            >
-              Events{" "}
-            </a>
-          </div>
         </Col>
       </Row>
     </Container>
