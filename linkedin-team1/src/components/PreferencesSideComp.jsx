@@ -26,7 +26,7 @@ const PreferencesSideComp = () => {
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
               href="#"
             >
-              My Jobs {" "}
+              My Jobs{" "}
             </a>
           </div>
         </Col>
@@ -41,9 +41,9 @@ const PreferencesSideComp = () => {
             </a>
           </div>
         </Col>
-        <hr className="mt-2 mb-3"/> 
+        <hr className="mt-2 mb-3" />
         <Col xs={12} className="pb-3 d-flex align-items-center">
-        <i className="bi bi-pencil-square text-primary"></i>
+          <i className="bi bi-pencil-square text-primary"></i>
           <div>
             <a
               className="fw-bold text-primary pb-1 ms-2 d-inline-block homeLinks"
