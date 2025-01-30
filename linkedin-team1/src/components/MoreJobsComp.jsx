@@ -9,7 +9,7 @@ const MoreJobsComp = () => {
   return (
     <Container
       fluid
-      className=" bg-white mt-4 rounded-3 position-relative bordinoGames"
+      className=" bg-white mt-2 rounded-3 position-relative bordinoGames"
     >
       <Row className="align-items-md-start">
         <Col xs={12} className="mt-3 mb-1 ps-4 ps-md-2 ps-lg-3 ps-xl-4">

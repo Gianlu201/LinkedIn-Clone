@@ -4,6 +4,7 @@ import JobPicksComp from "./JobPicksComp";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import MoreJobsComp from "./MoreJobsComp";
+import ExploreJobs from "./ExploreJobs";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const JobsComponent = () => {
         <Col xs={12} md={5} lg={4}></Col>
         <Col xs={12} md={7} lg={8}>
           <JobPicksComp />
+          <ExploreJobs />
           <MoreJobsComp />
         </Col>
       </Row>
