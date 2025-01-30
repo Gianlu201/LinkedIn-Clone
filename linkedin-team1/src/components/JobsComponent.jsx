@@ -8,6 +8,10 @@ import ExploreJobs from "./ExploreJobs";
 import JobDescription from "./JobDescription";
 import { useParams } from "react-router-dom";
 import JobFetch from "./JobFetch";
+import JobsProfile from "./JobsProfile";
+import PreferencesSideComp from "./PreferencesSideComp";
+import ProfileFooter from "./ProfileFooter";
+import StaticSuggested from "./StaticSuggested";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -40,7 +44,13 @@ const JobsComponent = () => {
   return (
     <Container className="mt-4 mt-md-5 pt-2">
       <Row>
-        <Col xs={12} md={5} lg={4}></Col>
+        <Col xs={12} md={5} lg={4}>
+          <Col xs={12} md={5} lg={4}>
+            <JobsProfile />
+            <PreferencesSideComp />
+            <ProfileFooter />
+          </Col>
+        </Col>
         <Col xs={12} md={7} lg={8}>
           {params?.query ? (
             <>
@@ -52,8 +62,9 @@ const JobsComponent = () => {
               <JobPicksComp />
               <ExploreJobs />
               <MoreJobsComp />
+              <StaticSuggested />
             </>
-          )}
+          )}{" "}
         </Col>
       </Row>
     </Container>
