@@ -247,7 +247,8 @@ h6 {
 }
 
 .bordinoGames {
-  border: 0.5px solid rgb(176, 170, 170);
+  border: 0.5px solid rgba(176, 170, 170, 0.5);
+
 }
 
 .hoverRow:hover {
@@ -268,6 +269,64 @@ h6 {
 .postText {
   font-size: 14px;
 }
+
+#descriptionDiv .h3, #descriptionDiv .h1, #descriptionDiv .h1 strong  {
+  font-size: 15px;
+  font-weight: 700;
+  color:#0D6EFD;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+#descriptionDiv p strong{
+  font-size: 12px;
+  font-weight: 500;
+  color:#6C757D;
+  letter-spacing: 0.1px;
+  text-align: justify; 
+}
+
+
+
+#descriptionDiv p,
+#descriptionDiv div,
+#descriptionDiv div span  {
+  color:#6C757D;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  text-align: justify;
+}
+
+#descriptionDiv li {
+  color: #6C757D;
+  list-style-type: disc;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 0.5px;
+  letter-spacing: 0.1px;
+  text-align: justify;
+}
+#descriptionDiv li strong {
+  color: #6C757D;
+  list-style-type: disc;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  text-align: justify;
+
+}
+#descriptionDiv li p strong {
+  color: #6C757D;
+  list-style-type: disc;
+  font-size: 12px;
+  font-weight: normal;  
+  letter-spacing: 0.1px;
+  text-align: justify;
+
+}
+
+
+
 
 /* CSS FOOTER */
 
