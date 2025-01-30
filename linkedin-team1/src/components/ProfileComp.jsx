@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ModalComp from './ModalComp';
 import { useParams } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ const ProfileComp = () => {
   });
 
   const params = useParams();
+  const dispatch = useDispatch();
 
   const getParamsProfile = async () => {
     const token =
@@ -28,7 +29,12 @@ const ProfileComp = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('PROFILO:', data);
+
         setCurrentProfile(data);
+        dispatch({
+          type: 'SET_CURRENT_PROFILE',
+          payload: data,
+        });
       } else {
         throw new Error('Errore nel recupero dei dati');
       }

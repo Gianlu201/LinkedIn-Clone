@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import companyImages from '../data/company_images.json';
 
 const JobFetch = () => {
   const params = useParams();
@@ -26,6 +27,11 @@ const JobFetch = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const getRandomImage = () => {
+    return companyImages[Math.floor(Math.random() * companyImages.length)]
+      .image;
   };
 
   useEffect(() => {
@@ -67,9 +73,8 @@ const JobFetch = () => {
                       >
                         {' '}
                         <img
-                          src={
-                            'https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI'
-                          }
+                          src={getRandomImage()}
+                          // src={getCompanyImage(i)}
                           alt=''
                           style={{ width: '48px', height: '48px' }}
                           className=' pt-1'
