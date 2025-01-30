@@ -54,7 +54,7 @@ const JobsProfile = () => {
           <img
             src={profile.image}
             alt=""
-            className="profileImgHome rounded-circle border border-white border-3"
+            className="profileImgHome rounded-circle border border-white border-3 "
           />
         </Col>
         <Col className="mt-3 mt-md-3 ms-1" xs={12}>
