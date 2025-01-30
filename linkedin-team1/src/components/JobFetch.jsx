@@ -1,17 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 
 const JobFetch = () => {
   const params = useParams();
   const [jobsFetched, setJobsFetched] = useState([]);
 
   const getJobsSearched = async () => {
+    const url = `https://strive-benchmark.herokuapp.com/api/jobs?search=${params.query}`;
+    console.log(params.query);
     try {
-      const response = await fetch();
+      const response = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       if (response.ok) {
-        const data = response.json();
-        console.log(data);
+        const data = await response.json();
         setJobsFetched(data.data);
       } else {
         throw new Error('Errore nel recupero dei lavori cercati');
@@ -39,15 +45,18 @@ const JobFetch = () => {
         </Col>
       </Row>
       <div>
-        {jobsFetched.length < 1 ? (
+        {jobsFetched?.length < 1 ? (
           <div>
             <Spinner animation='border' variant='primary' />
           </div>
         ) : (
-          <div>
-            {jobsFetched.slice(0, 3).map((job) => {
+          <div
+            style={{ height: '40vh' }}
+            className=' overflow-y-auto overflow-x-hidden'
+          >
+            {jobsFetched.map((job) => {
               return (
-                <Row className=' align-items-start' key={job._id}>
+                <Row className=' align-items-start w-100' key={job._id}>
                   <Col xs={11}>
                     <Row className='py-3'>
                       <Col
@@ -66,9 +75,12 @@ const JobFetch = () => {
                         />
                       </Col>
                       <Col xs={10} className='ps-0 ps-lg-2'>
-                        <h4 className='fw-bold fs-6 w-100 mainLink text-primary'>
+                        <Link
+                          to={`/jobs/${params.query}/company/${job.company_name}/job/${job._id}`}
+                          className='fw-bold fs-6 w-100 mainLink text-primary'
+                        >
                           {job.title}
-                        </h4>
+                        </Link>
                         <p className='descriptions'>
                           {job.company_name} • {job.category}
                         </p>
@@ -97,14 +109,6 @@ const JobFetch = () => {
           </div>
         )}
       </div>
-
-      <Row className=' btnAnalytics'>
-        <Col>
-          <Button className=' bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center'>
-            Show all <i className='bi bi-arrow-right-short fs-5'></i>
-          </Button>
-        </Col>
-      </Row>
     </Container>
   );
 };
