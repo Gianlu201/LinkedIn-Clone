@@ -265,6 +265,15 @@ h6 {
   height: 100px !important;
 }
 
+@media screen and (min-width: 768px) {
+  .stickyJobs {
+    position: sticky !important;
+    top: 9vh !important;
+    right: 0 !important;
+    height: 100px !important;
+  }
+}
+
 .postText {
   font-size: 14px;
 }
@@ -617,10 +626,4 @@ ul li {
   border-radius: 30px;
   padding-left: 18px;
   padding-right: 18px;
-}
-.btnSuggested:hover {
-  background-color: #0d6efd;
-  border: 1px solid white;
-  text-decoration: none;
-  color: white;
 }

@@ -44,7 +44,7 @@ const JobsComponent = () => {
   return (
     <Container className="mt-4 mt-md-5 pt-2">
       <Row>
-        <Col xs={12} md={5} lg={4} className="stickyImg">
+        <Col xs={12} md={5} lg={4} className="stickyJobs">
           <JobsProfile />
           <PreferencesSideComp />
           <div className="d-none d-md-block">

@@ -1,12 +1,64 @@
 import { useSelector } from "react-redux";
 import { Container, Nav, Row, Col, Tab, Button } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ExploreJobs = () => {
   const jobs = useSelector((state) => {
     return state.jobs;
   });
   const [activeTab, setActiveTab] = useState("retail");
+
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const categories = [
+    {
+      name: "Hybrid",
+      img: "https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALxe-13i08oISNC0LL0E8rOjbQ.png",
+    },
+    {
+      name: "Small biz",
+      img: "https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAEcyDKtNKGaJRNKSnegRaDfD7w.png",
+    },
+    {
+      name: "HR",
+      img: "https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAACmG4H52GI2ESsex3aFZtqIX4g.png",
+    },
+    {
+      name: "Hospitality",
+      img: "https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAHXcii7CMsZHRx2iKLSkZfEc2g.png",
+    },
+    {
+      name: "Remote",
+      img: "https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAGoRROB0HsmJS3WJTxL2Gg6sZA.png",
+    },
+    {
+      name: "Construction",
+      img: "https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAM__hYl5_pcQSBeXmeCuD1mjTQ.png",
+    },
+    {
+      name: "Manufacturing",
+      img: "https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALXOZ_PEtcJLSEqdUt9ZET7yeA.png",
+    },
+    {
+      name: "Pharma",
+      img: "https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAIs9D8utBTLqQZCdCN6m4tbQUg.png",
+    },
+    {
+      name: "Healthcare",
+      img: "https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAHf1zzQvjnhUT2iWPR8DpLQGug.png",
+    },
+  ];
+
+  const searchJobs = () => {
+    navigate(`/jobs/${search}`);
+  };
+
+  const handleClick = (name) => {
+    setSearch(name);
+    searchJobs();
+  };
 
   return (
     <Container
@@ -192,108 +244,25 @@ const ExploreJobs = () => {
           </Tab.Pane>
           <Tab.Pane eventKey="more">
             <Row className=" mt-3">
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALxe-13i08oISNC0LL0E8rOjbQ.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Hybrid
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAEcyDKtNKGaJRNKSnegRaDfD7w.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Small biz
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAACmG4H52GI2ESsex3aFZtqIX4g.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  HR
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAHXcii7CMsZHRx2iKLSkZfEc2g.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Hospitality
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAGoRROB0HsmJS3WJTxL2Gg6sZA.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Remote
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAM__hYl5_pcQSBeXmeCuD1mjTQ.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Construction
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALXOZ_PEtcJLSEqdUt9ZET7yeA.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Manufacturing
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAIs9D8utBTLqQZCdCN6m4tbQUg.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Pharma
-                </button>
-              </Col>
-              <Col xs={6} lg={4}>
-                <button className=" btn border w-100 text-start mb-3 d-flex align-items-center py-3">
-                  <img
-                    src="https://media.licdn.com/media/AAYQAgQJAAgAAQAAAAAAAHf1zzQvjnhUT2iWPR8DpLQGug.png"
-                    alt=""
-                    style={{ width: "34px", height: "34px" }}
-                    className=" me-2"
-                  />
-                  Healthcare
-                </button>
-              </Col>
+              {categories.map((category, i) => (
+                <Col xs={6} lg={4} key={i}>
+                  <button
+                    className="btn border w-100 text-start mb-3 d-flex align-items-center py-3 btnAnalytics"
+                    onClick={() => handleClick(category.name)}
+                  >
+                    <img
+                      src={category.img}
+                      alt={category.name}
+                      style={{ width: "34px", height: "34px" }}
+                      className="me-2"
+                    />
+                    {category.name}
+                  </button>
+                </Col>
+              ))}
             </Row>
-            <Row className=" btnAnalytics border-top">
-              <Col>
+            <Row className="border-top">
+              <Col className=" btnAnalytics">
                 <Button className=" bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center">
                   Show all <i className="bi bi-arrow-right-short fs-5"></i>
                 </Button>
