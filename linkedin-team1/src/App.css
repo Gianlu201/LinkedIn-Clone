@@ -593,3 +593,7 @@ ul li {
 .promoted {
   font-size: 12px;
 }
+
+.jobsDesc {
+  line-height: 1.2;
+}
