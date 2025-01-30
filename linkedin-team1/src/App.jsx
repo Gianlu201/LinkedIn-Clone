@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<HomeComponent />} />
           <Route path="/profile/:profileId" element={<MainComponent />} />
           <Route path="/jobs" element={<JobsComponent />} />
+          <Route path="/jobs/:query" element={<JobsComponent />} />
         </Routes>
       </div>
     </BrowserRouter>
