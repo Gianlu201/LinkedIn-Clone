@@ -11,6 +11,7 @@ import JobFetch from "./JobFetch";
 import StaticSuggested from "./StaticSuggested";
 import JobsProfile from "./JobsProfile";
 import PreferencesSideComp from "./PreferencesSideComp";
+import ProfileFooter from "./ProfileFooter";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const JobsComponent = () => {
         <Col xs={12} md={5} lg={4}>
           <JobsProfile />
           <PreferencesSideComp />
+          <ProfileFooter />
         </Col>
         <Col xs={12} md={7} lg={8}>
           {params?.query ? (
