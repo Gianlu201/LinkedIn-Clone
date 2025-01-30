@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HomeProfile = () => {
   const profile = useSelector((state) => {
@@ -52,18 +53,23 @@ const HomeProfile = () => {
             className="img-fluid rounded-top-3 sfondoGattoHome"
             style={{ width: "900px" }}
           />
-          <img
-            src={profile.image}
-            alt=""
-            className="profileImgHome rounded-circle border border-white border-3"
-          />
+          <Link to={`/profile/${profile._id}`}>
+            <img
+              src={profile.image}
+              alt=""
+              className="profileImgHome rounded-circle border border-white border-3"
+            />
+          </Link>
         </Col>
         <Col className="mt-3 mt-md-3 ms-1" xs={12}>
           <Row className=" mt-3 w-100 justify-content-between align-items-start">
             <Col xs={6} md={12}>
-              <h1 className="fs-5 fw-bold my-0">
+              <Link
+                to={`/profile/${profile._id}`}
+                className="fs-5 fw-bold my-0"
+              >
                 {profile.name} {profile.surname}
-              </h1>
+              </Link>
               <p className="ProfTitleHome">{profile.title}</p>
               <p className="mt-0 text-muted">{profile.area}</p>
             </Col>
