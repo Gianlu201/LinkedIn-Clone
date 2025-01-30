@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import JobFetch from "./JobFetch";
 import StaticSuggested from "./StaticSuggested";
 import JobsProfile from "./JobsProfile";
+import PreferencesSideComp from "./PreferencesSideComp";
 
 const JobsComponent = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const JobsComponent = () => {
       <Row>
         <Col xs={12} md={5} lg={4}>
           <JobsProfile />
+          <PreferencesSideComp />
         </Col>
         <Col xs={12} md={7} lg={8}>
           {params?.query ? (
