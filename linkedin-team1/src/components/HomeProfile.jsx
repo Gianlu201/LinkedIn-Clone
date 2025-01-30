@@ -47,7 +47,7 @@ const HomeProfile = () => {
       <Row className=" bg-white rounded-3">
         <Col className="p-0 mb-3 profileTopHome">
           <img
-            src="https://placecats.com/900/200"
+            src="https://static.vecteezy.com/system/resources/thumbnails/023/856/872/small/ai-generated-organic-design-background-and-banner-in-different-colour-gradient-photo.jpeg"
             alt=""
             className="img-fluid rounded-top-3 sfondoGattoHome"
             style={{ width: "900px" }}

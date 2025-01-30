@@ -188,6 +188,19 @@ const ModalComp = () => {
                       }}
                     />
 
+                    <h5 className="mt-3">Profile image</h5>
+                    <Form.Label className="mt-1 text-secondary">
+                      Paste an url
+                    </Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder=""
+                      value={user.image}
+                      onChange={(e) => {
+                        setUser({ ...user, image: e.target.value });
+                      }}
+                    />
+
                     <h5 className="mt-3">Contact info</h5>
                     <Form.Label className="mt-1 text-secondary">
                       Email address
