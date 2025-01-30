@@ -69,7 +69,7 @@ const JobsProfile = () => {
             <Col xs={6} md={12} className="my-md-2">
               <Button
                 size="sm"
-                className="btnSideProf mx-2 w-100 justify-content-center align-items-center fw-semibold"
+                className="btnSideProf mx-2 w-100 justify-content-center align-items-center fw-semibold mb-2"
               >
                 <i className="bi bi-plus-lg fs-6"></i> Experience{" "}
               </Button>
