@@ -1,54 +1,71 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 const SkillsComp = () => {
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
+
+  const currentProfile = useSelector((state) => {
+    return state.currentProfile;
+  });
+
   return (
     <Container
       fluid
-      className=" bg-white mt-2 rounded-3 position-relative bordinoGames"
+      className=' bg-white mt-2 rounded-3 position-relative bordinoGames'
     >
-      <Row className="ms-2 align-items-md-start">
-        <Col xs={12} md={6} className="mt-3 mb-2">
+      <Row className='ms-2 align-items-md-start'>
+        <Col xs={12} md={6} className='mt-3 mb-2'>
           <h3>Skills</h3>
         </Col>
-        <button type="button" className=" border-0 plus btn btn-sm">
-          <i className="bi bi-plus-lg fs-4"></i>
-        </button>{" "}
-        <i className="bi bi-pencil fs-5 matitina"></i>
+        {profile._id === currentProfile._id && (
+          <button type='button' className=' border-0 plus btn btn-sm'>
+            <i className='bi bi-plus-lg fs-4'></i>
+          </button>
+        )}
+
+        {profile._id === currentProfile._id && (
+          <button className='btn bg-white border-0 matitina'>
+            <i className='bi bi-pencil fs-5'></i>
+          </button>
+        )}
+
         <Col xs={12}>
-          <p className=" fw-bold">Lavoro di squadra</p>
+          <p className=' fw-bold'>Lavoro di squadra</p>
           <p>
-            {" "}
+            {' '}
             <img
-              src="https://media.licdn.com/dms/image/v2/C4E0BAQGE6CUEiMMXeA/company-logo_100_100/company-logo_100_100/0/1630643040684/i_grandi_viaggi_spa_logo?e=1746057600&v=beta&t=uPbFIvfoGKFF6YTRYsqS1TN9eyphdZkB28oeArJAbmM"
-              alt=""
-              style={{ width: "24px" }}
-            />{" "}
+              src='https://media.licdn.com/dms/image/v2/C4E0BAQGE6CUEiMMXeA/company-logo_100_100/company-logo_100_100/0/1630643040684/i_grandi_viaggi_spa_logo?e=1746057600&v=beta&t=uPbFIvfoGKFF6YTRYsqS1TN9eyphdZkB28oeArJAbmM'
+              alt=''
+              style={{ width: '24px' }}
+            />{' '}
             Animatrice at I GRANDI VIAGGI S.p.A
           </p>
         </Col>
       </Row>
-      <hr className="my-3" />
-      <Row className="ms-2 align-items-md-start">
+      <hr className='my-3' />
+      <Row className='ms-2 align-items-md-start'>
         <Col xs={12}>
-          <p className=" fw-bold">Lavoro di squadra</p>
+          <p className=' fw-bold'>Lavoro di squadra</p>
           <p>
-            {" "}
+            {' '}
             <img
-              src="https://media.licdn.com/dms/image/v2/C4E0BAQGE6CUEiMMXeA/company-logo_100_100/company-logo_100_100/0/1630643040684/i_grandi_viaggi_spa_logo?e=1746057600&v=beta&t=uPbFIvfoGKFF6YTRYsqS1TN9eyphdZkB28oeArJAbmM"
-              alt=""
-              style={{ width: "24px" }}
-            />{" "}
+              src='https://media.licdn.com/dms/image/v2/C4E0BAQGE6CUEiMMXeA/company-logo_100_100/company-logo_100_100/0/1630643040684/i_grandi_viaggi_spa_logo?e=1746057600&v=beta&t=uPbFIvfoGKFF6YTRYsqS1TN9eyphdZkB28oeArJAbmM'
+              alt=''
+              style={{ width: '24px' }}
+            />{' '}
             Animatrice at I GRANDI VIAGGI S.p.A
           </p>
         </Col>
       </Row>
-      <hr className="mt-3 mb-0" />
+      <hr className='mt-3 mb-0' />
 
       <Row>
         <Col>
-          <Button className=" bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center btnAnalytics">
-            Show all skills <i className="bi bi-arrow-right-short fs-5"></i>
+          <Button className=' bg-transparent w-100 border-0 text-black mt-0 pb-2 fw-bold d-flex align-items-center justify-content-center btnAnalytics'>
+            Show all skills <i className='bi bi-arrow-right-short fs-5'></i>
           </Button>
         </Col>
       </Row>

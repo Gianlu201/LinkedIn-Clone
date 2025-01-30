@@ -13,7 +13,6 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
-import JobsComponent from "./JobsComponent";
 
 const NavbarComponent = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -89,7 +88,7 @@ const NavbarComponent = () => {
 
   useEffect(() => {
     if (profile?._id && firstLoad) {
-      navigate(`/profile/${profile._id}`);
+      // navigate(`/profile/${profile._id}`);
       setFirstLoad(false);
     }
   }, [profile]);
@@ -510,7 +509,7 @@ const NavbarComponent = () => {
           </Col>
         </Row>
       </Container>
-      <JobsComponent/>
+      <JobsComponent />
     </div>
   );
 };
