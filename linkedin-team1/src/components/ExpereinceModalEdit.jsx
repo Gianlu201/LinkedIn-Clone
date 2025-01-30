@@ -68,7 +68,7 @@ export default function ExperienceModalEdit() {
                         </div>
                         <div className=' flex-grow-1 d-flex justify-content-between ps-0 pe-2'>
                           <div>
-                            <h4 className='fw-bold fs-6'>{exp.role}</h4>
+                            <h4 className='fw-bold fs-6 w-100'>{exp.role}</h4>
                             <p className='descriptions'>{exp.company}</p>
                             <p className='descriptions text-secondary'>
                               {exp.startDate.slice(0, 10)} -{' '}
