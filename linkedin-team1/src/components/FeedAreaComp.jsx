@@ -83,7 +83,7 @@ const FeedAreaComp = () => {
         <Spinner
           animation="border"
           className=" align-self-center"
-          variant="info"
+          variant="primary"
         />
       ) : (
         <>

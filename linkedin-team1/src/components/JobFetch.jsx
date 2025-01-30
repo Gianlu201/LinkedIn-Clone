@@ -57,7 +57,7 @@ const JobFetch = () => {
       </Row>
       {isLoading ? (
         <div className="d-flex justify-content-center">
-          <Spinner animation="border" variant="info" />
+          <Spinner animation="border" variant="primary" />
         </div>
       ) : jobsFetched.length < 1 ? (
         <Alert className="mt-2 fw-bold" variant="danger">
