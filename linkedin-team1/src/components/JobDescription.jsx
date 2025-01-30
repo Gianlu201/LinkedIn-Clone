@@ -7,6 +7,12 @@ const JobDescription = () => {
   const params = useParams();
 
   const [selectedJob, setSelectedJob] = useState({});
+  const [obj, setObj] = useState({
+    itemID: 6,
+    GlossaryWord: "ante",
+    GlossaryDescription: "<p>.</p>",
+    CategoryID: 6,
+  });
 
   const getJob = async () => {
     const URL = `https://strive-benchmark.herokuapp.com/api/jobs?company=${params.company}`;
@@ -41,6 +47,10 @@ const JobDescription = () => {
   useEffect(() => {
     setSelectedJob({});
   }, [params.query]);
+
+  useEffect(() => {
+    setObj({ ...obj, GlossaryDescription: selectedJob.description });
+  }, [selectedJob._id]);
 
   return (
     <Container
@@ -213,6 +223,12 @@ const JobDescription = () => {
             {selectedJob.category}
           </p>
         </Col>
+        <div>
+          <div
+            id="descriptionDiv"
+            dangerouslySetInnerHTML={{ __html: obj.GlossaryDescription }}
+          />
+        </div>
       </Row>
     </Container>
   );
