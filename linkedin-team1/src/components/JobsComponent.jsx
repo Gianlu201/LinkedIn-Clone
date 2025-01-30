@@ -42,13 +42,16 @@ const JobsComponent = () => {
       <Row>
         <Col xs={12} md={5} lg={4}></Col>
         <Col xs={12} md={7} lg={8}>
-          <JobPicksComp />
-          <ExploreJobs />
-          <MoreJobsComp />
-          {params?.query && (
+          {params?.query ? (
             <>
               <JobFetch />
               <JobDescription />
+            </>
+          ) : (
+            <>
+              <JobPicksComp />
+              <ExploreJobs />
+              <MoreJobsComp />
             </>
           )}
         </Col>
