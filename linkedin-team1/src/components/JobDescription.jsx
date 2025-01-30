@@ -38,6 +38,10 @@ const JobDescription = () => {
     getJob();
   }, [params.jobId]);
 
+  useEffect(() => {
+    setSelectedJob({});
+  }, [params.query]);
+
   return (
     <Container
       className={' bg-white '.concat(selectedJob?._id ? 'd-block' : 'd-none')}
