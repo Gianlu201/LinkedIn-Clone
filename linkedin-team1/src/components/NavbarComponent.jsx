@@ -170,15 +170,15 @@ const NavbarComponent = () => {
                 Web
               </p>
             </Nav.Link>
-            <Nav.Link
-              href="#action3"
-              className="d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
+            <Link
+              to={"/jobs"}
+              className="d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0 nav-link"
             >
               <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
               <p className="IconText pb-0  text-secondary d-none d-lg-block ">
                 Jobs
               </p>
-            </Nav.Link>{" "}
+            </Link>{" "}
             <Nav.Link
               href="#action4"
               className="d-flex flex-column align-items-center py-0 "

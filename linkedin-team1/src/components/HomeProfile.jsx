@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/no-unescaped-entities */
 import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -91,51 +90,64 @@ const HomeProfile = () => {
         </Col>
       </Row>
       <Row className="my-2 bg-white rounded-3">
-        <Col xs={12} className="pt-3">
+        <Col xs={12} className="py-1">
           <p className="text-muted homeLinks">
             {" "}
-            Access exclusive tools & insights{" "}
+            Grow your career with Premium{" "}
           </p>
         </Col>
-        <Col xs={12} className="pb-3">
+        <Col xs={12} className="pt-1 pb-2 d-flex align-items-center">
           <img
             src="/imgGiallina.svg"
             style={{ width: "18px", height: "18px" }}
           />
-          <span className="small fw-bold homeLinks">
-            {" "}
-            Network smarter with Premium
-          </span>
+          <span className="small fw-bold homeLinks"> Try 1 month for €0</span>
         </Col>
       </Row>
       <Row className="my-2 bg-white rounded-3">
-      <Col xs={12} className="pt-3 d-flex">
-      <i className="bi bi-bookmark-fill d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Saved Items </a>
-                </div> 
+        <Col xs={12} className="pt-3 d-flex">
+          <i className="bi bi-bookmark-fill d-inline-block"></i>
+          <div>
+            <a
+              className="fw-bold text-black ms-2 d-inline-block homeLinks"
+              href="#"
+            >
+              Saved Items{" "}
+            </a>
+          </div>
         </Col>
         <Col xs={12} className="py-1 d-flex">
-        <i className="bi bi-people-fill d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Groups </a>
-                </div> 
+          <i className="bi bi-people-fill d-inline-block"></i>
+          <div>
+            <a
+              className="fw-bold text-black ms-2 d-inline-block homeLinks"
+              href="#"
+            >
+              Groups{" "}
+            </a>
+          </div>
         </Col>
         <Col xs={12} className="py-1 d-flex">
-        <i className="bi bi-newspaper d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Newsletter </a>
-                </div> 
+          <i className="bi bi-newspaper d-inline-block"></i>
+          <div>
+            <a
+              className="fw-bold text-black ms-2 d-inline-block homeLinks"
+              href="#"
+            >
+              Newsletter{" "}
+            </a>
+          </div>
         </Col>
         <Col xs={12} className="pb-3 d-flex">
-        <i className="bi bi-calendar-event d-inline-block"></i>
-                <div>
-                  <a className="fw-bold text-black ms-2 d-inline-block homeLinks" href="#">
-                    Events </a>
-                </div> 
+          <i className="bi bi-calendar-event d-inline-block"></i>
+          <div>
+            <a
+              className="fw-bold text-black ms-2 d-inline-block homeLinks"
+              href="#"
+            >
+              Events{" "}
+            </a>
+          </div>
         </Col>
       </Row>
     </Container>
