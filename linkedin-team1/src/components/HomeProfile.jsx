@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeProfile = () => {
@@ -68,8 +68,8 @@ const HomeProfile = () => {
               <p className="mt-0 text-muted">{profile.area}</p>
             </Col>
             <Col xs={6} md={12} className="my-md-2">
-              <p className="my-0 ProfTitleHome">IIS Giosuè Carducci</p>
-            </Col>
+              <Button className="btnSideProf mx-2 w-100 justify-content-center align-items-center fw-semibold"><i className="bi bi-plus-lg fs-6"></i> Experience </Button>
+              </Col>
           </Row>
         </Col>
       </Row>
@@ -91,21 +91,7 @@ const HomeProfile = () => {
         </Col>
       </Row>
       <hr className=" my-1" />
-      <Row className="my-2 bg-white rounded-3">
-        <Col xs={12} className="py-1">
-          <p className="text-muted homeLinks">
-            {" "}
-            Grow your career with Premium{" "}
-          </p>
-        </Col>
-        <Col xs={12} className="pt-1 pb-2 d-flex align-items-center">
-          <img
-            src="/imgGiallina.svg"
-            style={{ width: "18px", height: "18px" }}
-          />
-          <span className="small fw-bold homeLinks"> Try 1 month for €0</span>
-        </Col>
-      </Row>
+    
     </Container>
   );
 };

@@ -587,3 +587,29 @@ ul li {
 .footerOneDropItem {
   font-size: 1em;
 }
+
+/*CSS aside Jobs*/ 
+.btnSideProf {
+  border: 1px dashed rgb(105, 105, 105); 
+  text-decoration: none; 
+  color: rgb(49, 48, 48); 
+  background-color: #F4F2EE;  
+}
+.btnSideProf:hover {
+  background-color: #c3ced3; 
+  border: 1px solid rgb(105, 105, 105); 
+  text-decoration: none; 
+  color: rgb(49, 48, 48); 
+}
+.btnSuggested {
+  border: 1px solid #0D6EFD;
+  border-radius: 30px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.btnSuggested:hover {
+  background-color: #0D6EFD; 
+  border: 1px solid white;
+  text-decoration: none; 
+  color: white; 
+}
