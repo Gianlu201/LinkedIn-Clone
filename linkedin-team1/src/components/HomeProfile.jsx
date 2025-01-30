@@ -93,21 +93,18 @@ const HomeProfile = () => {
       </Row>
       <hr className=" my-1" />
       <Row className="my-2 bg-white rounded-3">
-        <Col xs={12} className="pt-2">
+        <Col xs={12} className="py-1">
           <p className="text-muted homeLinks">
             {" "}
-            Access exclusive tools & insights{" "}
+            Grow your career with Premium{" "}
           </p>
         </Col>
-        <Col xs={12} className="pb-3">
+        <Col xs={12} className="pt-1 pb-2 d-flex align-items-center">
           <img
             src="/imgGiallina.svg"
             style={{ width: "18px", height: "18px" }}
           />
-          <span className="small fw-bold homeLinks">
-            {" "}
-            Network smarter with Premium
-          </span>
+          <span className="small fw-bold homeLinks"> Try 1 month for €0</span>
         </Col>
       </Row>
     </Container>
