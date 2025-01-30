@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const JobDescription = () => {
   const params = useParams();
@@ -38,7 +39,9 @@ const JobDescription = () => {
   }, [params.jobId]);
 
   return (
-    <Container className=' bg-white'>
+    <Container
+      className={' bg-white '.concat(selectedJob?._id ? 'd-block' : 'd-none')}
+    >
       <div className='d-flex justify-content-between'>
         <div className='d-flex'>
           <img

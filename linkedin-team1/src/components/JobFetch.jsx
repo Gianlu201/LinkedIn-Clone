@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const JobFetch = () => {
   const params = useParams();
+
   const [jobsFetched, setJobsFetched] = useState([]);
 
   const getJobsSearched = async () => {
