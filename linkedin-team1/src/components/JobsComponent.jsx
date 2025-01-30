@@ -45,11 +45,9 @@ const JobsComponent = () => {
     <Container className="mt-4 mt-md-5 pt-2">
       <Row>
         <Col xs={12} md={5} lg={4}>
-          <Col xs={12} md={5} lg={4}>
-            <JobsProfile />
-            <PreferencesSideComp />
-            <ProfileFooter />
-          </Col>
+          <JobsProfile />
+          <PreferencesSideComp />
+          <ProfileFooter />
         </Col>
         <Col xs={12} md={7} lg={8}>
           {params?.query ? (
@@ -61,8 +59,8 @@ const JobsComponent = () => {
             <>
               <JobPicksComp />
               <ExploreJobs />
-              <MoreJobsComp />
               <StaticSuggested />
+              <MoreJobsComp />
             </>
           )}{" "}
         </Col>
