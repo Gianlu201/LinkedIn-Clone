@@ -7,6 +7,8 @@ const CommnetsSection = (props) => {
   const [showMe, setShowMe] = useState(false);
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
+  const [currentMod, setCurrentMod] = useState(false);
+  const [currentComment, setCurrentComment] = useState("");
 
   const profile = useSelector((state) => {
     return state.profile;
@@ -68,6 +70,33 @@ const CommnetsSection = (props) => {
     }
   };
 
+  const handlePut = async (id, commentText) => {
+    const myComment = {
+      comment: commentText,
+    };
+    console.log(id);
+
+    try {
+      const response = await fetch(URLCommenti + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(myComment),
+      });
+      if (response.ok) {
+        setCommentText("");
+        props.setUpdate((state) => !state);
+        setCurrentMod(false);
+      } else {
+        throw new Error("Errore recupero commenti");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const checkVisibility = () => {
     console.log(props.postId);
     props.show.forEach((element) => {
@@ -106,7 +135,7 @@ const CommnetsSection = (props) => {
                     <Form.Control
                       type="text"
                       placeholder="Add a comment.."
-                      className=" w-100 ms-4 ms-lg-2 ms-xl-4 rounded-5"
+                      className=" w-100 ms-4 ms-lg-2 ms-xl-4 rounded-5 borderFocus"
                       value={commentText}
                       onChange={(e) => setCommentText(e.target.value)}
                     />
@@ -126,11 +155,15 @@ const CommnetsSection = (props) => {
                       type="submit"
                       className=" rounded-5"
                       onClick={(e) => {
-                        e.preventDefault();
-                        commentPost();
+                        if (currentMod) {
+                          handlePut(currentComment._id, commentText);
+                        } else {
+                          e.preventDefault();
+                          commentPost();
+                        }
                       }}
                     >
-                      Comment
+                      {currentMod ? "Modify" : "Comment"}
                     </Button>
                   )}
                 </Col>
@@ -147,14 +180,25 @@ const CommnetsSection = (props) => {
                         <div>
                           <h6 className=" ps-3">{comment.author}</h6>
                         </div>
-                        <p className=" ps-3">{comment.comment}</p>
+                        {currentMod && comment.author === profile.username ? (
+                          <p className="text-muted ps-3">{comment.comment}</p>
+                        ) : (
+                          <p className=" ps-3">{comment.comment}</p>
+                        )}
                       </div>
                       <div>
                         {comment.author === profile.username && (
                           <div className="d-flex me-3">
                             <Button
                               onClick={() => {
-                                handleDelete(comment._id);
+                                if (currentMod) {
+                                  setCurrentMod(false);
+                                  setCommentText("");
+                                } else {
+                                  setCurrentMod(true);
+                                  setCurrentComment(comment);
+                                  setCommentText(comment.comment);
+                                }
                               }}
                               className="btn btn-sm bg-white rounded-5 text-black border-0"
                             >
