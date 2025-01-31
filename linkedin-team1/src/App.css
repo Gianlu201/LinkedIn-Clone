@@ -248,7 +248,6 @@ h6 {
 
 .bordinoGames {
   border: 0.5px solid rgba(176, 170, 170, 0.5);
-
 }
 
 .hoverRow:hover {
@@ -279,35 +278,35 @@ h6 {
   font-size: 14px;
 }
 
-#descriptionDiv .h3, #descriptionDiv .h1, #descriptionDiv .h1 strong  {
+#descriptionDiv .h3,
+#descriptionDiv .h1,
+#descriptionDiv .h1 strong {
   font-size: 15px;
   font-weight: 700;
-  color:#0D6EFD;
+  color: #0d6efd;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 
-#descriptionDiv p strong{
+#descriptionDiv p strong {
   font-size: 12px;
   font-weight: 500;
-  color:#6C757D;
+  color: #6c757d;
   letter-spacing: 0.1px;
-  text-align: justify; 
+  text-align: justify;
 }
-
-
 
 #descriptionDiv p,
 #descriptionDiv div,
-#descriptionDiv div span  {
-  color:#6C757D;
+#descriptionDiv div span {
+  color: #6c757d;
   font-size: 12px;
   letter-spacing: 0.1px;
   text-align: justify;
 }
 
 #descriptionDiv li {
-  color: #6C757D;
+  color: #6c757d;
   list-style-type: disc;
   font-size: 12px;
   font-weight: normal;
@@ -316,26 +315,21 @@ h6 {
   text-align: justify;
 }
 #descriptionDiv li strong {
-  color: #6C757D;
+  color: #6c757d;
   list-style-type: disc;
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 0.1px;
   text-align: justify;
-
 }
 #descriptionDiv li p strong {
-  color: #6C757D;
+  color: #6c757d;
   list-style-type: disc;
   font-size: 12px;
-  font-weight: normal;  
+  font-weight: normal;
   letter-spacing: 0.1px;
   text-align: justify;
-
 }
-
-
-
 
 /* CSS FOOTER */
 
@@ -582,11 +576,13 @@ ul li {
   font-size: 7px;
 }
 
-
-.NotificaBell{
+.active-nav-path {
+  border-bottom: 3px solid #666666;
+}
+.NotificaBell {
   width: 15px;
   margin-left: 15px;
- position: absolute;
+  position: absolute;
 }
 
 /*HomeProfile CSS*/

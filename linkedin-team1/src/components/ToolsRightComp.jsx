@@ -13,7 +13,7 @@ const ToolsRightComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Saved Items{" "}
             </a>
@@ -24,7 +24,7 @@ const ToolsRightComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Groups{" "}
             </a>
@@ -35,7 +35,7 @@ const ToolsRightComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Newsletter{" "}
             </a>
@@ -46,7 +46,7 @@ const ToolsRightComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Events{" "}
             </a>

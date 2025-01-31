@@ -29,7 +29,7 @@ const AnalyticsComp = () => {
             <Col xs={12} lg={4} className='d-flex mb-4 mb-lg-1'>
               <i className='bi bi-people-fill fs-5'></i>
               <div className=' ms-1'>
-                <a href='#' className='mainLink fw-bold'>
+                <a href="javascript:void(0)" className='mainLink fw-bold'>
                   5 profile views
                 </a>
                 <p>Discover who's viewed your profile</p>
@@ -39,7 +39,7 @@ const AnalyticsComp = () => {
             <Col xs={12} lg={4} className=' d-flex mb-4 mb-lg-1'>
               <i className='bi bi-bar-chart-line-fill fs-5'></i>
               <div className='ms-1'>
-                <a href='#' className='mainLink fw-bold'>
+                <a href="javascript:void(0)" className='mainLink fw-bold'>
                   0 post impressions
                 </a>
                 <p>Start a post to increase engagement</p>
@@ -50,7 +50,7 @@ const AnalyticsComp = () => {
             <Col xs={12} lg={4} className=' d-flex'>
               <i className='bi bi-search fs-5'></i>
               <div className=' ms-1'>
-                <a href='#' className='mainLink fw-bold'>
+                <a href="javascript:void(0)" className='mainLink fw-bold'>
                   1 search appearance
                 </a>
                 <p>See how often you appear in search results</p>

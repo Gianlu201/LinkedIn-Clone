@@ -7,17 +7,17 @@ const ProfileFooter = () => {
         <Col xs={12} className="ps-0 pe-2">
           <ul className="d-flex flex-wrap text-center ms-0 align-items-center justify-content-evenly px-3">
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 Accessibility
               </a>
             </li>
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 Help Center
               </a>
             </li>
@@ -35,37 +35,37 @@ const ProfileFooter = () => {
                   style={{ width: "200px" }}
                 >
                   <Dropdown.Item
-                    href="#/action-1"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0"
                   >
                     Privacy Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-2"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0 bg-white"
                   >
                     User Agreement
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-3"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0"
                   >
                     Pages Terms
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-4"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0"
                   >
                     Cookie Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-5"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0"
                   >
                     Copyright Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-6"
+                    href="javascript:void(0)"
                     className="fw-bold footerDropItem py-1 px-2 border-0"
                   >
                     Your California privacy choices
@@ -75,12 +75,12 @@ const ProfileFooter = () => {
             </li>
 
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 Ad Choices
               </a>
             </li>
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 Advertising
               </a>
             </li>
@@ -159,12 +159,12 @@ const ProfileFooter = () => {
             </li>
 
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 Get the LinkedIn App
               </a>
             </li>
             <li>
-              <a href="#" className="profileFooter px-2 text-secondary">
+              <a href="javascript:void(0)" className="profileFooter px-2 text-secondary">
                 More
               </a>
             </li>
