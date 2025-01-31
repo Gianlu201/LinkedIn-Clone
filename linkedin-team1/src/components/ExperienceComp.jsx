@@ -144,20 +144,22 @@ const ExperienceComp = () => {
                         </Col>
                       </Row>
                     </Col>
-                    <Col xs={2}>
-                      <Link
-                        to={`/profile/${profile._id}/experience/${exp._id}`}
-                      >
-                        <button
-                          type="button"
-                          className=" border-0 btn btn-sm"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"
+                    {profile._id === currentProfile._id && (
+                      <Col xs={2}>
+                        <Link
+                          to={`/profile/${profile._id}/experience/${exp._id}`}
                         >
-                          <i className="bi bi-pencil fs-5"></i>
-                        </button>
-                      </Link>
-                    </Col>
+                          <button
+                            type="button"
+                            className=" border-0 btn btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                          >
+                            <i className="bi bi-pencil fs-5"></i>
+                          </button>
+                        </Link>
+                      </Col>
+                    )}
                   </Row>
                   {i < experience.length - 1 && <hr />}
                 </div>
