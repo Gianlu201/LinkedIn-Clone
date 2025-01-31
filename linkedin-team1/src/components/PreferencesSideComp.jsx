@@ -13,7 +13,7 @@ const PreferencesSideComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Preferences{" "}
             </a>
@@ -24,7 +24,7 @@ const PreferencesSideComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               My Jobs{" "}
             </a>
@@ -35,7 +35,7 @@ const PreferencesSideComp = () => {
           <div>
             <a
               className="fw-semibold text-black ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Interview Prep{" "}
             </a>
@@ -47,7 +47,7 @@ const PreferencesSideComp = () => {
           <div>
             <a
               className="fw-bold text-primary pb-1 ms-2 d-inline-block homeLinks"
-              href="#"
+              href="javascript:void(0)"
             >
               Post a free job{" "}
             </a>

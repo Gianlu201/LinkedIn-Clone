@@ -119,7 +119,7 @@ const JobDescription = () => {
               <li className=" pe-2">
                 <a
                   className="hoverRow dropdown-item small d-flex align-items-center"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className="me-1 fs-5 bi bi-pencil-fill text-danger"></i>
                   Report to Feed
@@ -128,7 +128,7 @@ const JobDescription = () => {
               <li className=" pe-2">
                 <a
                   className="hoverRow dropdown-item small d-flex align-items-center"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className="me-1 fs-5 bi bi-send-fill text-success"></i>
                   Send in a message
@@ -144,7 +144,7 @@ const JobDescription = () => {
               <li className=" pe-2">
                 <a
                   className="hoverRow dropdown-item small d-flex align-items-center"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className="me-1 fs-5 bi bi-send-fill text-success"></i>
                   Copy link
@@ -153,7 +153,7 @@ const JobDescription = () => {
               <li className=" pe-2">
                 <a
                   className="hoverRow dropdown-item small d-flex align-items-center"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className="me-1 fs-5 bi bi-twitter-x"></i> X, formerly
                   Twitter
@@ -162,7 +162,7 @@ const JobDescription = () => {
               <li className=" pe-2">
                 <a
                   className="hoverRow dropdown-item small d-flex align-items-center"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className="me-1 fs-5 bi bi-facebook text-primary"></i>
                   Facebook
@@ -183,7 +183,7 @@ const JobDescription = () => {
               <li className="">
                 <a
                   className="dropdown-item small d-flex align-items-center py-1 hoverRow"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className=" me-2 fs-5 bi bi-pencil-square text-primary"></i>
                   Send feedback
@@ -192,7 +192,7 @@ const JobDescription = () => {
               <li className="">
                 <a
                   className=" py-1 dropdown-item small d-flex align-items-center hoverRow"
-                  href="#"
+                  href="javascript:void(0)"
                 >
                   <i className=" me-2 fs-5 bi bi-flag-fill text-danger"></i>
                   Report this job

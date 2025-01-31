@@ -582,6 +582,15 @@ ul li {
   font-size: 7px;
 }
 
+.active-nav-path {
+  border-bottom: 3px solid #666666;
+}
+.NotificaBell{
+  width: 15px;
+  margin-left: 15px;
+ position: absolute;
+}
+
 /*HomeProfile CSS*/
 .sfondoGattoHome {
   height: 80px;

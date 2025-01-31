@@ -87,16 +87,16 @@ const HomeProfile = () => {
       <hr className=" my-1" />
       <Row className=" bg-white rounded-3">
         <Col xs={10} className="py-2">
-          <a href="#" className="homeLinks text-black fw-bold">
+          <a href="javascript:void(0)" className="homeLinks text-black fw-bold">
             Connections
           </a>
           <br />
-          <a href="#" className="homeLinks text-muted fw-bold">
+          <a href="javascript:void(0)" className="homeLinks text-muted fw-bold">
             Grow your network
           </a>
         </Col>
         <Col xs={2} className="py-2">
-          <a href="#" className="homeLinksNum">
+          <a href="javascript:void(0)" className="homeLinksNum">
             2
           </a>
         </Col>
