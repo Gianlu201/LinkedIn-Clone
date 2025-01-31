@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -74,7 +74,12 @@ const HomeProfile = () => {
               <p className="mt-0 text-muted">{profile.area}</p>
             </Col>
             <Col xs={6} md={12} className="my-md-2">
-              <p className="my-0 ProfTitleHome">IIS Giosuè Carducci</p>
+            <Button
+                size="sm"
+                className="btnSideProf mx-2 w-100 justify-content-center align-items-center fw-semibold mb-2"
+              >
+                <i className="bi bi-plus-lg fs-6"></i> Experience{" "}
+              </Button>
             </Col>
           </Row>
         </Col>
