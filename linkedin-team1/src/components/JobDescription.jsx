@@ -217,7 +217,7 @@ const JobDescription = () => {
             you compare to other 100 other applicants.{" "}
           </p>
         </Col>
-        <Col xs={12} className=" py-1">
+        <Col xs={12} className=" py-1 mb-5">
           <p className=" small d-flex align-items-center">
             <i className=" fs-5 pe-1 text-secondary bi bi-tags"></i>
             {selectedJob.category}
