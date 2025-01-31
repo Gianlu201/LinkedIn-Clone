@@ -50,7 +50,7 @@ const ExperienceComp = () => {
         throw new Error("Errore nel recupero dei dati");
       }
     } catch (error) {
-      console.log("errore", error);
+      console.log(error);
     }
   };
 
