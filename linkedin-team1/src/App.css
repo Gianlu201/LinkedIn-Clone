@@ -268,7 +268,7 @@ h6 {
 @media screen and (min-width: 768px) {
   .stickyJobs {
     position: sticky !important;
-    top: 9vh !important;
+    top: 6vh !important;
     right: 0 !important;
     height: 100px !important;
   }
