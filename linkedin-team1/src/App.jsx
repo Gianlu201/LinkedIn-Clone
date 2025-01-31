@@ -19,6 +19,10 @@ function App() {
           <Route path="/post/:postId" element={<HomeComponent />} />
           <Route path="/" element={<HomeComponent />} />
           <Route path="/profile/:profileId" element={<MainComponent />} />
+          <Route
+            path="/profile/:profileId/experience/:expId"
+            element={<MainComponent />}
+          />
           <Route path="/jobs" element={<JobsComponent />} />
           <Route path="/jobs/:query" element={<JobsComponent />} />
           <Route

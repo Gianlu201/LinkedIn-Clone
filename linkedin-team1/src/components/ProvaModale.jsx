@@ -1,8 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Form } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProvaModale = () => {
+  const param = useParams();
+  const navigate = useNavigate();
+
   const initialExperience = {
     role: "",
     company: "",
@@ -16,6 +21,10 @@ const ProvaModale = () => {
 
   const profile = useSelector((state) => {
     return state.profile;
+  });
+
+  const experience1 = useSelector((state) => {
+    return state.experience;
   });
 
   const [experience, setExperience] = useState(initialExperience);
@@ -71,7 +80,11 @@ const ProvaModale = () => {
       image: urlImg ? urlImg : experience.image,
     };
 
-    postNewExpereince(myNewExp);
+    if (param.expId) {
+      return putNewExperience();
+    } else {
+      return postNewExpereince(myNewExp);
+    }
   };
 
   const token =
@@ -93,6 +106,40 @@ const ProvaModale = () => {
         await getExperience();
         setExperience(initialExperience);
         document.getElementById("closeExperienceModal").click();
+      } else {
+        throw new Error("Errore nel recupero dei dati");
+      }
+    } catch (error) {
+      console.log("errore", error);
+    }
+  };
+
+  const putNewExperience = async () => {
+    const myExp = {
+      role: experience.role,
+      company: experience.company,
+      startDate: experience.startDate,
+      endDate: experience.endDate,
+      description: experience.description,
+      area: experience.area,
+      image: experience.image,
+    };
+
+    console.log(myExp);
+
+    try {
+      const response = await fetch(url + `/${param.expId}`, {
+        method: "PUT",
+        body: JSON.stringify(myExp),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        await getExperience();
+        document.getElementById("closeExperienceModal").click();
+        navigate(`/profile/${profile._id}`);
       } else {
         throw new Error("Errore nel recupero dei dati");
       }
@@ -126,6 +173,14 @@ const ProvaModale = () => {
     }
   };
 
+  useEffect(() => {
+    if (param.expId) {
+      setExperience(experience1.filter((ex) => ex._id === param.expId)[0]);
+      setStartDate(experience1.filter((ex) => ex._id === param.expId)[0]);
+      setEndDate(experience1.filter((ex) => ex._id === param.expId)[0]);
+    }
+  }, [param.expId]);
+
   return (
     <div
       className="modal fade"
@@ -146,6 +201,10 @@ const ProvaModale = () => {
               data-bs-dismiss="modal"
               aria-label="Close"
               id="closeExperienceModal"
+              onClick={() => {
+                navigate(`/profile/${profile._id}`);
+                setExperience(initialExperience);
+              }}
             ></button>
           </div>
           <div className="modal-body modalHeight">
@@ -198,70 +257,89 @@ const ProvaModale = () => {
                   <Form.Label className="mt-1 text-secondary">
                     Start date*
                   </Form.Label>
-                  <div className=" d-flex justify-content-between">
-                    <select
-                      name="Month"
-                      className=" w-50 me-2 p-1"
-                      value={startDate.month}
-                      onChange={(e) =>
-                        setStartDate({ ...startDate, month: e.target.value })
-                      }
-                    >
-                      <option value="">Month</option>
-                      <option value="01">January</option>
-                      <option value="02">February</option>
-                      <option value="03">March</option>
-                      <option value="04">April</option>
-                      <option value="05">May</option>
-                      <option value="06">June</option>
-                      <option value="07">July</option>
-                      <option value="08">August</option>
-                      <option value="09">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                    </select>
+                  {!param.expId && (
+                    <div className=" d-flex justify-content-between">
+                      <select
+                        name="Month"
+                        className=" w-50 me-2 p-1"
+                        value={startDate.month}
+                        onChange={(e) =>
+                          setStartDate({ ...startDate, month: e.target.value })
+                        }
+                      >
+                        <option value="">Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
 
-                    <select
-                      name="Year"
-                      className=" w-50"
-                      value={startDate.year}
-                      onChange={(e) =>
-                        setStartDate({ ...startDate, year: e.target.value })
-                      }
-                    >
-                      <option value="">Year</option>
-                      <option value="2000">2000</option>
-                      <option value="2001">2001</option>
-                      <option value="2002">2002</option>
-                      <option value="2003">2003</option>
-                      <option value="2004">2004</option>
-                      <option value="2005">2005</option>
-                      <option value="2006">2006</option>
-                      <option value="2007">2007</option>
-                      <option value="2008">2008</option>
-                      <option value="2009">2009</option>
-                      <option value="2010">2010</option>
-                      <option value="2011">2011</option>
-                      <option value="2012">2012</option>
-                      <option value="2013">2013</option>
-                      <option value="2014">2014</option>
-                      <option value="2015">2015</option>
-                      <option value="2016">2016</option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                    </select>
-                  </div>
+                      <select
+                        name="Year"
+                        className=" w-50"
+                        value={startDate.year}
+                        onChange={(e) =>
+                          setStartDate({ ...startDate, year: e.target.value })
+                        }
+                      >
+                        <option value="">Year</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                      </select>
+                    </div>
+                  )}
+
+                  {param.expId && (
+                    <div>
+                      <Form.Control
+                        type="text"
+                        placeholder="ex: 2020-03-21"
+                        value={experience.startDate.slice(0, 10)}
+                        onChange={(e) => {
+                          setExperience({
+                            ...experience,
+                            startDate: e.target.value,
+                          });
+                        }}
+                        required
+                      />
+                    </div>
+                  )}
                 </div>
 
-                {!current && (
+                {!current && !param.expId && (
                   <div className=" mb-3">
                     <Form.Label className="mt-1 text-secondary">
                       End date*
@@ -327,6 +405,26 @@ const ProvaModale = () => {
                         <option value="2025">2025</option>
                       </select>
                     </div>
+                  </div>
+                )}
+
+                {!current && param.expId && (
+                  <div>
+                    <Form.Label className="mt-1 text-secondary">
+                      End date*
+                    </Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="ex: 2020-03-21"
+                      value={experience.endDate.slice(0, 10)}
+                      onChange={(e) => {
+                        setExperience({
+                          ...experience,
+                          endDate: e.target.value,
+                        });
+                      }}
+                      required
+                    />
                   </div>
                 )}
 
