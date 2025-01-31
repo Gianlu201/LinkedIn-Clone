@@ -93,14 +93,14 @@ const ExperienceComp = () => {
             <h3>Experience</h3>
           </Col>{" "}
           {profile._id === currentProfile._id && (
-            <Link to={`/profile/${profile._id}`}>
+            <Link to={`/profile/${profile._id}`} className="expPlus ">
               <button
                 type="button"
                 className=" border-0 plus btn btn-sm"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
-                <i className="bi bi-plus-lg fs-4 matitina"></i>
+                <i className="bi bi-plus-lg fs-4"></i>
               </button>
             </Link>
           )}
@@ -120,7 +120,7 @@ const ExperienceComp = () => {
             {experience.map((exp, i) => {
               return (
                 <div key={exp._id}>
-                  <Row className="ms-2">
+                  <Row className="ms-2 align-items-center">
                     <Col xs={10}>
                       <Row>
                         <Col xs={2} lg={1} className="pe-0 me-lg-3">
@@ -145,7 +145,7 @@ const ExperienceComp = () => {
                       </Row>
                     </Col>
                     {profile._id === currentProfile._id && (
-                      <Col xs={2}>
+                      <Col xs={2} className=" text-center">
                         <Link
                           to={`/profile/${profile._id}/experience/${exp._id}`}
                         >
