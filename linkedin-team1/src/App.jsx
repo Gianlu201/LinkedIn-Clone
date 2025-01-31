@@ -7,6 +7,7 @@ import NavbarComponent from './components/NavbarComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeComponent from './components/HomeComponent';
 import JobsComponent from './components/JobsComponent';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             path='/jobs/:query/company/:company/job/:jobId/:imgIndex'
             element={<JobsComponent />}
           />
+          <Route path={'/404'} element={<ErrorPage />} />
         </Routes>
       </div>
     </BrowserRouter>
