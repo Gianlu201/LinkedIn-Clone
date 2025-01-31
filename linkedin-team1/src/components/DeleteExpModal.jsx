@@ -1,10 +1,16 @@
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const DeleteMyPostModal = (props) => {
-  console.log(props.postId);
+const DeleteExpModal = (props) => {
+  const profile = useSelector((state) => {
+    return state.profile;
+  });
 
-  const deletePost = async (id) => {
-    const url = "https://striveschool-api.herokuapp.com/api/posts/";
+  const navigate = useNavigate();
+
+  const deleteExp = async (id) => {
+    const url = `https://striveschool-api.herokuapp.com/api/profile/${profile._id}/experiences/`;
     const token =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
     try {
@@ -17,8 +23,8 @@ const DeleteMyPostModal = (props) => {
       });
       if (response.ok) {
         // TODO toast da inserire per dare conferma!
-        document.getElementById("closeDeleteMyPostModal").click();
-        props.setCurrentPostId("");
+        document.getElementById("closeDeleteExpModal").click();
+        props.setMyExpId("");
       } else {
         throw new Error("Errore nell'invio dati");
       }
@@ -30,7 +36,7 @@ const DeleteMyPostModal = (props) => {
   return (
     <div
       className="modal fade"
-      id="deleteMyPostModal"
+      id="deleteExpModal"
       tabIndex="-1"
       aria-labelledby="exampleModalLabel "
       aria-hidden="true"
@@ -47,7 +53,7 @@ const DeleteMyPostModal = (props) => {
               className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-              id="closeDeleteMyPostModal"
+              id="closeDeleteExpModal"
             ></button>
           </div>
           <div className="modal-body">
@@ -67,7 +73,9 @@ const DeleteMyPostModal = (props) => {
               type="button"
               className="btn btn-primary"
               onClick={() => {
-                deletePost(props.postId);
+                deleteExp(props.myExpId);
+                navigate(`/profile/${profile._id}`);
+                props.getExperience;
               }}
             >
               Delete
@@ -79,4 +87,4 @@ const DeleteMyPostModal = (props) => {
   );
 };
 
-export default DeleteMyPostModal;
+export default DeleteExpModal;

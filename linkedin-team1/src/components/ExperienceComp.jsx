@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProvaModale from "./ProvaModale";
 import { Link, useParams } from "react-router-dom";
 
@@ -20,6 +20,7 @@ const ExperienceComp = () => {
 
   const dispatch = useDispatch();
   const params = useParams();
+  const [proviamo, setProviamo] = useState([]);
 
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
@@ -80,8 +81,11 @@ const ExperienceComp = () => {
 
   useEffect(() => {
     getExperience();
-  }, [profile]);
+  }, [profile, params.profileId]);
 
+  useEffect(() => {
+    setProviamo(experience);
+  }, [experience]);
   return (
     <>
       <Container
@@ -104,20 +108,10 @@ const ExperienceComp = () => {
               </button>
             </Link>
           )}
-          {/* {profile._id === currentProfile._id && (
-            <button
-              type="button"
-              className=" border-0 matitina btn btn-sm"
-              data-bs-toggle="modal"
-              data-bs-target="#ExperienceModalEdit"
-            >
-              <i className="bi bi-pencil fs-5"></i>
-            </button>
-          )} */}
         </Row>{" "}
         <Row>
           <Col xs={12}>
-            {experience.map((exp, i) => {
+            {proviamo.map((exp, i) => {
               return (
                 <div key={exp._id}>
                   <Row className="ms-2 align-items-center">
