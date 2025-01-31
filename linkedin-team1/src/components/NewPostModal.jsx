@@ -158,7 +158,7 @@ const NewPostModal = () => {
                 <Form.Control
                   type='text'
                   placeholder='What do you want to talk about?'
-                  className='border-0'
+                  className='border-0 borderFocus'
                   value={text}
                   onChange={(e) => {
                     setText(e.target.value);
