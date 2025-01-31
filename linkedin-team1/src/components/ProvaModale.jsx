@@ -195,9 +195,15 @@ const ProvaModale = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Add experience
-              </h1>
+              {param.expId ? (
+                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                  Edit experience
+                </h1>
+              ) : (
+                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                  Add experience
+                </h1>
+              )}
               <button
                 type="button"
                 className="btn-close"
