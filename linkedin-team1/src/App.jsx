@@ -7,6 +7,7 @@ import NavbarComponent from './components/NavbarComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeComponent from './components/HomeComponent';
 import JobsComponent from './components/JobsComponent';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <Route path='/jobs' element={<JobsComponent />} />
           <Route path='/jobs/:query' element={<JobsComponent />} />
           <Route
-            path='/jobs/:query/company/:company/job/:jobId'
+            path='/jobs/:query/company/:company/job/:jobId/:imgIndex'
             element={<JobsComponent />}
           />
+          <Route path={'/404'} element={<ErrorPage />} />
         </Routes>
       </div>
     </BrowserRouter>

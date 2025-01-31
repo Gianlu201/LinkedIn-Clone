@@ -31,9 +31,15 @@ const JobFetch = () => {
     }
   };
 
-  const getRandomImage = () => {
-    return companyImages[Math.floor(Math.random() * companyImages.length)]
-      .image;
+  const getCompanyImage = (ind) => {
+    let indice = ind;
+
+    if (ind > companyImages.length - 1) {
+      let division = Math.floor(ind / (companyImages.length - 1));
+      indice = ind - division * (companyImages.length - 1);
+    }
+
+    return indice;
   };
 
   useEffect(() => {
@@ -78,15 +84,17 @@ const JobFetch = () => {
                     className="pe-0 pe-md-2 pe-lg-0 ms-lg-3 d-flex justify-content-center justify-content-lg-end"
                   >
                     <img
-                      src={getRandomImage()}
+                      src={companyImages[getCompanyImage(i)].image}
                       alt=""
                       style={{ width: "48px", height: "48px" }}
-                      className="pt-1"
+                      className=" pt-1"
                     />
                   </Col>
                   <Col xs={10} className="ps-0 ps-lg-2">
                     <Link
-                      to={`/jobs/${params.query}/company/${job.company_name}/job/${job._id}`}
+                      to={`/jobs/${params.query}/company/${
+                        job.company_name
+                      }/job/${job._id}/${getCompanyImage(i)}`}
                       className="fw-bold fs-6 w-100 mainLink text-primary"
                     >
                       {job.title}

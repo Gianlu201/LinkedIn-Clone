@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import companyImages from "../data/company_images.json";
 
 const JobDescription = () => {
   const params = useParams();
@@ -38,6 +39,44 @@ const JobDescription = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const timePassed = (dat) => {
+    const targetDay = new Date(dat);
+    const today = new Date();
+
+    const timePassed = (today - targetDay) / 1000;
+    const yearPassed = Math.floor(timePassed / 60 / 60 / 24 / 30 / 12);
+    const monthsPassed = Math.floor(timePassed / 60 / 60 / 24 / 30);
+    const daysPassed = Math.floor(timePassed / 60 / 60 / 24);
+    const hoursPassed = Math.floor(timePassed / 60 / 60);
+    const minutesPassed = Math.floor(timePassed / 60);
+    const secondsPassed = Math.floor(timePassed);
+
+    switch (true) {
+      case yearPassed > 0:
+        return `${yearPassed}y`;
+      case monthsPassed > 0:
+        return `${monthsPassed}m`;
+      case daysPassed > 0:
+        return `${daysPassed}d`;
+      case hoursPassed > 0:
+        return `${hoursPassed}h`;
+      case minutesPassed > 0:
+        return `${minutesPassed}min`;
+      case secondsPassed > 0:
+        return `${secondsPassed}sec`;
+      default:
+        return "now";
+    }
+  };
+
+  const getRandomViewers = () => {
+    const caracters = params.jobId.split("");
+    const numbers = caracters.filter((c) => isFinite(c));
+    return `${numbers[numbers.length - 3]}${numbers[numbers.length - 2]}${
+      numbers[numbers.length - 1]
+    }`;
   };
 
   useEffect(() => {
@@ -170,9 +209,7 @@ const JobDescription = () => {
               className="pe-0 pe-md-2 pe-lg-0 ms-lg-3 ms-xl-1 d-flex justify-content-center justify-content-lg-end"
             >
               <img
-                src={
-                  "https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
-                }
+                src={companyImages[params.imgIndex]?.image}
                 alt=""
                 style={{ width: "55px", height: "55px" }}
               />
@@ -192,11 +229,11 @@ const JobDescription = () => {
       <Row className=" ps-lg-3 ps-xl-4 ps-2 pb-2">
         <Col xs={12} className=" py-1">
           <h5 className=" fw-semibold">{selectedJob.title}</h5>
-          {/* TODO importare funzione per calcolare il tempo */}
-          {/* TODO inserire numero random nel 100 */}
+
           <p className=" small">
-            {selectedJob.candidate_required_location} · Reposted 5d ago · Over
-            100 applicants{" "}
+            {selectedJob.candidate_required_location} · Reposted{" "}
+            {timePassed(selectedJob.publication_date)} ago · Over{" "}
+            {getRandomViewers()} applicants{" "}
           </p>
         </Col>
         <Col xs={12} className=" py-1">

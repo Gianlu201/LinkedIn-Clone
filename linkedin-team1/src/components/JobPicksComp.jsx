@@ -1,10 +1,23 @@
 import { useSelector } from "react-redux";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import companyImages from "../data/company_images.json";
 
 const JobPicksComp = () => {
   const jobs = useSelector((state) => {
     return state.jobs;
   });
+
+  const getCompanyImage = (ind) => {
+    let indice = ind;
+
+    if (ind > companyImages.length - 1) {
+      let division = Math.floor(ind / (companyImages.length - 1));
+      indice = ind - division * (companyImages.length - 1);
+    }
+
+    return indice;
+  };
 
   return (
     <Container
@@ -20,7 +33,7 @@ const JobPicksComp = () => {
           </p>
         </Col>{" "}
       </Row>{" "}
-      {jobs.slice(0, 3).map((job) => {
+      {jobs.slice(0, 3).map((job, index) => {
         return (
           <Row className=" align-items-start" key={job._id}>
             <Col xs={11}>
@@ -32,18 +45,21 @@ const JobPicksComp = () => {
                 >
                   {" "}
                   <img
-                    src={
-                      "https://media.licdn.com/dms/image/v2/D4D0BAQGIhX3bWhxh9w/company-logo_100_100/company-logo_100_100/0/1725522409182/selectra_logo?e=1746057600&v=beta&t=gjqQiU10CokbqAXwYwtfn7BmR5SoUtFnOvvcWIn_TXI"
-                    }
+                    src={companyImages[getCompanyImage(index)]?.image}
                     alt=""
                     style={{ width: "48px", height: "48px" }}
                     className=" pt-1"
                   />
                 </Col>
                 <Col xs={10} className="ps-0 ps-lg-2">
-                  <h4 className="fw-bold fs-6 w-100 mainLink text-primary">
+                  <Link
+                    to={`/jobs/developer/company/${job.company_name}/job/${
+                      job._id
+                    }/${getCompanyImage(index)}`}
+                    className="fw-bold fs-6 w-100 mainLink text-primary"
+                  >
                     {job.title}
-                  </h4>
+                  </Link>
                   <p className="descriptions">
                     {job.company_name} • {job.category}
                   </p>

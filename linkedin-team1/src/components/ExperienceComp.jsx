@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ProvaModale from './ProvaModale';
 import ExperienceModalEdit from './ExpereinceModalEdit';
+import { useParams } from 'react-router-dom';
 
 const ExperienceComp = () => {
   const profile = useSelector((state) => {
@@ -19,13 +20,14 @@ const ExperienceComp = () => {
   });
 
   const dispatch = useDispatch();
+  const params = useParams();
 
   const token =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk';
 
   const getExperience = async () => {
-    const url2 = `https://striveschool-api.herokuapp.com/api/profile/${profile._id}/experiences`;
-    if (!profile._id) {
+    const url2 = `https://striveschool-api.herokuapp.com/api/profile/${params.profileId}/experiences`;
+    if (!params.profileId) {
       return;
     }
 
