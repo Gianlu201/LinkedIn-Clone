@@ -178,7 +178,6 @@ const NavbarComponent = () => {
           >
             <Link
               to={"/"}
-              href="#action1"
               className=" nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
             >
               <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
@@ -187,7 +186,7 @@ const NavbarComponent = () => {
               </p>
             </Link>
             <Nav.Link
-              href="#action2"
+              href="javascript:void(0)"
               className="d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0"
             >
               <i className="IconeGrigeNav bi bi-person-fill fs-4 px-xl-3"></i>
@@ -205,7 +204,7 @@ const NavbarComponent = () => {
               </p>
             </Link>{" "}
             <Nav.Link
-              href="#action4"
+              href="javascript:void(0)"
               className="d-flex flex-column align-items-center py-0 "
             >
               <i className="IconeGrigeNav bi bi-chat-dots-fill fs-4 px-xl-3"></i>
@@ -214,7 +213,7 @@ const NavbarComponent = () => {
               </p>
             </Nav.Link>
             <Nav.Link
-              href="#action5"
+              href="javascript:void(0)"
               className=" d-flex flex-column align-items-center py-0"
             >
               <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
