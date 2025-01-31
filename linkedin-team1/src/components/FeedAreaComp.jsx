@@ -9,6 +9,7 @@ const FeedAreaComp = () => {
   const [posts, setPosts] = useState([]);
   const [notShowArr, setNotShowArr] = useState([]);
   const [currentPostId, setCurrentPostId] = useState('');
+  const [update, setUpdate] = useState(false);
 
   const [showArr, setShowArr] = useState(['']);
 
@@ -114,6 +115,10 @@ const FeedAreaComp = () => {
     getAllFeed();
     getComments();
   }, [currentPostId, params]);
+
+  useEffect(() => {
+    getComments();
+  }, [update]);
 
   return (
     <div className=' mt-2 rounded-3 d-flex flex-column'>
@@ -333,6 +338,7 @@ const FeedAreaComp = () => {
 
                   <CommnetsSection
                     show={showArr}
+                    setUpdate={setUpdate}
                     postId={post._id}
                     commentsArray={commentsArray}
                   />
