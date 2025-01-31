@@ -27,7 +27,7 @@ const NavbarComponent = () => {
 
   const getNavPath = (path) => {
     return location.pathname === path ? "active-nav-path" : "";
-  }
+  };
   const handleClickOutside = (event) => {
     if (
       dropdownMe &&
@@ -138,7 +138,7 @@ const NavbarComponent = () => {
                         <Form.Control
                           type="text"
                           placeholder=" Search..."
-                          className="w-100"
+                          className="w-100 focusNav"
                           value={search}
                           onChange={(e) => {
                             setSearch(e.target.value);
@@ -164,7 +164,7 @@ const NavbarComponent = () => {
                   <Form.Control
                     type="text"
                     placeholder="Search"
-                    className=" sfondoSearch border-0"
+                    className=" sfondoSearch border-0 focusNav"
                     value={search}
                     onChange={(e) => {
                       setSearch(e.target.value);
@@ -178,10 +178,14 @@ const NavbarComponent = () => {
             xs={8}
             md={7}
             lg={6}
-            className="px-0 d-flex align-items-center justify-content-evenly">
+            className="px-0 d-flex align-items-center justify-content-evenly"
+          >
             <Link
               to="/"
-              className={`${getNavPath("/")} nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0`}>
+              className={`${getNavPath(
+                "/"
+              )} nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0`}
+            >
               <i className="IconeGrigeNav bi bi-house-fill fs-4 px-xl-3"></i>
               <p className="IconText pb-0 text-secondary d-none d-lg-block ">
                 Home
@@ -198,14 +202,15 @@ const NavbarComponent = () => {
             </Nav.Link>
             <Link
               to="/jobs"
-              className={`${getNavPath("/jobs")} nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0`}
-              >
+              className={`${getNavPath(
+                "/jobs"
+              )} nav-link d-flex flex-column align-items-center py-0 px-lg-2 px-xl-0`}
+            >
               <i className="IconeGrigeNav bi bi-briefcase-fill fs-4 px-xl-3"></i>
               <p className="IconText pb-0  text-secondary d-none d-lg-block ">
                 Jobs
               </p>
-            </Link>
-            {" "}
+            </Link>{" "}
             <Nav.Link
               href="javascript:void(0)"
               className="d-flex flex-column align-items-center py-0 "
@@ -219,14 +224,22 @@ const NavbarComponent = () => {
               href="javascript:void(0)"
               className=" d-flex flex-column align-items-center py-0"
             >
-              <img src="/notifica.png" alt="notifica" className="NotificaBell"/>
+              <img
+                src="/notifica.png"
+                alt="notifica"
+                className="NotificaBell"
+              />
               <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
               <p className="IconText pb-0 text-secondary d-none d-lg-block ">
                 Notifications
               </p>
             </Nav.Link>
             {profile._id && (
-              <div className={`position-relative px-lg-2 px-xl-0 ${getNavPath(`/profile/${profile._id}`)}`}>
+              <div
+                className={`position-relative px-lg-2 px-xl-0 ${getNavPath(
+                  `/profile/${profile._id}`
+                )}`}
+              >
                 <Button
                   className=" bg-transparent border-0 px-0 py-0 d-flex flex-column align-items-center"
                   onClick={() => {
