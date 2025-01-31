@@ -222,105 +222,111 @@ const NavbarComponent = () => {
                 Notifications
               </p>
             </Nav.Link>
-            <div className=" position-relative px-lg-2 px-xl-0">
-              <Button
-                className=" bg-transparent border-0 px-0 py-0 d-flex flex-column align-items-center"
-                onClick={() => {
-                  setDropdownMe(!dropdownMe);
-                }}
-              >
-                <img
-                  src={profile.image}
-                  className="ImmagineProfilo"
-                  alt="Descrizione immagine"
-                />
-                <p className="IconText text-secondary  d-none d-lg-block">
-                  Me<i className="bi bi-caret-down-fill caretDown"></i>
-                </p>
-              </Button>
-              {dropdownMe && (
-                <div
-                  ref={dropdownMeRef}
-                  className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3"
+            {profile._id && (
+              <div className=" position-relative px-lg-2 px-xl-0">
+                <Button
+                  className=" bg-transparent border-0 px-0 py-0 d-flex flex-column align-items-center"
+                  onClick={() => {
+                    setDropdownMe(!dropdownMe);
+                  }}
                 >
-                  <Container
-                    style={{ width: "270px" }}
-                    className="border border-muted rounded-2 pb-3"
+                  <img
+                    src={profile.image}
+                    className="ImmagineProfilo"
+                    alt="Descrizione immagine"
+                  />
+                  <p className="IconText text-secondary  d-none d-lg-block">
+                    Me<i className="bi bi-caret-down-fill caretDown"></i>
+                  </p>
+                </Button>
+                {profile._id && dropdownMe && (
+                  <div
+                    ref={dropdownMeRef}
+                    className="dropdown-menu-start d-flex align-items-center divDropPosition bg-white rounded-3 z-3"
                   >
-                    <Row className="d-flex flex-column">
-                      <Col>
-                        <Row className="mt-3">
-                          <Col xs={3} className="pe-1">
-                            {" "}
-                            <img
-                              src={profile.image}
-                              className="ImmagineProfilo rounded-circle"
-                              alt="Descrizione immagine"
-                              style={{ width: "50px", height: "50px" }}
-                            />
-                          </Col>
-                          <Col xs={9} className="ps-2">
-                            <p className="fw-bold">
-                              {profile.name} {profile.surname}
-                            </p>
-                            <p className=" small">{profile.title}</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col>
-                        <Row className="mt-2">
-                          <Col xs={12} className="pe-0">
-                            <div className="mb-2 d-flex justify-content-end pe-2">
+                    <Container
+                      style={{ width: "270px" }}
+                      className="border border-muted rounded-2 pb-3"
+                    >
+                      <Row className="d-flex flex-column">
+                        <Col>
+                          <Row className="mt-3">
+                            <Col xs={3} className="pe-1">
                               {" "}
-                              <Link
-                                to={`/profile/${profile._id}`}
-                                className=" btn btn-sm bg-transparent border-1 border-primary text-primary rounded-3 w-100 rounded-5 btnPSection"
-                                onClick={() => {
-                                  setDropdownMe(!dropdownMe);
-                                }}
-                              >
-                                <p className="text-button p-0">View Profile</p>
-                              </Link>
-                            </div>
-                          </Col>
+                              <img
+                                src={profile.image}
+                                className="ImmagineProfilo rounded-circle"
+                                alt="Descrizione immagine"
+                                style={{ width: "50px", height: "50px" }}
+                              />
+                            </Col>
+                            <Col xs={9} className="ps-2">
+                              <p className="fw-bold">
+                                {profile.name} {profile.surname}
+                              </p>
+                              <p className=" small">{profile.title}</p>
+                            </Col>
+                          </Row>
+                        </Col>
+                        <Col>
+                          <Row className="mt-2">
+                            <Col xs={12} className="pe-0">
+                              <div className="mb-2 d-flex justify-content-end pe-2">
+                                {" "}
+                                <Link
+                                  to={`/profile/${profile._id}`}
+                                  className=" btn btn-sm bg-transparent border-1 border-primary text-primary rounded-3 w-100 rounded-5 btnPSection"
+                                  onClick={() => {
+                                    setDropdownMe(!dropdownMe);
+                                  }}
+                                >
+                                  <p className="text-button p-0">
+                                    View Profile
+                                  </p>
+                                </Link>
+                              </div>
+                            </Col>
+                            <hr></hr>
+                          </Row>
+                        </Col>
+                        <Col>
+                          <p className="fw-bold mb-1">Account</p>
+                          <Row className=" align-items-center">
+                            <Col xs={1}>
+                              <img
+                                src="/imgGiallina.svg"
+                                style={{ width: "18px", height: "18px" }}
+                              />
+                            </Col>
+                            <Col xs={10} className="pe-0">
+                              <p className="small fw-semibold text-secondary">
+                                {" "}
+                                Try 1 month of Premium for €0
+                              </p>
+                            </Col>
+                          </Row>{" "}
+                          <p className="text-secondary small">
+                            Settigs & Privacy
+                          </p>
+                          <p className="text-secondary small">Help</p>
+                          <p className="text-secondary small mb-1">Language</p>
                           <hr></hr>
-                        </Row>
-                      </Col>
-                      <Col>
-                        <p className="fw-bold mb-1">Account</p>
-                        <Row className=" align-items-center">
-                          <Col xs={1}>
-                            <img
-                              src="/imgGiallina.svg"
-                              style={{ width: "18px", height: "18px" }}
-                            />
-                          </Col>
-                          <Col xs={10} className="pe-0">
-                            <p className="small fw-semibold text-secondary">
-                              {" "}
-                              Try 1 month of Premium for €0
-                            </p>
-                          </Col>
-                        </Row>{" "}
-                        <p className="text-secondary small">
-                          Settigs & Privacy
-                        </p>
-                        <p className="text-secondary small">Help</p>
-                        <p className="text-secondary small mb-1">Language</p>
-                        <hr></hr>
-                        <p className="fw-bold mb-1">Manage</p>
-                        <p className="text-secondary small">Posts & Activity</p>
-                        <p className="text-secondary small pb-1">
-                          Job Posting Account
-                        </p>
-                      </Col>
-                    </Row>
-                    <hr></hr>
-                    <p className="text-secondary small">Sign Out</p>
-                  </Container>
-                </div>
-              )}
-            </div>
+                          <p className="fw-bold mb-1">Manage</p>
+                          <p className="text-secondary small">
+                            Posts & Activity
+                          </p>
+                          <p className="text-secondary small pb-1">
+                            Job Posting Account
+                          </p>
+                        </Col>
+                      </Row>
+                      <hr></hr>
+                      <p className="text-secondary small">Sign Out</p>
+                    </Container>
+                  </div>
+                )}
+              </div>
+            )}
           </Col>
           <Col
             xs={2}
