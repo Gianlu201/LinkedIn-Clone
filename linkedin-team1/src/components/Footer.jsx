@@ -7,22 +7,22 @@ const Footer = () => {
         <Col xs={6}>
           <ul className="d-flex flex-wrap anchor-list justify-content-between">
             <li>
-              <a href="#">About</a>
+              <a href="javascript:void(0)">About</a>
             </li>
             <li>
-              <a href="#">Accessibility</a>
+              <a href="javascript:void(0)">Accessibility</a>
             </li>
             <li>
-              <a href="#">Talent Solutions</a>
+              <a href="javascript:void(0)">Talent Solutions</a>
             </li>
             <li>
-              <a href="#">Professional Community Policies</a>
+              <a href="javascript:void(0)">Professional Community Policies</a>
             </li>
             <li>
-              <a href="#">Careers</a>
+              <a href="javascript:void(0)">Careers</a>
             </li>
             <li>
-              <a href="#">Marketing Solutions</a>
+              <a href="javascript:void(0)">Marketing Solutions</a>
             </li>
             <li>
               <Dropdown>
@@ -38,37 +38,37 @@ const Footer = () => {
                   style={{ width: "200px" }}
                 >
                   <Dropdown.Item
-                    href="#/action-1"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0"
                   >
                     Privacy Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-2"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0 bg-white"
                   >
                     User Agreement
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-3"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0"
                   >
                     Pages Terms
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-4"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0"
                   >
                     Cookie Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-5"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0"
                   >
                     Copyright Policy
                   </Dropdown.Item>
                   <Dropdown.Item
-                    href="#/action-6"
+                    href="javascript:void(0)"
                     className="fw-bold footerOneDropItem py-1 px-2 border-0"
                   >
                     Your California privacy choices
@@ -77,22 +77,22 @@ const Footer = () => {
               </Dropdown>
             </li>
             <li>
-              <a href="#">Ad Choices</a>
+              <a href="javascript:void(0)">Ad Choices</a>
             </li>
             <li>
-              <a href="#">Advertising</a>
+              <a href="javascript:void(0)">Advertising</a>
             </li>
             <li>
-              <a href="#">Sales Solutions</a>
+              <a href="javascript:void(0)">Sales Solutions</a>
             </li>
             <li>
-              <a href="#">Mobile</a>
+              <a href="javascript:void(0)">Mobile</a>
             </li>
             <li>
-              <a href="#">Small Business</a>
+              <a href="javascript:void(0)">Small Business</a>
             </li>
             <li>
-              <a href="#">Safety Center</a>
+              <a href="javascript:void(0)">Safety Center</a>
             </li>
           </ul>
         </Col>
@@ -102,7 +102,7 @@ const Footer = () => {
               <li className="d-flex">
                 <i className="bi bi-question-circle-fill d-inline-block fs-6 me-2"></i>
                 <div>
-                  <a className="fw-bold" href="#">
+                  <a className="fw-bold" href="javascript:void(0)">
                     Questions?
                   </a>
                   <p>Visit our Help Center</p>
@@ -111,7 +111,7 @@ const Footer = () => {
               <li className="d-flex">
                 <i className="bi bi-gear-fill d-inline-block fs-6 me-2"></i>
                 <div>
-                  <a className="fw-bold" href="#">
+                  <a className="fw-bold" href="javascript:void(0)">
                     Manage your account and privacy
                   </a>
                   <p>Go to your Settings</p>
@@ -120,7 +120,7 @@ const Footer = () => {
               <li className="d-flex">
                 <i className="bi bi-shield-shaded d-inline-block fs-6 me-2"></i>
                 <div>
-                  <a className="fw-bold" href="#">
+                  <a className="fw-bold" href="javascript:void(0)">
                     Recommendation transparency
                   </a>
                   <p>Learn more about Recommended Content</p>

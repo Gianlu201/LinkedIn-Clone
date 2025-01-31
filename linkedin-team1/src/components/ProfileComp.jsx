@@ -224,7 +224,7 @@ const ProfileComp = () => {
                     <Card.Subtitle className="mb-2 text-muted fs-6">
                       Manager and Salesperson rol...
                     </Card.Subtitle>
-                    <Card.Link href="#" className=" fs-6">
+                    <Card.Link href="javascript:void(0)" className=" fs-6">
                       Show details
                     </Card.Link>
                   </Card.Body>
@@ -242,7 +242,7 @@ const ProfileComp = () => {
                       </span>{" "}
                       and attract qualified candidates
                     </Card.Title>
-                    <Card.Link href="#" className=" fs-6">
+                    <Card.Link href="javascript:void(0)" className=" fs-6">
                       Get started
                     </Card.Link>
                   </Card.Body>
@@ -261,7 +261,7 @@ const ProfileComp = () => {
                       as a selection on your profile so ypur business can be
                       easily discovered
                     </Card.Title>
-                    <Card.Link href="#" className=" fs-6">
+                    <Card.Link href="javascript:void(0)" className=" fs-6">
                       Get started
                     </Card.Link>
                   </Card.Body>
@@ -277,7 +277,7 @@ const ProfileComp = () => {
                       <span className=" fw-bold">Tell non-profits</span> you're
                       interested in getting involved with your time and skills
                     </Card.Title>
-                    <Card.Link href="#" className=" fs-6">
+                    <Card.Link href="javascript:void(0)" className=" fs-6">
                       Get started
                     </Card.Link>
                   </Card.Body>
