@@ -216,6 +216,7 @@ const NavbarComponent = () => {
               href="javascript:void(0)"
               className=" d-flex flex-column align-items-center py-0"
             >
+              <img src="/notifica.png" alt="notifica" className="NotificaBell"/>
               <i className="IconeGrigeNav bi bi-bell-fill fs-4 px-xl-3"></i>
               <p className="IconText pb-0 text-secondary d-none d-lg-block ">
                 Notifications
