@@ -164,14 +164,24 @@ const CommnetsSection = (props) => {
                       </div>
                       <div>
                         {comment.author === profile.username && (
-                          <Button
-                            onClick={() => {
-                              handleDelete(comment._id);
-                            }}
-                            className='btn btn-sm bg-white rounded-5 text-black border-black'
-                          >
-                            canc
-                          </Button>
+                          <div className='d-flex'>
+                            <Button
+                              onClick={() => {
+                                handleDelete(comment._id);
+                              }}
+                              className='btn btn-sm bg-white rounded-5 text-black border-black'
+                            >
+                              mod
+                            </Button>
+                            <Button
+                              onClick={() => {
+                                handleDelete(comment._id);
+                              }}
+                              className='btn btn-sm bg-white rounded-5 text-black border-black'
+                            >
+                              canc
+                            </Button>
+                          </div>
                         )}
                       </div>
                     </div>
