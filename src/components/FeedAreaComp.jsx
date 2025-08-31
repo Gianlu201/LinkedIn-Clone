@@ -24,8 +24,7 @@ const FeedAreaComp = () => {
 
   const getAllFeed = async () => {
     const url = 'https://striveschool-api.herokuapp.com/api/posts/';
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk';
+    const token = import.meta.env.VITE_TOKEN;
     try {
       const response = await fetch(url, {
         headers: {
@@ -46,9 +45,7 @@ const FeedAreaComp = () => {
     }
   };
 
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk';
-
+  const token = import.meta.env.VITE_TOKEN;
   const getComments = async () => {
     const URLCommenti = `https://striveschool-api.herokuapp.com/api/comments/`;
 

@@ -1,6 +1,6 @@
-import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const DeleteExpModal = (props) => {
   const profile = useSelector((state) => {
@@ -11,20 +11,19 @@ const DeleteExpModal = (props) => {
 
   const deleteExp = async (id) => {
     const url = `https://striveschool-api.herokuapp.com/api/profile/${profile._id}/experiences/`;
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
+    const token = import.meta.env.VITE_TOKEN;
     try {
       const response = await fetch(url + id, {
-        method: "DELETE",
+        method: 'DELETE',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
       });
       if (response.ok) {
         // TODO toast da inserire per dare conferma!
-        document.getElementById("closeDeleteExpModal").click();
-        props.setMyExpId("");
+        document.getElementById('closeDeleteExpModal').click();
+        props.setMyExpId('');
       } else {
         throw new Error("Errore nell'invio dati");
       }
@@ -35,43 +34,43 @@ const DeleteExpModal = (props) => {
 
   return (
     <div
-      className="modal fade"
-      id="deleteExpModal"
-      tabIndex="-1"
-      aria-labelledby="exampleModalLabel "
-      aria-hidden="true"
+      className='modal fade'
+      id='deleteExpModal'
+      tabIndex='-1'
+      aria-labelledby='exampleModalLabel '
+      aria-hidden='true'
     >
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h1 className="modal-title fs-5" id="exampleModalLabel">
-              <i className="bi bi-exclamation-triangle-fill text-danger me-2"></i>
+      <div className='modal-dialog'>
+        <div className='modal-content'>
+          <div className='modal-header'>
+            <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <i className='bi bi-exclamation-triangle-fill text-danger me-2'></i>
               Are you sure?
             </h1>
             <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              id="closeDeleteExpModal"
+              type='button'
+              className='btn-close'
+              data-bs-dismiss='modal'
+              aria-label='Close'
+              id='closeDeleteExpModal'
             ></button>
           </div>
-          <div className="modal-body">
+          <div className='modal-body'>
             This action is irreversible! It will not be possible to recover your
             post!
           </div>
-          <div className="modal-footer">
+          <div className='modal-footer'>
             <button
-              type="button"
-              className="btn btn-secondary"
-              data-bs-dismiss="modal"
+              type='button'
+              className='btn btn-secondary'
+              data-bs-dismiss='modal'
             >
               Close
             </button>
             <Button
-              variant="danger"
-              type="button"
-              className="btn btn-primary"
+              variant='danger'
+              type='button'
+              className='btn btn-primary'
               onClick={() => {
                 deleteExp(props.myExpId);
                 navigate(`/profile/${profile._id}`);

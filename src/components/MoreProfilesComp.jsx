@@ -11,8 +11,7 @@ const MoreProfilesComp = (props) => {
 
   const dispatch = useDispatch();
 
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk';
+  const token = import.meta.env.VITE_TOKEN;
   const url = 'https://striveschool-api.herokuapp.com/api/profile/';
 
   const getProfile = async () => {

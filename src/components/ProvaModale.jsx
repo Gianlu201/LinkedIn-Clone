@@ -1,22 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Form } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import DeleteExpModal from "./DeleteExpModal";
+import { Form } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import DeleteExpModal from './DeleteExpModal';
 
 const ProvaModale = () => {
   const param = useParams();
   const navigate = useNavigate();
 
   const initialExperience = {
-    role: "",
-    company: "",
-    startDate: "",
+    role: '',
+    company: '',
+    startDate: '',
     endDate: null,
-    description: "",
-    area: "",
-    image: "",
+    description: '',
+    area: '',
+    image: '',
     // 'https://demo.studiopress.com/page-builder/gb-square-placeholder.jpg'
   };
 
@@ -31,31 +31,31 @@ const ProvaModale = () => {
   const [experience, setExperience] = useState(initialExperience);
 
   const [current, setCurrent] = useState(true);
-  const [startDate, setStartDate] = useState({ year: "", month: "" });
-  const [endDate, setEndDate] = useState({ year: "", month: "" });
+  const [startDate, setStartDate] = useState({ year: '', month: '' });
+  const [endDate, setEndDate] = useState({ year: '', month: '' });
   const [required, setRequired] = useState(false);
-  const [myExpId, setMyExpId] = useState("");
+  const [myExpId, setMyExpId] = useState('');
 
   const dispatch = useDispatch();
 
   const handlePost = () => {
-    if (experience.role.trim() === "") {
+    if (experience.role.trim() === '') {
       return setRequired(true);
     }
-    if (experience.company.trim() === "") {
+    if (experience.company.trim() === '') {
       return setRequired(true);
     }
-    if (experience.description.trim() === "") {
+    if (experience.description.trim() === '') {
       return setRequired(true);
     }
-    if (experience.area.trim() === "") {
+    if (experience.area.trim() === '') {
       return setRequired(true);
     }
-    if (startDate.month === "" || startDate.year === "") {
+    if (startDate.month === '' || startDate.year === '') {
       return setRequired(true);
     }
     if (!current) {
-      if (endDate.month === "" || endDate.year === "") {
+      if (endDate.month === '' || endDate.year === '') {
         return setRequired(true);
       }
     }
@@ -70,9 +70,9 @@ const ProvaModale = () => {
     }
 
     let urlImg;
-    if (experience.image.trim() === "") {
+    if (experience.image.trim() === '') {
       urlImg =
-        "https://demo.studiopress.com/page-builder/gb-square-placeholder.jpg";
+        'https://demo.studiopress.com/page-builder/gb-square-placeholder.jpg';
     }
 
     const myNewExp = {
@@ -89,30 +89,29 @@ const ProvaModale = () => {
     }
   };
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzk4OWY3MDhlOWNjZDAwMTUyMGFiN2EiLCJpYXQiOjE3MzgwNTU1MzYsImV4cCI6MTczOTI2NTEzNn0.7puTeQLut5TMH7Z8bH5-8DgDjNZ9Iyw_phbiNUCxSEk";
+  const token = import.meta.env.VITE_TOKEN;
 
   const url = `https://striveschool-api.herokuapp.com/api/profile/${profile._id}/experiences`;
 
   const postNewExpereince = async (exp) => {
     try {
       const response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(exp),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
       });
       if (response.ok) {
         await getExperience();
         setExperience(initialExperience);
-        document.getElementById("closeExperienceModal").click();
+        document.getElementById('closeExperienceModal').click();
       } else {
-        throw new Error("Errore nel recupero dei dati");
+        throw new Error('Errore nel recupero dei dati');
       }
     } catch (error) {
-      console.log("errore", error);
+      console.log('errore', error);
     }
   };
 
@@ -131,22 +130,22 @@ const ProvaModale = () => {
 
     try {
       const response = await fetch(url + `/${param.expId}`, {
-        method: "PUT",
+        method: 'PUT',
         body: JSON.stringify(myExp),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
       });
       if (response.ok) {
         await getExperience();
-        document.getElementById("closeExperienceModal").click();
+        document.getElementById('closeExperienceModal').click();
         navigate(`/profile/${profile._id}`);
       } else {
-        throw new Error("Errore nel recupero dei dati");
+        throw new Error('Errore nel recupero dei dati');
       }
     } catch (error) {
-      console.log("errore", error);
+      console.log('errore', error);
     }
   };
 
@@ -156,7 +155,7 @@ const ProvaModale = () => {
     try {
       const response = await fetch(url2, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
       });
@@ -164,14 +163,14 @@ const ProvaModale = () => {
         const data = await response.json();
 
         dispatch({
-          type: "GET_EXPERIENCE",
+          type: 'GET_EXPERIENCE',
           payload: data,
         });
       } else {
-        throw new Error("Errore nel recupero dei dati");
+        throw new Error('Errore nel recupero dei dati');
       }
     } catch (error) {
-      console.log("errore", error);
+      console.log('errore', error);
     }
   };
 
@@ -186,30 +185,30 @@ const ProvaModale = () => {
   return (
     <>
       <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
+        className='modal fade'
+        id='exampleModal'
+        tabIndex='-1'
+        aria-labelledby='exampleModalLabel'
+        aria-hidden='true'
       >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
+        <div className='modal-dialog'>
+          <div className='modal-content'>
+            <div className='modal-header'>
               {param.expId ? (
-                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                <h1 className='modal-title fs-5' id='exampleModalLabel'>
                   Edit experience
                 </h1>
               ) : (
-                <h1 className="modal-title fs-5" id="exampleModalLabel">
+                <h1 className='modal-title fs-5' id='exampleModalLabel'>
                   Add experience
                 </h1>
               )}
               <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                id="closeExperienceModal"
+                type='button'
+                className='btn-close'
+                data-bs-dismiss='modal'
+                aria-label='Close'
+                id='closeExperienceModal'
                 onClick={() => {
                   navigate(`/profile/${profile._id}`);
                   setExperience(initialExperience);
@@ -217,20 +216,20 @@ const ProvaModale = () => {
                 }}
               ></button>
             </div>
-            <div className="modal-body modalHeight">
+            <div className='modal-body modalHeight'>
               <Form
                 onSubmit={(e) => {
                   e.preventDefault();
                 }}
               >
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <p className=" text-secondary mb-4 small">
+                <Form.Group className='mb-3' controlId='formBasicEmail'>
+                  <p className=' text-secondary mb-4 small'>
                     * indicates required
                   </p>
-                  <Form.Label className=" text-secondary">Title*</Form.Label>
+                  <Form.Label className=' text-secondary'>Title*</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="ex: retail sales manager"
+                    type='text'
+                    placeholder='ex: retail sales manager'
                     value={experience.role}
                     onChange={(e) => {
                       setExperience({ ...experience, role: e.target.value });
@@ -238,40 +237,40 @@ const ProvaModale = () => {
                     required
                   />
 
-                  <Form.Label className="mt-1 text-secondary">
+                  <Form.Label className='mt-1 text-secondary'>
                     Company or Oraganization*
                   </Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="ex: Microsoft"
+                    type='text'
+                    placeholder='ex: Microsoft'
                     value={experience.company}
                     onChange={(e) => {
                       setExperience({ ...experience, company: e.target.value });
                     }}
                     required
                   />
-                  <div className="mt-3">
+                  <div className='mt-3'>
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       checked={current}
                       onChange={() => {
                         setCurrent(!current);
                       }}
                     />
-                    <Form.Label className="mt-1 ms-2 text-secondary">
+                    <Form.Label className='mt-1 ms-2 text-secondary'>
                       I am currently working in this role
                     </Form.Label>
                   </div>
 
-                  <div className=" mb-3">
-                    <Form.Label className="mt-1 text-secondary">
+                  <div className=' mb-3'>
+                    <Form.Label className='mt-1 text-secondary'>
                       Start date*
                     </Form.Label>
                     {!param.expId && (
-                      <div className=" d-flex justify-content-between">
+                      <div className=' d-flex justify-content-between'>
                         <select
-                          name="Month"
-                          className=" w-50 me-2 p-1"
+                          name='Month'
+                          className=' w-50 me-2 p-1'
                           value={startDate.month}
                           onChange={(e) =>
                             setStartDate({
@@ -280,56 +279,56 @@ const ProvaModale = () => {
                             })
                           }
                         >
-                          <option value="">Month</option>
-                          <option value="01">January</option>
-                          <option value="02">February</option>
-                          <option value="03">March</option>
-                          <option value="04">April</option>
-                          <option value="05">May</option>
-                          <option value="06">June</option>
-                          <option value="07">July</option>
-                          <option value="08">August</option>
-                          <option value="09">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12">December</option>
+                          <option value=''>Month</option>
+                          <option value='01'>January</option>
+                          <option value='02'>February</option>
+                          <option value='03'>March</option>
+                          <option value='04'>April</option>
+                          <option value='05'>May</option>
+                          <option value='06'>June</option>
+                          <option value='07'>July</option>
+                          <option value='08'>August</option>
+                          <option value='09'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
                         </select>
 
                         <select
-                          name="Year"
-                          className=" w-50"
+                          name='Year'
+                          className=' w-50'
                           value={startDate.year}
                           onChange={(e) =>
                             setStartDate({ ...startDate, year: e.target.value })
                           }
                         >
-                          <option value="">Year</option>
-                          <option value="2000">2000</option>
-                          <option value="2001">2001</option>
-                          <option value="2002">2002</option>
-                          <option value="2003">2003</option>
-                          <option value="2004">2004</option>
-                          <option value="2005">2005</option>
-                          <option value="2006">2006</option>
-                          <option value="2007">2007</option>
-                          <option value="2008">2008</option>
-                          <option value="2009">2009</option>
-                          <option value="2010">2010</option>
-                          <option value="2011">2011</option>
-                          <option value="2012">2012</option>
-                          <option value="2013">2013</option>
-                          <option value="2014">2014</option>
-                          <option value="2015">2015</option>
-                          <option value="2016">2016</option>
-                          <option value="2017">2017</option>
-                          <option value="2018">2018</option>
-                          <option value="2019">2019</option>
-                          <option value="2020">2020</option>
-                          <option value="2021">2021</option>
-                          <option value="2022">2022</option>
-                          <option value="2023">2023</option>
-                          <option value="2024">2024</option>
-                          <option value="2025">2025</option>
+                          <option value=''>Year</option>
+                          <option value='2000'>2000</option>
+                          <option value='2001'>2001</option>
+                          <option value='2002'>2002</option>
+                          <option value='2003'>2003</option>
+                          <option value='2004'>2004</option>
+                          <option value='2005'>2005</option>
+                          <option value='2006'>2006</option>
+                          <option value='2007'>2007</option>
+                          <option value='2008'>2008</option>
+                          <option value='2009'>2009</option>
+                          <option value='2010'>2010</option>
+                          <option value='2011'>2011</option>
+                          <option value='2012'>2012</option>
+                          <option value='2013'>2013</option>
+                          <option value='2014'>2014</option>
+                          <option value='2015'>2015</option>
+                          <option value='2016'>2016</option>
+                          <option value='2017'>2017</option>
+                          <option value='2018'>2018</option>
+                          <option value='2019'>2019</option>
+                          <option value='2020'>2020</option>
+                          <option value='2021'>2021</option>
+                          <option value='2022'>2022</option>
+                          <option value='2023'>2023</option>
+                          <option value='2024'>2024</option>
+                          <option value='2025'>2025</option>
                         </select>
                       </div>
                     )}
@@ -337,8 +336,8 @@ const ProvaModale = () => {
                     {param.expId && (
                       <div>
                         <Form.Control
-                          type="text"
-                          placeholder="ex: 2020-03-21"
+                          type='text'
+                          placeholder='ex: 2020-03-21'
                           value={experience.startDate.slice(0, 10)}
                           onChange={(e) => {
                             setExperience({
@@ -353,69 +352,69 @@ const ProvaModale = () => {
                   </div>
 
                   {!current && !param.expId && (
-                    <div className=" mb-3">
-                      <Form.Label className="mt-1 text-secondary">
+                    <div className=' mb-3'>
+                      <Form.Label className='mt-1 text-secondary'>
                         End date*
                       </Form.Label>
-                      <div className=" d-flex justify-content-between">
+                      <div className=' d-flex justify-content-between'>
                         <select
-                          name="Month"
-                          className=" w-50 me-2 p-1"
+                          name='Month'
+                          className=' w-50 me-2 p-1'
                           value={endDate.month}
                           onChange={(e) =>
                             setEndDate({ ...endDate, month: e.target.value })
                           }
                         >
                           <option>Month</option>
-                          <option value="01">January</option>
-                          <option value="02">February</option>
-                          <option value="03">March</option>
-                          <option value="04">April</option>
-                          <option value="05">May</option>
-                          <option value="06">June</option>
-                          <option value="07">July</option>
-                          <option value="08">August</option>
-                          <option value="09">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12">December</option>
+                          <option value='01'>January</option>
+                          <option value='02'>February</option>
+                          <option value='03'>March</option>
+                          <option value='04'>April</option>
+                          <option value='05'>May</option>
+                          <option value='06'>June</option>
+                          <option value='07'>July</option>
+                          <option value='08'>August</option>
+                          <option value='09'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
                         </select>
 
                         <select
-                          name="Year"
-                          className=" w-50"
+                          name='Year'
+                          className=' w-50'
                           value={endDate.year}
                           onChange={(e) =>
                             setEndDate({ ...endDate, year: e.target.value })
                           }
                         >
                           <option>Year</option>
-                          <option value="2000">2000</option>
-                          <option value="2001">2001</option>
-                          <option value="2002">2002</option>
-                          <option value="2003">2003</option>
-                          <option value="2004">2004</option>
-                          <option value="2005">2005</option>
-                          <option value="2006">2006</option>
-                          <option value="2007">2007</option>
-                          <option value="2008">2008</option>
-                          <option value="2009">2009</option>
-                          <option value="2010">2010</option>
-                          <option value="2011">2011</option>
-                          <option value="2012">2012</option>
-                          <option value="2013">2013</option>
-                          <option value="2014">2014</option>
-                          <option value="2015">2015</option>
-                          <option value="2016">2016</option>
-                          <option value="2017">2017</option>
-                          <option value="2018">2018</option>
-                          <option value="2019">2019</option>
-                          <option value="2020">2020</option>
-                          <option value="2021">2021</option>
-                          <option value="2022">2022</option>
-                          <option value="2023">2023</option>
-                          <option value="2024">2024</option>
-                          <option value="2025">2025</option>
+                          <option value='2000'>2000</option>
+                          <option value='2001'>2001</option>
+                          <option value='2002'>2002</option>
+                          <option value='2003'>2003</option>
+                          <option value='2004'>2004</option>
+                          <option value='2005'>2005</option>
+                          <option value='2006'>2006</option>
+                          <option value='2007'>2007</option>
+                          <option value='2008'>2008</option>
+                          <option value='2009'>2009</option>
+                          <option value='2010'>2010</option>
+                          <option value='2011'>2011</option>
+                          <option value='2012'>2012</option>
+                          <option value='2013'>2013</option>
+                          <option value='2014'>2014</option>
+                          <option value='2015'>2015</option>
+                          <option value='2016'>2016</option>
+                          <option value='2017'>2017</option>
+                          <option value='2018'>2018</option>
+                          <option value='2019'>2019</option>
+                          <option value='2020'>2020</option>
+                          <option value='2021'>2021</option>
+                          <option value='2022'>2022</option>
+                          <option value='2023'>2023</option>
+                          <option value='2024'>2024</option>
+                          <option value='2025'>2025</option>
                         </select>
                       </div>
                     </div>
@@ -423,12 +422,12 @@ const ProvaModale = () => {
 
                   {!current && param.expId && (
                     <div>
-                      <Form.Label className="mt-1 text-secondary">
+                      <Form.Label className='mt-1 text-secondary'>
                         End date*
                       </Form.Label>
                       <Form.Control
-                        type="text"
-                        placeholder="ex: 2020-03-21"
+                        type='text'
+                        placeholder='ex: 2020-03-21'
                         value={experience.endDate.slice(0, 10)}
                         onChange={(e) => {
                           setExperience({
@@ -441,24 +440,24 @@ const ProvaModale = () => {
                     </div>
                   )}
 
-                  <Form.Label className="mt-1 text-secondary">
+                  <Form.Label className='mt-1 text-secondary'>
                     Location*
                   </Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="ex: London, United Kingdom"
+                    type='text'
+                    placeholder='ex: London, United Kingdom'
                     value={experience.area}
                     onChange={(e) => {
                       setExperience({ ...experience, area: e.target.value });
                     }}
                   />
 
-                  <Form.Label className="mt-1 text-secondary">
+                  <Form.Label className='mt-1 text-secondary'>
                     Description*
                   </Form.Label>
                   <Form.Control
-                    as={"textarea"}
-                    placeholder="List your major duties and successes, highlighting specific projects"
+                    as={'textarea'}
+                    placeholder='List your major duties and successes, highlighting specific projects'
                     value={experience.description}
                     onChange={(e) => {
                       setExperience({
@@ -468,10 +467,10 @@ const ProvaModale = () => {
                     }}
                   />
 
-                  <h5 className="mt-3">Media</h5>
+                  <h5 className='mt-3'>Media</h5>
                   <p>Add image</p>
                   <Form.Control
-                    type="text"
+                    type='text'
                     placeholder="ex: 'https://demo.studiopress.com/page-builder/gb-square-placeholder.jpg'"
                     value={experience.image}
                     onChange={(e) => {
@@ -482,12 +481,12 @@ const ProvaModale = () => {
               </Form>
             </div>
             {param.expId ? (
-              <div className="modal-footer d-flex justify-content-between align-items-center">
+              <div className='modal-footer d-flex justify-content-between align-items-center'>
                 <button
-                  type="button"
-                  className="btn btn-danger rounded-5"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteExpModal"
+                  type='button'
+                  className='btn btn-danger rounded-5'
+                  data-bs-toggle='modal'
+                  data-bs-target='#deleteExpModal'
                   onClick={() => {
                     setMyExpId(param.expId);
                     setExperience(initialExperience);
@@ -496,13 +495,13 @@ const ProvaModale = () => {
                   Delete
                 </button>
                 {required && (
-                  <p className="text-danger small">
+                  <p className='text-danger small'>
                     Required fields not filled
                   </p>
                 )}
                 <button
-                  type="button"
-                  className="btn btn-primary rounded-5"
+                  type='button'
+                  className='btn btn-primary rounded-5'
                   onClick={() => {
                     handlePost();
                   }}
@@ -511,17 +510,17 @@ const ProvaModale = () => {
                 </button>
               </div>
             ) : (
-              <div className="modal-footer d-flex justify-content-between align-items-center">
+              <div className='modal-footer d-flex justify-content-between align-items-center'>
                 {required ? (
-                  <p className="text-danger small">
+                  <p className='text-danger small'>
                     *required fields not filled
                   </p>
                 ) : (
                   <p></p>
                 )}
                 <button
-                  type="button"
-                  className="btn btn-primary rounded-5"
+                  type='button'
+                  className='btn btn-primary rounded-5'
                   onClick={() => {
                     handlePost();
                   }}

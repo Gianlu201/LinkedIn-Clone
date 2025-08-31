@@ -32,9 +32,7 @@ const LanguageUrlComp = () => {
           <Row className='ms-2 ms-md-0 align-items-md-start position-relative'>
             <Col xs={12} className='mt-3 mb-2'>
               <h3 className='fontDestra '>Public profile & URL</h3>
-              <p className='pDestra'>
-                www.linkedin.com/in/camilla-zicari-84101620b
-              </p>
+              <p className='pDestra'>www.linkedin.com/in/gianluca-di-diego</p>
               <button className='btn bg-white border-0 matitinaDestra'>
                 <i className='bi bi-pencil fs-5 matitina'></i>
               </button>

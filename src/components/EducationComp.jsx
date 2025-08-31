@@ -40,9 +40,11 @@ const EducationComp = () => {
               />
             </Col>
             <Col xs={10} className='ps-0'>
-              <h4 className='fw-bold fs-6 w-100'>IIS Giosuè Carducci</h4>
+              <h4 className='fw-bold fs-6 w-100'>
+                Liceo Scientifico P. Metastasio
+              </h4>
               <p className='descriptions'>
-                Diploma di scuola superiore, Scienze applicate
+                Diploma di scuola superiore, Liceo scientifico
               </p>
               <p className='descriptions text-secondary'>Sep 2015 - Jun 2020</p>
             </Col>
