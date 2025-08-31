@@ -166,8 +166,3 @@ export const getMessages = () => request('/messages');
 
 ---
 
-## Credits
-
-Progetto originale: `Gianlu201/LinkedIn-Clone` — GitHub
-
-Grazie! 🚀
